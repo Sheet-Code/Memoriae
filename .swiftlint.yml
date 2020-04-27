@@ -8,6 +8,7 @@ disabled_rules:
 - multiline_arguments_brackets
 - no_extension_access_modifier
 - no_grouping_extension
+- trailing_whitespace
 - trailing_closure
 - unowned_variable_capture
 - vertical_whitespace_between_cases
@@ -114,7 +115,7 @@ file_length: 700
 
 function_parameter_count: 6
 
-warning_threshold: 1
+warning_threshold: 10
 
 file_name:
   suffix_pattern: "Extensions?|\\+.*"
