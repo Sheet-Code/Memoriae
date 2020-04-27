@@ -6,28 +6,52 @@
 //  Copyright © 2020 SheetCode Team. All rights reserved.
 //
 
+//import Foundation
+//
+//struct Level: Decodable {
+//
+//    let id: Int
+//    let title: String
+//
+//    let kind: String
+//    let target: TOMMPictureTarget?
+//
+//    let task: String?
+//    let description: String?
+//    let picture: String?
+//}
+//
+//struct TOMMPictureTarget: Decodable {
+//    let picture: String
+//    let time: Int
+//    let questions: [Question]
+//}
+//
+//struct Question: Decodable {
+//    let question: String
+//    let rightAnswer: String
+//    let answers: [String]
+//}
+
 import Foundation
 
-class Level: Decodable {
-
-    enum Kind: String, Decodable {
-        case WMSNumbers, WMSPictures
-    }
-    
+// MARK: - LevelElement
+struct Level: Codable {
     let id: Int
-    let title: String
-    let kind: Kind
+    let title, kind, task, description: String
+    let picture: String?
+    let target: Target?
+}
 
-    let task: String?
-    let description: String?
-    let image: String?
+// MARK: - Target
+struct Target: Codable {
+    let picture: String
+    let time: Int
+    let questions: [Question]
+}
 
-    init(id: Int, title: String, kind: Kind, description: String?, task: String?, image: String?) {
-        self.id = id
-        self.title = title
-        self.kind = kind
-        self.description = description
-        self.task = task
-        self.image = image
-    }
+// MARK: - Question
+struct Question: Codable {
+    let question, rightAnswer: String
+    let answers: [String]
 }

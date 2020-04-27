@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //topBar.title = "Memoriae"
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ extension MainViewController: UITableViewDelegate {
         }
 
         previewController.level = level
-        navigationController?.pushViewController(previewController, animated: false)
+        navigationController?.pushViewController(previewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
