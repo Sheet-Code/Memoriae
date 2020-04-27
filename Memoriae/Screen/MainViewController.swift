@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
     var data: [Level]?
 
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet weak var topBar: UINavigationItem!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +30,7 @@ class MainViewController: UIViewController {
         tableView.rowHeight = rowHeight
         LevelCell.viewController = self
         tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -57,5 +57,24 @@ extension MainViewController: UITableViewDataSource {
         }
         cell.setup(with: nNData[indexPath.row], controller: self, index: indexPath)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        guard let level = data?[indexPath.row] else {
+            return
+        }
+        guard let previewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "LevelPreviewController") as? LevelPreviewController else {
+                return
+        }
+
+        previewController.level = level
+        navigationController?.pushViewController(previewController, animated: false)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

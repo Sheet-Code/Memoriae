@@ -17,6 +17,7 @@
 		0BC1FCEE2433BA89002161A1 /* MemoriaeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCED2433BA89002161A1 /* MemoriaeTests.swift */; };
 		0BC1FCF92433BA89002161A1 /* MemoriaeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCF82433BA89002161A1 /* MemoriaeUITests.swift */; };
 		0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D95A2456E5FF00450D0E /* LevelCell.swift */; };
+		0BD9D95F245729BD00450D0E /* LevelPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */; };
 		187236DC4ADDC9066E3CE74B /* Pods_Memoriae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B962E7BCDAFC590754E8A6FF /* Pods_Memoriae.framework */; };
 		64046A64A4B6A9E0028BDB56 /* Pods_MemoriaeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7367931731C180D547DCC07E /* Pods_MemoriaeUITests.framework */; };
 		B748487A86F76CA012E23622 /* Pods_MemoriaeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33EEC53947962658FA7A238 /* Pods_MemoriaeTests.framework */; };
@@ -56,6 +57,7 @@
 		0BC1FCF82433BA89002161A1 /* MemoriaeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaeUITests.swift; sourceTree = "<group>"; };
 		0BC1FCFA2433BA89002161A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BD9D95A2456E5FF00450D0E /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPreviewController.swift; sourceTree = "<group>"; };
 		4E5912D020F1E2023348921F /* Pods-MemoriaeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeTests/Pods-MemoriaeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C0B4B8851CB1AE3B7A8F570 /* Pods-Memoriae.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memoriae.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memoriae/Pods-Memoriae.debug.xcconfig"; sourceTree = "<group>"; };
 		7367931731C180D547DCC07E /* Pods_MemoriaeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 			children = (
 				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
 				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
+				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC1FCDB2433BA88002161A1 /* MainViewController.swift in Sources */,
+				0BD9D95F245729BD00450D0E /* LevelPreviewController.swift in Sources */,
 				0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */,
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
 				0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */,
