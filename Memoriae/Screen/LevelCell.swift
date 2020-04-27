@@ -20,7 +20,7 @@ class LevelCell: UITableViewCell {
         picture.image = nil
     }
 
-    func setup(with level: Level, controller: ViewController, index: IndexPath) {
+    func setup(with level: Level, controller: MainViewController, index: IndexPath) {
 
         title.text = level.title
         descript.text = level.description

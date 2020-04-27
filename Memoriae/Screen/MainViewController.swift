@@ -8,12 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     let rowHeight: CGFloat = 200
     var data: [Level]?
 
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet weak var topBar: UINavigationItem!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //topBar.title = "Memoriae"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +35,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case self.tableView:
