@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */; };
+		0B49FC2A245A223200A4F072 /* ScoreRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC29245A223200A4F072 /* ScoreRealm.swift */; };
 		0B96E8A12455B3250017E0D7 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96E8A02455B3250017E0D7 /* Level.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedUIButton.swift; sourceTree = "<group>"; };
+		0B49FC29245A223200A4F072 /* ScoreRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRealm.swift; sourceTree = "<group>"; };
 		0B96E8A02455B3250017E0D7 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0B96E8A02455B3250017E0D7 /* Level.swift */,
+				0B49FC29245A223200A4F072 /* ScoreRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				0BD9D962245763AA00450D0E /* TOMMPictureViewController.swift */,
-				0BD9D96424577D5B00450D0E /* TOMMPictureAnswersViewController.swift */,
 				0BD9D96724577F2700450D0E /* TOMMAnswerCell.swift */,
+				0BD9D96424577D5B00450D0E /* TOMMPictureAnswersViewController.swift */,
 			);
 			path = TOMM;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				0BC1FCCF2433BA88002161A1 /* Sources */,
 				0BC1FCD02433BA88002161A1 /* Frameworks */,
 				0BC1FCD12433BA88002161A1 /* Resources */,
+				416583201B66FF28C9DB872E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +378,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		416583201B66FF28C9DB872E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Memoriae/Pods-Memoriae-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Memoriae/Pods-Memoriae-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		57A4CA4F327071B89F70DCBD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +464,7 @@
 				0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */,
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
 				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,
+				0B49FC2A245A223200A4F072 /* ScoreRealm.swift in Sources */,
 				0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */,
 				0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */,
 				0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */,

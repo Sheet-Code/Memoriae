@@ -1,19 +1,23 @@
 {
   "images" : [
     {
-      "filename" : "fQzR4RkrwVk.jpg",
+      "filename" : "1509311066_narrative-794978_960_720-1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "fQzR4RkrwVk-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "fQzR4RkrwVk-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "1509311066_narrative-794978_960_720.jpg",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
     }
   ],
   "info" : {

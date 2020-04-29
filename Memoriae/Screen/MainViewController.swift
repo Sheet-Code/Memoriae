@@ -10,24 +10,25 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    let rowHeight: CGFloat = 200
+//    let rowHeight: CGFloat = 200
     var data: [Level]?
 
     @IBOutlet private var tableView: UITableView!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let asset = NSDataAsset(name: "levels.json")
         guard let assetData = asset?.data else {
             return
         }
         data = try? JSONDecoder().decode([Level].self, from: assetData)
-        tableView.rowHeight = rowHeight
+        
+        tableView.rowHeight = UITableView.automaticDimension
         LevelCell.viewController = self
         tableView.dataSource = self
         tableView.delegate = self

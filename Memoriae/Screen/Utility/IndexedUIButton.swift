@@ -13,11 +13,11 @@ class IndexedUIButton: UIButton {
 
     private var index: Int?
 
-    func setIndex(index: Int){
+    func setIndex(index: Int) {
         self.index = index
     }
 
-    func getIndex() -> Int?{
-        return self.index
+    func getIndex() -> Int? {
+        self.index
     }
 }

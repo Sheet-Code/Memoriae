@@ -13,7 +13,6 @@ class LevelPreviewController: UIViewController {
 
     var level: Level?
 
-    @IBOutlet private var topBar: UINavigationItem!
     @IBOutlet private var task: UILabel!
     @IBOutlet private var descript: UILabel!
     @IBOutlet private var image: UIImageView!
@@ -31,8 +30,10 @@ class LevelPreviewController: UIViewController {
         guard let pic = level?.picture else {
             return
         }
+
         image.image = UIImage(named: pic)
-        //        self.startButon.addTarget(self, action: Selector("openLevel:"), for: UIControl.Event.touchUpInside)
+        image.layer.cornerRadius = 8.0
+        image.clipsToBounds = true
     }
 
     @IBAction private func startTest(_ sender: Any) {
@@ -41,7 +42,7 @@ class LevelPreviewController: UIViewController {
             return
         }
         newViewController.level = level
-        //PEDERAT'
+
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
     }

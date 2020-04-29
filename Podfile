@@ -6,6 +6,7 @@ target 'Memoriae' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'RealmSwift'
 
   target 'MemoriaeTests' do
     inherit! :search_paths

@@ -26,6 +26,9 @@ class LevelCell: UITableViewCell {
         guard let pic = level.picture else {
             return
         }
+        
         picture.image = UIImage(named: pic)
+        picture.layer.cornerRadius = 8.0
+        picture.clipsToBounds = true
     }
 }

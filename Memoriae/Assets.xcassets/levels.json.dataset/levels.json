@@ -1,23 +1,63 @@
 [
     {
         "id" : 0,
-        "title" : "Picture Details",
+        "title" : "Mnemonics",
         "kind" : "TOMMPicture",
-        "task" : "Do something",
-        "description" : "Level in which u should fuck off",
+        "task" : "This task was compiled in accordance with the TOMM methodology. You will be shown a picture. The task is to remember as many details as you can. After a certain time we will ask you a few questions",
+        "description" : "Memorization of details",
         "picture" : "tomm_picture_preview",
         "target" : {
             "picture" : "tomm_picture_main",
-            "time" : 2,
+            "time" : 4,
             "questions" : [
                 {
-                    "question" : "Who killed Kennedy?",
-                    "rightAnswer" : "me",
+                    "question" : "On which page of the book was the road?",
+                    "rightAnswer" : 1,
                     "answers" : [
-                        "me",
-                        "you",
-                        "he",
-                        "we"
+                        "left",
+                        "right",
+                        "on no"
+                    ]
+                },
+                {
+                    "question" : "What clothes were on the person with the umbrella?",
+                    "rightAnswer" : 1,
+                    "answers" : [
+                        "pants",
+                        "dress",
+                        "skirt",
+                        "cloak"
+                    ]
+                },
+                {
+                    "question" : "What color was the cup?",
+                    "rightAnswer" : 2,
+                    "answers" : [
+                        "white",
+                        "beige",
+                        "brown",
+                        "orange"
+                    ]
+                },
+                {
+                    "question" : "Which bird was sitting on the lantern?",
+                    "rightAnswer" : 3,
+                    "answers" : [
+                        "sparrow",
+                        "crow",
+                        "pigeon",
+                        "seagull"
+                    ]
+                },
+                {
+                    "question" : "How many birds flew in the air?",
+                    "rightAnswer" : 2,
+                    "answers" : [
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9"
                     ]
                 }
             ]
@@ -27,8 +67,8 @@
         "id" : 1,
         "title" : "Level2",
         "kind" : "WMSNumbers",
-        "task" : "Do something",
-        "description" : "dont forget to create the type for this level, Dym Palych",
+        "task" : "dont forget to create the type in entity and structure in json for this level, Dym Palych",
+        "description" : "Do something",
         "picture" : null
     }
 ]

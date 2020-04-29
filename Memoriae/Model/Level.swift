@@ -52,6 +52,7 @@ struct Target: Codable {
 
 // MARK: - Question
 struct Question: Codable {
-    let question, rightAnswer: String
+    let question: String
+    let rightAnswer: Int
     let answers: [String]
 }

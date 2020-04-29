@@ -1,19 +1,23 @@
 {
   "images" : [
     {
-      "filename" : "IMG_20170904_120047.jpg",
+      "filename" : "Снимок экрана 2020-04-29 в 20.49.22-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IMG_20170904_120047-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IMG_20170904_120047-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "Снимок экрана 2020-04-29 в 20.49.22.png",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
     }
   ],
   "info" : {
