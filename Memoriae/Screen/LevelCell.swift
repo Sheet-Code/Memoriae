@@ -21,8 +21,11 @@ class LevelCell: UITableViewCell {
     }
 
     func setup(with level: Level, controller: MainViewController, index: IndexPath) {
-
         title.text = level.title
         descript.text = level.description
+        guard let pic = level.picture else {
+            return
+        }
+        picture.image = UIImage(named: pic)
     }
 }

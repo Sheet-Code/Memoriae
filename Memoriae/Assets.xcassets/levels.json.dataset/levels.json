@@ -1,1 +1,34 @@
-[{"id":0,"title":"Picture Details","kind":"TOMMPicture","task":"Do something","description":"Level in whick u should fuck off","picture":"tomm_picture_preview","level":{"picture":"tomm_picture_main","questions":[{"question":"Who killed Kennedy?","rightAnswer":"me","answers":["me","you","he"]}]}},{"id":1,"title":"Level2","kind":"WMSNumbers","task":"Do something","description":"dont forget to create the type for this level, Dym Palych","picture":null}]
+[
+    {
+        "id" : 0,
+        "title" : "Picture Details",
+        "kind" : "TOMMPicture",
+        "task" : "Do something",
+        "description" : "Level in which u should fuck off",
+        "picture" : "tomm_picture_preview",
+        "target" : {
+            "picture" : "tomm_picture_main",
+            "time" : 2,
+            "questions" : [
+                {
+                    "question" : "Who killed Kennedy?",
+                    "rightAnswer" : "me",
+                    "answers" : [
+                        "me",
+                        "you",
+                        "he",
+                        "we"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "id" : 1,
+        "title" : "Level2",
+        "kind" : "WMSNumbers",
+        "task" : "Do something",
+        "description" : "dont forget to create the type for this level, Dym Palych",
+        "picture" : null
+    }
+]

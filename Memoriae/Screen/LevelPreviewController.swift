@@ -18,7 +18,6 @@ class LevelPreviewController: UIViewController {
     @IBOutlet private var descript: UILabel!
     @IBOutlet private var image: UIImageView!
 
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let nNLevel = level else {
@@ -29,13 +28,19 @@ class LevelPreviewController: UIViewController {
         task.text = nNLevel.task
         descript.text = nNLevel.description
         self.tabBarController?.tabBar.isHidden = true
-//        self.startButon.addTarget(self, action: Selector("openLevel:"), for: UIControl.Event.touchUpInside)
+        guard let pic = level?.picture else {
+            return
+        }
+        image.image = UIImage(named: pic)
+        //        self.startButon.addTarget(self, action: Selector("openLevel:"), for: UIControl.Event.touchUpInside)
     }
-    @IBAction func startTest(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+    @IBAction private func startTest(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let newViewController = storyBoard.instantiateViewController(identifier: "TOMMPictureViewController") as? TOMMPictureViewController else {
             return
         }
+        newViewController.level = level
         //PEDERAT'
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true

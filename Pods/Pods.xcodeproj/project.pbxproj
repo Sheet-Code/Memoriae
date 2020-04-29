@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,18 +56,18 @@
 		74E48FDC4EC364D52C8D652D7ED9A60F /* Pods-MemoriaeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MemoriaeTests.release.xcconfig"; sourceTree = "<group>"; };
 		89D0E994F92757921740BD8E1B28D890 /* Pods-MemoriaeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MemoriaeTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		921A4E334E195A61C14F5123A6407C81 /* Pods-Memoriae-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Memoriae-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9846020A721CB8635F821CDD0A0127D5 /* Pods-Memoriae-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Memoriae-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A204DF556E6B4ED2360263280DE39B24 /* Pods-MemoriaeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MemoriaeUITests-frameworks.sh"; sourceTree = "<group>"; };
 		A2BB9CB87CAF4D97DE8A05ADC0733B71 /* Pods-Memoriae.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Memoriae.debug.xcconfig"; sourceTree = "<group>"; };
 		ABD0BAA2D4CDF3A1B6B05A7474223F57 /* Pods-Memoriae.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Memoriae.release.xcconfig"; sourceTree = "<group>"; };
-		B84996EE07108D0986424CEDE42F947C /* Pods_MemoriaeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B84996EE07108D0986424CEDE42F947C /* Pods_MemoriaeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MemoriaeTests.framework; path = "Pods-MemoriaeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA838C31098269F5E33B3B7A13023F19 /* Pods-MemoriaeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MemoriaeUITests-dummy.m"; sourceTree = "<group>"; };
 		CBF6507065F09ED1FFAAAD32D718FB43 /* Pods-Memoriae-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Memoriae-frameworks.sh"; sourceTree = "<group>"; };
 		CE241F76F5442FE6B9AE3DA1A6A3F4AD /* Pods-MemoriaeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MemoriaeUITests.modulemap"; sourceTree = "<group>"; };
-		CFB8F593352498435218ABC368BE30B3 /* Pods_Memoriae.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memoriae.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFB8F593352498435218ABC368BE30B3 /* Pods_Memoriae.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Memoriae.framework; path = "Pods-Memoriae.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D909E1345FCDAE4CF6DD6B7187F26F67 /* Pods-Memoriae-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Memoriae-resources.sh"; sourceTree = "<group>"; };
-		DDC61C2CEFD7E206124FA699E68B47D5 /* Pods_MemoriaeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC61C2CEFD7E206124FA699E68B47D5 /* Pods_MemoriaeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MemoriaeUITests.framework; path = "Pods-MemoriaeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E870C3A4BB1EB627113B39E400616056 /* Pods-MemoriaeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MemoriaeUITests-umbrella.h"; sourceTree = "<group>"; };
 		ED998866C5B4B18FDE6628F3E0237B1E /* Pods-MemoriaeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MemoriaeTests.modulemap"; sourceTree = "<group>"; };
 		F10596DEB7B0AFD99AE6DC4E88678F95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 			);
+			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -307,14 +308,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -390,7 +390,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-MemoriaeTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MemoriaeTests/Pods-MemoriaeTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -424,7 +428,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-MemoriaeUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MemoriaeUITests/Pods-MemoriaeUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -459,7 +467,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-MemoriaeTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MemoriaeTests/Pods-MemoriaeTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -494,7 +506,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Memoriae/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Memoriae/Pods-Memoriae.modulemap";
 				OTHER_LDFLAGS = "";
@@ -514,7 +530,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -573,7 +588,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -651,7 +665,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-MemoriaeUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MemoriaeUITests/Pods-MemoriaeUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -685,7 +703,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Memoriae/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Memoriae/Pods-Memoriae.modulemap";
 				OTHER_LDFLAGS = "";

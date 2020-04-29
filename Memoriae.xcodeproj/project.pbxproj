@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */; };
 		0B96E8A12455B3250017E0D7 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96E8A02455B3250017E0D7 /* Level.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
@@ -18,7 +19,9 @@
 		0BC1FCF92433BA89002161A1 /* MemoriaeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCF82433BA89002161A1 /* MemoriaeUITests.swift */; };
 		0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D95A2456E5FF00450D0E /* LevelCell.swift */; };
 		0BD9D95F245729BD00450D0E /* LevelPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */; };
-		0BD9D9612457554900450D0E /* TOMMPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D9602457554900450D0E /* TOMMPictureViewController.swift */; };
+		0BD9D963245763AA00450D0E /* TOMMPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D962245763AA00450D0E /* TOMMPictureViewController.swift */; };
+		0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D96424577D5B00450D0E /* TOMMPictureAnswersViewController.swift */; };
+		0BD9D96824577F2700450D0E /* TOMMAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D96724577F2700450D0E /* TOMMAnswerCell.swift */; };
 		187236DC4ADDC9066E3CE74B /* Pods_Memoriae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B962E7BCDAFC590754E8A6FF /* Pods_Memoriae.framework */; };
 		64046A64A4B6A9E0028BDB56 /* Pods_MemoriaeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7367931731C180D547DCC07E /* Pods_MemoriaeUITests.framework */; };
 		B748487A86F76CA012E23622 /* Pods_MemoriaeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33EEC53947962658FA7A238 /* Pods_MemoriaeTests.framework */; };
@@ -42,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedUIButton.swift; sourceTree = "<group>"; };
 		0B96E8A02455B3250017E0D7 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +63,9 @@
 		0BC1FCFA2433BA89002161A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BD9D95A2456E5FF00450D0E /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
 		0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPreviewController.swift; sourceTree = "<group>"; };
-		0BD9D9602457554900450D0E /* TOMMPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMMPictureViewController.swift; sourceTree = "<group>"; };
+		0BD9D962245763AA00450D0E /* TOMMPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMMPictureViewController.swift; sourceTree = "<group>"; };
+		0BD9D96424577D5B00450D0E /* TOMMPictureAnswersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMMPictureAnswersViewController.swift; sourceTree = "<group>"; };
+		0BD9D96724577F2700450D0E /* TOMMAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMMAnswerCell.swift; sourceTree = "<group>"; };
 		4E5912D020F1E2023348921F /* Pods-MemoriaeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeTests/Pods-MemoriaeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C0B4B8851CB1AE3B7A8F570 /* Pods-Memoriae.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memoriae.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memoriae/Pods-Memoriae.debug.xcconfig"; sourceTree = "<group>"; };
 		7367931731C180D547DCC07E /* Pods_MemoriaeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B0E4D6024599D6A00DABF92 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		0B96E89F2455B2E30017E0D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,10 +180,11 @@
 		0BD9D9582456DE2900450D0E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0B0E4D6024599D6A00DABF92 /* Utility */,
 				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
 				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
 				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
-				0BD9D9602457554900450D0E /* TOMMPictureViewController.swift */,
+				0BD9D96624577EDC00450D0E /* TOMM */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -179,6 +194,16 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		0BD9D96624577EDC00450D0E /* TOMM */ = {
+			isa = PBXGroup;
+			children = (
+				0BD9D962245763AA00450D0E /* TOMMPictureViewController.swift */,
+				0BD9D96424577D5B00450D0E /* TOMMPictureAnswersViewController.swift */,
+				0BD9D96724577F2700450D0E /* TOMMAnswerCell.swift */,
+			);
+			path = TOMM;
 			sourceTree = "<group>";
 		};
 		BB1A6448255F238710F98854 /* Pods */ = {
@@ -340,13 +365,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = SwiftLint;
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,9 +439,12 @@
 				0BD9D95F245729BD00450D0E /* LevelPreviewController.swift in Sources */,
 				0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */,
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
+				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,
 				0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */,
 				0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */,
-				0BD9D9612457554900450D0E /* TOMMPictureViewController.swift in Sources */,
+				0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */,
+				0BD9D963245763AA00450D0E /* TOMMPictureViewController.swift in Sources */,
+				0BD9D96824577F2700450D0E /* TOMMAnswerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
