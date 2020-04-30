@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="599" y="1002"/>
         </scene>
-        <!--Item-->
+        <!--Settings Navigation-->
         <scene sceneID="QxA-rc-8Ch">
             <objects>
-                <navigationController id="aub-Y0-DW2" sceneMemberID="viewController">
+                <navigationController title="Settings Navigation" id="aub-Y0-DW2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="nxM-Su-DDo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sL1-yI-wW2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-1133" y="-431"/>
         </scene>
-        <!--Item-->
+        <!--Tests Navigation-->
         <scene sceneID="mZ9-PC-KqX">
             <objects>
-                <navigationController storyboardIdentifier="nav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eZR-Tp-QPD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" title="Tests Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eZR-Tp-QPD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Nqy-gF-Czu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIT-2O-5Ck">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -314,11 +314,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mMB-gV-Fee">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="225" id="mMB-gV-Fee">
+                                <rect key="frame" x="0.0" y="28" width="414" height="225"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mMB-gV-Fee" id="NDc-3U-FN5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -334,12 +334,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6p-71-b6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="301"/>
+            <point key="canvasLocation" x="598.55072463768124" y="300.66964285714283"/>
         </scene>
-        <!--Item-->
+        <!--Achievements Navigation-->
         <scene sceneID="uu5-ZL-wxk">
             <objects>
-                <navigationController id="q7u-6W-VLX" sceneMemberID="viewController">
+                <navigationController title="Achievements Navigation" id="q7u-6W-VLX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="aVg-71-mjw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Frq-ol-9yL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

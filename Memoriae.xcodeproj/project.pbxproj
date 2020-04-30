@@ -119,6 +119,17 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		0B49FC31245B601400A4F072 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
+				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
+				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
+				0BD9D96624577EDC00450D0E /* TOMM */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
 		0B96E89F2455B2E30017E0D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,11 +199,8 @@
 		0BD9D9582456DE2900450D0E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0B49FC31245B601400A4F072 /* Levels */,
 				0B0E4D6024599D6A00DABF92 /* Utility */,
-				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
-				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
-				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
-				0BD9D96624577EDC00450D0E /* TOMM */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
