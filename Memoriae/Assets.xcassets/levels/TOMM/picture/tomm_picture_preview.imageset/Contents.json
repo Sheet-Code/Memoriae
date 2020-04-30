@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Снимок экрана 2020-04-29 в 20.49.22-1.png",
+      "filename" : "TOMM_preview.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,6 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
-    },
-    {
-      "filename" : "Снимок экрана 2020-04-29 в 20.49.22.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "unassigned" : true
     }
   ],
   "info" : {

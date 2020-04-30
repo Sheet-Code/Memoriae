@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-//    let rowHeight: CGFloat = 200
     var data: [Level]?
 
     @IBOutlet private var tableView: UITableView!

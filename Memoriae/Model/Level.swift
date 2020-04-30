@@ -6,33 +6,6 @@
 //  Copyright © 2020 SheetCode Team. All rights reserved.
 //
 
-//import Foundation
-//
-//struct Level: Decodable {
-//
-//    let id: Int
-//    let title: String
-//
-//    let kind: String
-//    let target: TOMMPictureTarget?
-//
-//    let task: String?
-//    let description: String?
-//    let picture: String?
-//}
-//
-//struct TOMMPictureTarget: Decodable {
-//    let picture: String
-//    let time: Int
-//    let questions: [Question]
-//}
-//
-//struct Question: Decodable {
-//    let question: String
-//    let rightAnswer: String
-//    let answers: [String]
-//}
-
 import Foundation
 
 // MARK: - LevelElement

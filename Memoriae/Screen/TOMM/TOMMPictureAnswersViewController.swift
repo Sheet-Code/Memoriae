@@ -11,6 +11,7 @@ import UIKit
 class TOMMPictureAnswersViewController: UIViewController {
 
     var level: Level?
+    var difficulty: Float?
     var tableData: [Question]?
 
     @IBOutlet private var table: UITableView!
@@ -29,8 +30,13 @@ class TOMMPictureAnswersViewController: UIViewController {
         table.delegate = self
         table.allowsSelection = false
 
-        exitButton.center = submitButton.center
-        exitButton.center.x += view.bounds.width
+        exitButton.center.x = view.bounds.width * 2
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        exitButton.center.y = submitButton.center.y
+        exitButton.center.x = submitButton.center.x + view.bounds.width
     }
 
     @IBAction private func submitAnswers(_ sender: Any) {
@@ -42,8 +48,8 @@ class TOMMPictureAnswersViewController: UIViewController {
                 return
             }
             guard let selected = cell.getSelectedAnswer() else {
-                let alert = UIAlertController(title: "Questions",
-                                              message: (String(index + 1) + " number question not answered"),
+                let alert = UIAlertController(title: "That's not all!",
+                                              message: "Question number " + (String(index + 1) + " is not answered"),
                                               preferredStyle: UIAlertController.Style.alert)
                 let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
                 alertAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
@@ -59,16 +65,29 @@ class TOMMPictureAnswersViewController: UIViewController {
         }
 
         var right = 0
-
         for index in 0...answers.count - 1 where questions[index].rightAnswer == answers[index] {
             right += 1
         }
 
-        //        let alert = UIAlertController(title: "Answers",
-        //                                      message: (String(right) + "/" + String(answers.count) + " right!"),
-        //                                      preferredStyle: UIAlertController.Style.alert)
-        //        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        //        self.present(alert, animated: true, completion: nil)
+        guard let nNlevel = level else {
+            return
+        }
+        guard let nNdifficulty = difficulty else {
+            return
+        }
+
+        ScoreRepositoryImpl.saveAnswers(right: right, level: nNlevel, difficulty: nNdifficulty, questions: questions)
+
+//        let repo = ScoreRepositoryImpl()
+//        guard let points = repo.get().last?.points else {
+//            return
+//        }
+//
+//                let alert = UIAlertController(title: "Results sent",
+//                                              message: String(points),
+//                                              preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
 
         for index in 0...table.numberOfRows(inSection: 0) - 1 {
             let indexPath = IndexPath(row: index, section: 0)

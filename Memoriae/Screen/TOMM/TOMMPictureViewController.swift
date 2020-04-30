@@ -11,6 +11,7 @@ import UIKit
 class TOMMPictureViewController: UIViewController {
 
     var level: Level?
+    var difficulty: Float?
 
     private var timerCounter: Float = 0
     private var waitTime: Float = 0
@@ -29,10 +30,11 @@ class TOMMPictureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let target = level?.target else {
+        guard let target = level?.target, let multiplier = difficulty else {
             return
         }
-        waitTime = Float(target.time)
+
+        waitTime = Float(target.time) * multiplier
 
         Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
     }
@@ -42,10 +44,12 @@ class TOMMPictureViewController: UIViewController {
         if timerCounter >= waitTime {
             timer.invalidate()
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            guard let newViewController = storyBoard.instantiateViewController(identifier: "TOMMPictureAnswersViewController") as? TOMMPictureAnswersViewController else {
+            guard let newViewController = storyBoard.instantiateViewController(identifier: "TOMMPictureAnswersViewController")
+                as? TOMMPictureAnswersViewController else {
                 return
             }
             newViewController.level = self.level
+            newViewController.difficulty = self.difficulty
             self.navigationController?.pushViewController(newViewController, animated: true)
             self.navigationController?.isNavigationBarHidden = true
         }

@@ -17,6 +17,9 @@ class LevelPreviewController: UIViewController {
     @IBOutlet private var descript: UILabel!
     @IBOutlet private var image: UIImageView!
 
+    @IBOutlet private var difficultySlider: UISlider!
+    @IBOutlet private var difficultyLabel: UILabel!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let nNLevel = level else {
@@ -34,6 +37,12 @@ class LevelPreviewController: UIViewController {
         image.image = UIImage(named: pic)
         image.layer.cornerRadius = 8.0
         image.clipsToBounds = true
+
+        difficultyLabel.text = Difficulty.standardName
+
+        difficultySlider.value = Float(Difficulty.standardIndex)
+        difficultySlider.minimumValue = 0
+        difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000001
     }
 
     @IBAction private func startTest(_ sender: Any) {
@@ -42,8 +51,13 @@ class LevelPreviewController: UIViewController {
             return
         }
         newViewController.level = level
-
+        newViewController.difficulty = Difficulty.multipliers[Int(difficultySlider.value)]
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
+    }
+
+    @IBAction private func sliderValueChanged(_ sender: Any) {
+
+        difficultyLabel.text = Difficulty.names[Int(difficultySlider.value)]
     }
 }
