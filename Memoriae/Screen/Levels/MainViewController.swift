@@ -14,10 +14,6 @@ class MainViewController: UIViewController {
 
     @IBOutlet private var tableView: UITableView!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +27,11 @@ class MainViewController: UIViewController {
         LevelCell.viewController = self
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
 }
 

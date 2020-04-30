@@ -43,6 +43,7 @@ class LevelPreviewController: UIViewController {
         difficultySlider.value = Float(Difficulty.standardIndex)
         difficultySlider.minimumValue = 0
         difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000001
+
     }
 
     @IBAction private func startTest(_ sender: Any) {

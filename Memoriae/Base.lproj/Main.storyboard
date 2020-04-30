@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DfF-Wq-7sB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,10 +17,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iev-q8-Usu">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iev-q8-Usu" id="2hp-hL-hpT">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -153,20 +153,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tj0-Bp-q7h">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="xao-qu-cqw" firstAttribute="top" secondItem="tj0-Bp-q7h" secondAttribute="bottom" id="AlY-PK-rqV"/>
-                            <constraint firstItem="xao-qu-cqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G9K-R0-rlY"/>
-                            <constraint firstItem="xao-qu-cqw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IFY-g9-OEf"/>
-                            <constraint firstAttribute="trailing" secondItem="tj0-Bp-q7h" secondAttribute="trailing" id="Ijv-68-0cW"/>
-                            <constraint firstItem="xao-qu-cqw" firstAttribute="top" secondItem="tj0-Bp-q7h" secondAttribute="bottom" id="bfs-l4-O7I"/>
-                            <constraint firstItem="tj0-Bp-q7h" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="htR-MH-uaD"/>
-                            <constraint firstItem="xao-qu-cqw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qyU-4T-cw3"/>
-                            <constraint firstItem="tj0-Bp-q7h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="te8-qB-qKh"/>
+                            <constraint firstItem="xao-qu-cqw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4YY-31-HQk"/>
+                            <constraint firstItem="xao-qu-cqw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TYh-st-a5M"/>
+                            <constraint firstItem="xao-qu-cqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cIo-RN-mVb"/>
+                            <constraint firstItem="xao-qu-cqw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eir-aH-Qym"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -178,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="-431.25"/>
+            <point key="canvasLocation" x="598.55072463768124" y="-431.25"/>
         </scene>
         <!--LevelPreview-->
         <scene sceneID="DPa-7i-f2l">
@@ -314,12 +307,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="225" id="mMB-gV-Fee">
-                                <rect key="frame" x="0.0" y="28" width="414" height="225"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="295" id="mMB-gV-Fee">
+                                <rect key="frame" x="0.0" y="28" width="414" height="295"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mMB-gV-Fee" id="NDc-3U-FN5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="295"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMD-yn-q8F">
+                                            <rect key="frame" x="10" y="22" width="384" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nxn-u4-tcq">
+                                            <rect key="frame" x="15" y="63" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KPD-Ho-R8s">
+                                            <rect key="frame" x="177" y="197" width="86" height="2"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </progressView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xMD-yn-q8F" firstAttribute="top" secondItem="NDc-3U-FN5" secondAttribute="top" constant="22" id="4fh-WK-JA8"/>
+                                        <constraint firstAttribute="trailing" secondItem="xMD-yn-q8F" secondAttribute="trailing" constant="20" id="58t-5v-IgW"/>
+                                        <constraint firstItem="xMD-yn-q8F" firstAttribute="leading" secondItem="NDc-3U-FN5" secondAttribute="leading" constant="10" id="cbE-cE-YyG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -410,7 +424,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-IO-plL">
-                                                    <rect key="frame" x="20" y="11" width="374" height="20.5"/>
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="374" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
