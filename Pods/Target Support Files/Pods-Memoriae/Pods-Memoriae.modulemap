@@ -1,6 +1,0 @@
-framework module Pods_Memoriae {
-  umbrella header "Pods-Memoriae-umbrella.h"
-
-  export *
-  module * { export * }
-}
