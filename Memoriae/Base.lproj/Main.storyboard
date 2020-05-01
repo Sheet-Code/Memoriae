@@ -414,7 +414,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zT-GU-Atd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="790"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TOMMAnswerCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TOMMAnswerCell" rowHeight="247" id="Z9f-0G-DUQ" customClass="TOMMAnswerCell" customModule="Memoriae">
@@ -452,7 +452,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI2-Ke-GWN">
-                                <rect key="frame" x="0.0" y="842" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Az3-Z7-iro"/>
                                 </constraints>
@@ -464,7 +464,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvQ-CW-7VR">
-                                <rect key="frame" x="371" y="841" width="30" height="30"/>
+                                <rect key="frame" x="384" y="832" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Exit">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -476,10 +476,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="yI2-Ke-GWN" secondAttribute="bottom" constant="24" id="DxD-KZ-9DC"/>
+                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="bottom" secondItem="iif-9y-sXz" secondAttribute="bottom" id="Kb2-Vx-UVD"/>
                             <constraint firstItem="3zT-GU-Atd" firstAttribute="leading" secondItem="iif-9y-sXz" secondAttribute="leading" id="LlZ-oO-Uud"/>
-                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="top" secondItem="3zT-GU-Atd" secondAttribute="bottom" constant="8" id="Unt-g7-mhn"/>
                             <constraint firstItem="3zT-GU-Atd" firstAttribute="top" secondItem="iif-9y-sXz" secondAttribute="top" id="XHS-K3-nzx"/>
+                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="top" secondItem="3zT-GU-Atd" secondAttribute="bottom" id="Z2H-om-QcB"/>
                             <constraint firstItem="yI2-Ke-GWN" firstAttribute="trailing" secondItem="iif-9y-sXz" secondAttribute="trailing" id="Zcd-PO-CrU"/>
                             <constraint firstItem="yI2-Ke-GWN" firstAttribute="leading" secondItem="iif-9y-sXz" secondAttribute="leading" id="gIq-Ic-aP5"/>
                             <constraint firstItem="3zT-GU-Atd" firstAttribute="trailing" secondItem="iif-9y-sXz" secondAttribute="trailing" id="kUz-ON-RiW"/>

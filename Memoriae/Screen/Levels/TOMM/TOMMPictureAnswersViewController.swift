@@ -9,45 +9,57 @@
 import UIKit
 
 class TOMMPictureAnswersViewController: UIViewController {
-
+    
     var level: Level?
     var difficulty: Float?
-    var tableData: [Question]?
 
+    private var tableData: [Question]?
+    private var answers: [Int?]?
+    private var answersAreSubmitted = false
+    
     @IBOutlet private var table: UITableView!
     @IBOutlet private var submitButton: UIButton!
     @IBOutlet private var exitButton: UIButton!
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let questions = level?.target?.questions else {
             return
         }
+        
         tableData = questions
         table.rowHeight = UITableView.automaticDimension
         LevelCell.viewController = self
         table.dataSource = self
         table.delegate = self
         table.allowsSelection = false
-
+        
         exitButton.center.x = view.bounds.width * 2
+        
+        guard let count = level?.target?.questions.count else {
+            return
+        }
+        
+        var answers = [Int?]()
+        for _ in 0...count {
+            answers.append(nil)
+        }
+        self.answers = answers
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         exitButton.center.y = submitButton.center.y
         exitButton.center.x = submitButton.center.x + view.bounds.width
     }
-
+    
     @IBAction private func submitAnswers(_ sender: Any) {
+        
         var answers: [Int] = []
-
+        
         for index in 0...table.numberOfRows(inSection: 0) - 1 {
-            let indexPath = IndexPath(row: index, section: 0)
-            guard let cell = table.cellForRow(at: indexPath) as? TOMMAnswerCell else {
-                return
-            }
-            guard let selected = cell.getSelectedAnswer() else {
+            
+            guard let selected = self.answers?[index] else {
                 let alert = UIAlertController(title: "That's not all!",
                                               message: "Question number " + (String(index + 1) + " is not answered"),
                                               preferredStyle: UIAlertController.Style.alert)
@@ -59,60 +71,67 @@ class TOMMPictureAnswersViewController: UIViewController {
             }
             answers.append(selected)
         }
-
+        
+        answersAreSubmitted = true
+        
         guard let questions = tableData else {
             return
         }
-
+        
         var right = 0
         for index in 0...answers.count - 1 where questions[index].rightAnswer == answers[index] {
             right += 1
         }
-
+        
         guard let nNlevel = level else {
             return
         }
         guard let nNdifficulty = difficulty else {
             return
         }
-
+        
         ScoreRepositoryImpl.saveAnswers(right: right, level: nNlevel, difficulty: nNdifficulty, questions: questions)
-
-//        let repo = ScoreRepositoryImpl()
-//        guard let points = repo.get().last?.points else {
-//            return
-//        }
-//
-//                let alert = UIAlertController(title: "Results sent",
-//                                              message: String(points),
-//                                              preferredStyle: UIAlertController.Style.alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-
+        
+        //        let repo = ScoreRepositoryImpl()
+        //        guard let points = repo.get().last?.points else {
+        //            return
+        //        }
+        //
+        //                let alert = UIAlertController(title: "Results sent",
+        //                                              message: String(points),
+        //                                              preferredStyle: UIAlertController.Style.alert)
+        //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        //                self.present(alert, animated: true, completion: nil)
+        
         for index in 0...table.numberOfRows(inSection: 0) - 1 {
+            
             let indexPath = IndexPath(row: index, section: 0)
-            guard let cell = table.cellForRow(at: indexPath) as? TOMMAnswerCell else {
-                return
+            let cell = table.cellForRow(at: indexPath) as? TOMMAnswerCell
+            
+            if cell != nil {
+                guard let nNcell = cell else {
+                    return
+                }
+                nNcell.submitAnswer()
             }
-            cell.submitAnswer()
         }
-
+        
         UIView.animate(withDuration: 0.7, animations: {
             self.submitButton.center.x -= self.view.bounds.width
             self.exitButton.center.x -= self.view.bounds.width
         })
     }
-
+    
     @IBAction private func exit(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let newViewController = storyBoard.instantiateViewController(identifier: "entry") as? UITabBarController else {
             return
         }
-
+        
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
     }
-
+    
     func tableView(_ tableView: UITableView, answerCellForRowAt indexPath: IndexPath) -> TOMMAnswerCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TOMMAnswerCell", for: indexPath) as? TOMMAnswerCell else {
             fatalError("Table view is not configured")
@@ -120,8 +139,22 @@ class TOMMPictureAnswersViewController: UIViewController {
         guard let nNData = tableData else {
             fatalError("Data is null")
         }
-        cell.setup(with: nNData[indexPath.row], controller: self, index: indexPath)
+        cell.setup(with: nNData[indexPath.row], answersAreSubmitted: answersAreSubmitted, controller: self, index: indexPath)
         return cell
+    }
+    
+    func selectAnswer(index: Int, answer: Int) {
+        
+        guard var answers = self.answers else {
+            return
+        }
+        
+        answers[index] = answer
+        self.answers = answers
+    }
+    
+    func getSelectedAnswer(index: Int) -> Int? {
+        answers?[index]
     }
 }
 
@@ -138,7 +171,7 @@ extension TOMMPictureAnswersViewController: UITableViewDataSource {
             return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TOMMAnswerCell", for: indexPath) as? TOMMAnswerCell else {
             fatalError("Table view is not configured")
@@ -146,16 +179,16 @@ extension TOMMPictureAnswersViewController: UITableViewDataSource {
         guard let nNData = tableData else {
             fatalError("Data is null")
         }
-        cell.setup(with: nNData[indexPath.row], controller: self, index: indexPath)
+        cell.setup(with: nNData[indexPath.row], answersAreSubmitted: answersAreSubmitted, controller: self, index: indexPath)
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
 extension TOMMPictureAnswersViewController: UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

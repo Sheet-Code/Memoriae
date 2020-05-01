@@ -14,6 +14,8 @@ class TOMMAnswerCell: UITableViewCell {
     var question: Question?
     var options: [UIButton] = [UIButton]()
     
+    private var index: Int?
+    private var controller: TOMMPictureAnswersViewController?
     private var selectedAnswer: Int?
     
     @IBOutlet private var stack: UIStackView!
@@ -22,48 +24,73 @@ class TOMMAnswerCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.questionLabel.text = nil
+
+        self.stack.removeAllArrangedSubviews()
+        options = []
     }
     
-    func getSelectedAnswer() -> Int? {
-        selectedAnswer
-    }
-    
-    func setup(with question: Question, controller: TOMMPictureAnswersViewController, index: IndexPath) {
+    func setup(with question: Question, answersAreSubmitted: Bool, controller: TOMMPictureAnswersViewController, index: IndexPath) {
         self.question = question
         self.questionLabel.text = String(index.row + 1) + ". " + question.question
         
         guard let answers = self.question?.answers else {
             return
         }
-        if stack.arrangedSubviews.isEmpty == true {
-            for index in 0...answers.count - 1 {
-                
-                let button = IndexedUIButton(type: .system)
-                button.setIndex(index: index)
-                buttonSetup(button: button)
-                stack.addArrangedSubview(button)
-                button.setTitle(answers[index], for: .init())
-                
-                options.append(button)
-            }
+
+        for index in 0...answers.count - 1 {
+
+            let button = IndexedUIButton(type: .system)
+            button.setIndex(index: index)
+            buttonSetup(button: button)
+            button.setTitle(answers[index], for: .init())
+
+            stack.addArrangedSubview(button)
+            options.append(button)
+        }
+
+        self.index = index.row
+        self.controller = controller
+
+        guard let selected = controller.getSelectedAnswer(index: index.row) else {
+            return
+        }
+
+        self.selectedAnswer = selected
+        self.pressButton(index: index.row)
+
+        if answersAreSubmitted {
+            submitAnswer()
         }
     }
     
     @objc func pressed(sender: IndexedUIButton) {
+        
+        guard let selectedAnswerIndex = sender.getIndex() else {
+            return
+        }
+        
+        pressButton(index: selectedAnswerIndex)
+
+        guard let controller = self.controller, let index = self.index else {
+            return
+        }
+
+        controller.selectAnswer(index: index, answer: selectedAnswerIndex)
+    }
+
+    func pressButton(index: Int) {
+
         guard let count = self.question?.answers.count else {
             return
         }
-        
+
         for index in 0...count - 1 {
             options[index].isSelected = false
         }
-        
-        guard let selectedIndex = sender.getIndex() else {
-            return
-        }
-        
-        options[selectedIndex].isSelected = true
-        selectedAnswer = selectedIndex
+
+        options[index].isSelected = true
+        self.selectedAnswer = index
+
     }
     
     func buttonSetup(button: UIButton) {

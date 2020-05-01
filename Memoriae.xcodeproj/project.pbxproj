@@ -11,6 +11,7 @@
 		0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC2B245A383D00A4F072 /* ScoreRepository.swift */; };
 		0B49FC2E245A3C3D00A4F072 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC2D245A3C3D00A4F072 /* Score.swift */; };
 		0B49FC30245B20C900A4F072 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC2F245B20C900A4F072 /* Difficulty.swift */; };
+		0B94FF63245BA000002CFC41 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94FF62245BA000002CFC41 /* UIStackView.swift */; };
 		0B96E8A12455B3250017E0D7 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96E8A02455B3250017E0D7 /* Level.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
@@ -52,6 +53,7 @@
 		0B49FC2B245A383D00A4F072 /* ScoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRepository.swift; sourceTree = "<group>"; };
 		0B49FC2D245A3C3D00A4F072 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		0B49FC2F245B20C900A4F072 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		0B94FF62245BA000002CFC41 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		0B96E8A02455B3250017E0D7 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */,
+				0B94FF62245BA000002CFC41 /* UIStackView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */,
 				0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */,
 				0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */,
+				0B94FF63245BA000002CFC41 /* UIStackView.swift in Sources */,
 				0BD9D963245763AA00450D0E /* TOMMPictureViewController.swift in Sources */,
 				0B49FC2E245A3C3D00A4F072 /* Score.swift in Sources */,
 				0BD9D96824577F2700450D0E /* TOMMAnswerCell.swift in Sources */,
