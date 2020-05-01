@@ -165,7 +165,7 @@
 		0BC1FCD52433BA88002161A1 /* Memoriae */ = {
 			isa = PBXGroup;
 			children = (
-				0BD9D9592456DE3A00450D0E /* Service */,
+				0BD9D9592456DE3A00450D0E /* Repository */,
 				0BD9D9582456DE2900450D0E /* Screen */,
 				0B96E89F2455B2E30017E0D7 /* Model */,
 				0BC1FCD62433BA88002161A1 /* AppDelegate.swift */,
@@ -205,12 +205,12 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		0BD9D9592456DE3A00450D0E /* Service */ = {
+		0BD9D9592456DE3A00450D0E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				0B49FC2B245A383D00A4F072 /* ScoreRepository.swift */,
 			);
-			path = Service;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		0BD9D96624577EDC00450D0E /* TOMM */ = {
