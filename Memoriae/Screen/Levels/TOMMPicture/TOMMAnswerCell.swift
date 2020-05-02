@@ -56,7 +56,7 @@ class TOMMAnswerCell: UITableViewCell {
         }
 
         self.selectedAnswer = selected
-        self.pressButton(index: index.row)
+        self.pressButton(index: selected)
 
         if answersAreSubmitted {
             submitAnswer()
