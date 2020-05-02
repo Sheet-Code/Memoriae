@@ -13,7 +13,7 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
     var level: Level?
     var difficulty: Float?
     var targetNumber: Int?
-    var currentTarget: Target?
+    var currentTarget: TOMMPictureSet?
 
     private var timerCounter: Float = 0
     private var waitTime: Float = 0
@@ -29,7 +29,7 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let target = level?.targets else {
+        guard let target = level?.pictureSets else {
             return
         }
 

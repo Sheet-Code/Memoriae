@@ -16,6 +16,7 @@
 		0BA41208245D68B600592355 /* TOMMPicture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA41207245D68B600592355 /* TOMMPicture.storyboard */; };
 		0BA4120A245D6A2600592355 /* TOMMPictureAnswers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA41209245D6A2600592355 /* TOMMPictureAnswers.storyboard */; };
 		0BA4120F245D710B00592355 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4120E245D710B00592355 /* LevelViewController.swift */; };
+		0BA41212245DCD4C00592355 /* TOMMPictureSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA41211245DCD4C00592355 /* TOMMPictureSet.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
 		0BC1FCDB2433BA88002161A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCDA2433BA88002161A1 /* MainViewController.swift */; };
@@ -61,6 +62,7 @@
 		0BA41207245D68B600592355 /* TOMMPicture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TOMMPicture.storyboard; sourceTree = "<group>"; };
 		0BA41209245D6A2600592355 /* TOMMPictureAnswers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TOMMPictureAnswers.storyboard; sourceTree = "<group>"; };
 		0BA4120E245D710B00592355 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		0BA41211245DCD4C00592355 /* TOMMPictureSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMMPictureSet.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		0B96E89F2455B2E30017E0D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0BA41210245DCD0600592355 /* TOMMPicture */,
 				0B96E8A02455B3250017E0D7 /* Level.swift */,
 				0B49FC2D245A3C3D00A4F072 /* Score.swift */,
 				0B49FC2F245B20C900A4F072 /* Difficulty.swift */,
@@ -172,6 +175,14 @@
 			children = (
 				0BA41207245D68B600592355 /* TOMMPicture.storyboard */,
 				0BA41209245D6A2600592355 /* TOMMPictureAnswers.storyboard */,
+			);
+			path = TOMMPicture;
+			sourceTree = "<group>";
+		};
+		0BA41210245DCD0600592355 /* TOMMPicture */ = {
+			isa = PBXGroup;
+			children = (
+				0BA41211245DCD4C00592355 /* TOMMPictureSet.swift */,
 			);
 			path = TOMMPicture;
 			sourceTree = "<group>";
@@ -514,6 +525,7 @@
 				0BC1FCDB2433BA88002161A1 /* MainViewController.swift in Sources */,
 				0BD9D95F245729BD00450D0E /* LevelPreviewController.swift in Sources */,
 				0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */,
+				0BA41212245DCD4C00592355 /* TOMMPictureSet.swift in Sources */,
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
 				0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */,
 				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,

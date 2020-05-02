@@ -6,7 +6,7 @@
         "task" : "This task was compiled in accordance with the TOMM methodology. You will be shown a picture. The task is to remember as many details as you can. After a certain time we will ask you a few questions",
         "description" : "Memorization details of picture",
         "picture" : "tomm_picture_preview",
-        "targets" : [
+        "pictureSets" : [
             {
                 "picture" : "tomm_picture_1",
                 "time" : 4,
