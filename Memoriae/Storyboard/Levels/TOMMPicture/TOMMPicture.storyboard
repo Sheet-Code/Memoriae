@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TOMM Picture-->
+        <scene sceneID="wq9-70-QKE">
+            <objects>
+                <viewController storyboardIdentifier="TOMMPictureViewController" title="TOMM Picture" id="iYa-dl-cnI" customClass="TOMMPictureViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FcF-Dp-w02">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zei-NG-1Xg">
+                                <rect key="frame" x="17" y="44" width="380" height="808"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jYI-eL-Jgs">
+                                <rect key="frame" x="17" y="861" width="380" height="2"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zei-NG-1Xg" firstAttribute="leading" secondItem="RvM-vi-wQa" secondAttribute="leading" constant="17" id="5vX-L0-BO9"/>
+                            <constraint firstItem="Zei-NG-1Xg" firstAttribute="top" secondItem="RvM-vi-wQa" secondAttribute="top" id="CYe-cd-pTJ"/>
+                            <constraint firstItem="RvM-vi-wQa" firstAttribute="trailing" secondItem="Zei-NG-1Xg" secondAttribute="trailing" constant="17" id="HMT-UK-k2Y"/>
+                            <constraint firstItem="jYI-eL-Jgs" firstAttribute="top" secondItem="Zei-NG-1Xg" secondAttribute="bottom" constant="9" id="IWN-15-ZGg"/>
+                            <constraint firstAttribute="bottom" secondItem="jYI-eL-Jgs" secondAttribute="bottom" constant="33" id="SFD-YC-rQy"/>
+                            <constraint firstAttribute="trailing" secondItem="jYI-eL-Jgs" secondAttribute="trailing" constant="17" id="jPu-y7-gr9"/>
+                            <constraint firstItem="jYI-eL-Jgs" firstAttribute="leading" secondItem="FcF-Dp-w02" secondAttribute="leading" constant="17" id="lGx-Ll-CHa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RvM-vi-wQa"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="Zei-NG-1Xg" id="V87-Ee-3xG"/>
+                        <outlet property="progressBar" destination="jYI-eL-Jgs" id="J8v-pX-TnV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAN-8b-HZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-120" y="-1574"/>
+        </scene>
+    </scenes>
+</document>

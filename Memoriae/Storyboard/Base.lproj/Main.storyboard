@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="598.55072463768124" y="-431.25"/>
         </scene>
-        <!--LevelPreview-->
+        <!--Level Preview-->
         <scene sceneID="DPa-7i-f2l">
             <objects>
-                <viewController storyboardIdentifier="LevelPreviewController" title="LevelPreview" id="EQA-2w-laS" customClass="LevelPreviewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LevelPreviewController" title="Level Preview" id="EQA-2w-laS" customClass="LevelPreviewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G4a-M3-vaN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,134 +367,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XM-OS-nUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-384" y="301"/>
-        </scene>
-        <!--Picture View Controller-->
-        <scene sceneID="rkL-eB-Rlm">
-            <objects>
-                <viewController storyboardIdentifier="TOMMPictureViewController" id="ezy-Cm-Hbv" customClass="TOMMPictureViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Iho-DL-Ytd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejq-AE-5VY">
-                                <rect key="frame" x="17" y="44" width="380" height="808"/>
-                            </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fT4-NN-Q5i">
-                                <rect key="frame" x="17" y="861" width="380" height="2"/>
-                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="fT4-NN-Q5i" firstAttribute="top" secondItem="ejq-AE-5VY" secondAttribute="bottom" constant="9" id="4S3-51-lqb"/>
-                            <constraint firstAttribute="bottom" secondItem="fT4-NN-Q5i" secondAttribute="bottom" constant="33" id="FxD-h7-n3d"/>
-                            <constraint firstItem="ejq-AE-5VY" firstAttribute="leading" secondItem="bWD-HR-oob" secondAttribute="leading" constant="17" id="H9W-eV-t6S"/>
-                            <constraint firstAttribute="trailing" secondItem="fT4-NN-Q5i" secondAttribute="trailing" constant="17" id="UbL-Za-lYG"/>
-                            <constraint firstItem="fT4-NN-Q5i" firstAttribute="leading" secondItem="Iho-DL-Ytd" secondAttribute="leading" constant="17" id="V3f-G1-ero"/>
-                            <constraint firstItem="ejq-AE-5VY" firstAttribute="top" secondItem="bWD-HR-oob" secondAttribute="top" id="gZR-Qa-c2o"/>
-                            <constraint firstItem="bWD-HR-oob" firstAttribute="trailing" secondItem="ejq-AE-5VY" secondAttribute="trailing" constant="17" id="mcU-Rr-eeV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="bWD-HR-oob"/>
-                    </view>
-                    <connections>
-                        <outlet property="image" destination="ejq-AE-5VY" id="UUo-Sh-eGu"/>
-                        <outlet property="progressBar" destination="fT4-NN-Q5i" id="biw-Om-bd6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nts-TH-NWV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2100" y="-431.25"/>
-        </scene>
-        <!--Picture Answers View Controller-->
-        <scene sceneID="wxr-Qc-Cwk">
-            <objects>
-                <viewController storyboardIdentifier="TOMMPictureAnswersViewController" id="ymk-SH-ZEk" customClass="TOMMPictureAnswersViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FzI-vE-Iza">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zT-GU-Atd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="788"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TOMMAnswerCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TOMMAnswerCell" rowHeight="247" id="Z9f-0G-DUQ" customClass="TOMMAnswerCell" customModule="Memoriae">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="247"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z9f-0G-DUQ" id="b9W-vR-qGD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="247"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-IO-plL">
-                                                    <rect key="frame" x="20" y="10.999999999999998" width="374" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-Ik-Won">
-                                                    <rect key="frame" x="45" y="52" width="349" height="184"/>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qzY-IO-plL" firstAttribute="leading" secondItem="b9W-vR-qGD" secondAttribute="leadingMargin" id="CHV-8G-CLa"/>
-                                                <constraint firstItem="gwm-Ik-Won" firstAttribute="top" secondItem="qzY-IO-plL" secondAttribute="bottom" constant="20.5" id="GFy-kj-tSv"/>
-                                                <constraint firstItem="qzY-IO-plL" firstAttribute="trailing" secondItem="b9W-vR-qGD" secondAttribute="trailingMargin" id="PLS-Tp-hqu"/>
-                                                <constraint firstItem="gwm-Ik-Won" firstAttribute="trailing" secondItem="b9W-vR-qGD" secondAttribute="trailingMargin" id="iiF-xV-yah"/>
-                                                <constraint firstItem="qzY-IO-plL" firstAttribute="top" secondItem="b9W-vR-qGD" secondAttribute="topMargin" id="oXF-et-NEr"/>
-                                                <constraint firstItem="gwm-Ik-Won" firstAttribute="leading" secondItem="b9W-vR-qGD" secondAttribute="leadingMargin" constant="25" id="pUk-My-9R9"/>
-                                                <constraint firstItem="gwm-Ik-Won" firstAttribute="bottom" secondItem="b9W-vR-qGD" secondAttribute="bottomMargin" id="wum-zJ-pGC"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="questionLabel" destination="qzY-IO-plL" id="A9F-LQ-osP"/>
-                                            <outlet property="stack" destination="gwm-Ik-Won" id="gY8-4m-G29"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI2-Ke-GWN">
-                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Az3-Z7-iro"/>
-                                </constraints>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitAnswers:" destination="ymk-SH-ZEk" eventType="touchUpInside" id="OdW-gM-69G"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvQ-CW-7VR">
-                                <rect key="frame" x="384" y="832" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exit">
-                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="exit:" destination="ymk-SH-ZEk" eventType="touchUpInside" id="fVs-3e-R4C"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="bottom" secondItem="iif-9y-sXz" secondAttribute="bottom" id="Kb2-Vx-UVD"/>
-                            <constraint firstItem="3zT-GU-Atd" firstAttribute="leading" secondItem="iif-9y-sXz" secondAttribute="leading" id="LlZ-oO-Uud"/>
-                            <constraint firstItem="3zT-GU-Atd" firstAttribute="top" secondItem="iif-9y-sXz" secondAttribute="top" id="XHS-K3-nzx"/>
-                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="top" secondItem="3zT-GU-Atd" secondAttribute="bottom" id="Z2H-om-QcB"/>
-                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="trailing" secondItem="iif-9y-sXz" secondAttribute="trailing" id="Zcd-PO-CrU"/>
-                            <constraint firstItem="yI2-Ke-GWN" firstAttribute="leading" secondItem="iif-9y-sXz" secondAttribute="leading" id="gIq-Ic-aP5"/>
-                            <constraint firstItem="3zT-GU-Atd" firstAttribute="trailing" secondItem="iif-9y-sXz" secondAttribute="trailing" id="kUz-ON-RiW"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="iif-9y-sXz"/>
-                    </view>
-                    <connections>
-                        <outlet property="exitButton" destination="EvQ-CW-7VR" id="6nc-MQ-smU"/>
-                        <outlet property="submitButton" destination="yI2-Ke-GWN" id="jwu-xL-htq"/>
-                        <outlet property="table" destination="3zT-GU-Atd" id="6Dc-3A-67O"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdJ-kU-ghQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2757.971014492754" y="-431.25"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

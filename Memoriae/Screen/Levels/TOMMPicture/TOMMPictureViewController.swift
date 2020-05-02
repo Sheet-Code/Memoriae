@@ -43,7 +43,7 @@ class TOMMPictureViewController: UIViewController {
         timerCounter += timeStep
         if timerCounter >= waitTime {
             timer.invalidate()
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let storyBoard = UIStoryboard(name: "TOMMPictureAnswers", bundle: nil)
             guard let newViewController = storyBoard.instantiateViewController(identifier: "TOMMPictureAnswersViewController")
                 as? TOMMPictureAnswersViewController else {
                 return

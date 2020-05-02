@@ -47,7 +47,7 @@ class LevelPreviewController: UIViewController {
     }
 
     @IBAction private func startTest(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "TOMMPicture", bundle: nil)
         guard let newViewController = storyBoard.instantiateViewController(identifier: "TOMMPictureViewController") as? TOMMPictureViewController else {
             return
         }
