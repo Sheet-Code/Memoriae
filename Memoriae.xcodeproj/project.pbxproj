@@ -15,6 +15,7 @@
 		0B96E8A12455B3250017E0D7 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96E8A02455B3250017E0D7 /* Level.swift */; };
 		0BA41208245D68B600592355 /* TOMMPicture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA41207245D68B600592355 /* TOMMPicture.storyboard */; };
 		0BA4120A245D6A2600592355 /* TOMMPictureAnswers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA41209245D6A2600592355 /* TOMMPictureAnswers.storyboard */; };
+		0BA4120F245D710B00592355 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4120E245D710B00592355 /* LevelViewController.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
 		0BC1FCDB2433BA88002161A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCDA2433BA88002161A1 /* MainViewController.swift */; };
@@ -59,6 +60,7 @@
 		0B96E8A02455B3250017E0D7 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		0BA41207245D68B600592355 /* TOMMPicture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TOMMPicture.storyboard; sourceTree = "<group>"; };
 		0BA41209245D6A2600592355 /* TOMMPictureAnswers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TOMMPictureAnswers.storyboard; sourceTree = "<group>"; };
+		0BA4120E245D710B00592355 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,9 +131,9 @@
 		0B49FC31245B601400A4F072 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
 				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
 				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
+				0BA4120E245D710B00592355 /* LevelViewController.swift */,
 				0BD9D96624577EDC00450D0E /* TOMMPicture */,
 			);
 			path = Levels;
@@ -232,6 +234,7 @@
 		0BD9D9582456DE2900450D0E /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
 				0B49FC31245B601400A4F072 /* Levels */,
 				0B0E4D6024599D6A00DABF92 /* Utility */,
 			);
@@ -514,6 +517,7 @@
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
 				0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */,
 				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,
+				0BA4120F245D710B00592355 /* LevelViewController.swift in Sources */,
 				0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */,
 				0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */,
 				0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */,

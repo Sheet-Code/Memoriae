@@ -47,18 +47,20 @@ class LevelPreviewController: UIViewController {
     }
 
     @IBAction private func startTest(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "TOMMPicture", bundle: nil)
-        guard let newViewController = storyBoard.instantiateViewController(identifier: "TOMMPictureViewController") as? TOMMPictureViewController else {
+
+        guard let level = self.level else { return }
+
+        let storyBoard = UIStoryboard(name: level.kind, bundle: nil)
+        guard let newViewController = storyBoard.instantiateViewController(identifier: level.kind + "ViewController") as? LevelViewController else {
             return
         }
-        newViewController.level = level
-        newViewController.difficulty = Difficulty.multipliers[Int(difficultySlider.value)]
+
+        newViewController.setTest(level: level, difficulty: Difficulty.multipliers[Int(difficultySlider.value)])
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
     }
 
     @IBAction private func sliderValueChanged(_ sender: Any) {
-
         difficultyLabel.text = Difficulty.names[Int(difficultySlider.value)]
     }
 }

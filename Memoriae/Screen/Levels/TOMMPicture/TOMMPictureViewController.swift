@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TOMMPictureViewController: UIViewController {
+class TOMMPictureViewController: UIViewController, LevelViewController {
 
     var level: Level?
     var difficulty: Float?
@@ -54,5 +54,10 @@ class TOMMPictureViewController: UIViewController {
             self.navigationController?.isNavigationBarHidden = true
         }
         progressBar.setProgress(Float(timerCounter / waitTime), animated: true)
+    }
+
+    func setTest(level: Level, difficulty: Float) {
+        self.level = level
+        self.difficulty = difficulty
     }
 }
