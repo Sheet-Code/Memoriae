@@ -10,8 +10,10 @@ import UIKit
 
 class TOMMPictureAnswersViewController: UIViewController {
     
-    var level: Level?
-    var difficulty: Float?
+    private var level: Level?
+    private var difficulty: Float?
+    private var targetNumber: Int?
+    private var currentTarget: Target?
 
     private var tableData: [Question]?
     private var answers: [Int?]?
@@ -23,7 +25,7 @@ class TOMMPictureAnswersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let questions = level?.target?.questions else {
+        guard let questions = currentTarget?.questions else {
             return
         }
         
@@ -36,7 +38,7 @@ class TOMMPictureAnswersViewController: UIViewController {
         
         exitButton.center.x = view.bounds.width * 2
         
-        guard let count = level?.target?.questions.count else {
+        guard let count = currentTarget?.questions.count else {
             return
         }
         
@@ -155,6 +157,14 @@ class TOMMPictureAnswersViewController: UIViewController {
     
     func getSelectedAnswer(index: Int) -> Int? {
         answers?[index]
+    }
+
+    func setTestDetails(level: Level?, difficulty: Float?, targetNumber: Int?, currentTarget: Target?) {
+
+        self.level = level
+        self.difficulty = difficulty
+        self.targetNumber = targetNumber
+        self.currentTarget = currentTarget
     }
 }
 

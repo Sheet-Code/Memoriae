@@ -12,6 +12,8 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
 
     var level: Level?
     var difficulty: Float?
+    var targetNumber: Int?
+    var currentTarget: Target?
 
     private var timerCounter: Float = 0
     private var waitTime: Float = 0
@@ -22,19 +24,26 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let target = level?.target else {
-            return
-        }
-        image.image = UIImage(named: target.picture)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let target = level?.target, let multiplier = difficulty else {
+
+        guard let target = level?.targets else {
             return
         }
 
-        waitTime = Float(target.time) * multiplier
+        let targetNumber = Int.random(in: 0..<target.count)
+
+        let currentTarget = target[targetNumber]
+        image.image = UIImage(named: currentTarget.picture)
+        self.currentTarget = currentTarget
+
+        guard let multiplier = difficulty else {
+            return
+        }
+
+        waitTime = Float(currentTarget.time) * multiplier
 
         Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
     }
@@ -48,8 +57,9 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
                 as? TOMMPictureAnswersViewController else {
                 return
             }
-            newViewController.level = self.level
-            newViewController.difficulty = self.difficulty
+
+            newViewController.setTestDetails(level: self.level, difficulty: self.difficulty, targetNumber: self.targetNumber, currentTarget: self.currentTarget)
+
             self.navigationController?.pushViewController(newViewController, animated: true)
             self.navigationController?.isNavigationBarHidden = true
         }

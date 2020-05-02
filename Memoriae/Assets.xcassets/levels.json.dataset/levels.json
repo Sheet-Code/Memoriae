@@ -6,62 +6,119 @@
         "task" : "This task was compiled in accordance with the TOMM methodology. You will be shown a picture. The task is to remember as many details as you can. After a certain time we will ask you a few questions",
         "description" : "Memorization details of picture",
         "picture" : "tomm_picture_preview",
-        "target" : {
-            "picture" : "tomm_picture_main",
-            "time" : 4,
-            "questions" : [
-                {
-                    "question" : "On which page of the book was the road?",
-                    "rightAnswer" : 1,
-                    "answers" : [
-                        "left",
-                        "right",
-                        "on no"
-                    ]
-                },
-                {
-                    "question" : "What clothes were on the person with the umbrella?",
-                    "rightAnswer" : 1,
-                    "answers" : [
-                        "pants",
-                        "dress",
-                        "skirt",
-                        "cloak"
-                    ]
-                },
-                {
-                    "question" : "What color was the cup?",
-                    "rightAnswer" : 2,
-                    "answers" : [
-                        "white",
-                        "beige",
-                        "brown",
-                        "orange"
-                    ]
-                },
-                {
-                    "question" : "Which bird was sitting on the lantern?",
-                    "rightAnswer" : 3,
-                    "answers" : [
-                        "sparrow",
-                        "crow",
-                        "pigeon",
-                        "seagull"
-                    ]
-                },
-                {
-                    "question" : "How many birds flew in the air?",
-                    "rightAnswer" : 2,
-                    "answers" : [
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9"
-                    ]
-                }
-            ]
-        }
+        "targets" : [
+            {
+                "picture" : "tomm_picture_1",
+                "time" : 4,
+                "questions" : [
+                    {
+                        "question" : "On which page of the book was the road?",
+                        "rightAnswer" : 1,
+                        "answers" : [
+                            "left",
+                            "right",
+                            "on no"
+                        ]
+                    },
+                    {
+                        "question" : "What clothes were on the person with the umbrella?",
+                        "rightAnswer" : 1,
+                        "answers" : [
+                            "pants",
+                            "dress",
+                            "skirt",
+                            "cloak"
+                        ]
+                    },
+                    {
+                        "question" : "What color was the cup?",
+                        "rightAnswer" : 2,
+                        "answers" : [
+                            "white",
+                            "beige",
+                            "brown",
+                            "orange"
+                        ]
+                    },
+                    {
+                        "question" : "Which bird was sitting on the lantern?",
+                        "rightAnswer" : 3,
+                        "answers" : [
+                            "sparrow",
+                            "crow",
+                            "pigeon",
+                            "seagull"
+                        ]
+                    },
+                    {
+                        "question" : "How many birds flew in the air?",
+                        "rightAnswer" : 2,
+                        "answers" : [
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9"
+                        ]
+                    }
+                ]
+            },
+            {
+                "picture" : "tomm_picture_2",
+                "time" : 4,
+                "questions" : [
+                    {
+                        "question" : "What was the weather like?",
+                        "rightAnswer" : 0,
+                        "answers" : [
+                            "sunny",
+                            "cloudy",
+                            "rainy"
+                        ]
+                    },
+                    {
+                        "question" : "What material was the fence?",
+                        "rightAnswer" : 1,
+                        "answers" : [
+                            "wooden",
+                            "brick",
+                            "iron",
+                            "stone"
+                        ]
+                    },
+                    {
+                        "question" : "What was the door?",
+                        "rightAnswer" : 3,
+                        "answers" : [
+                            "wooden with windows",
+                            "wooden without windows",
+                            "millet metal",
+                            "no door"
+                        ]
+                    },
+                    {
+                        "question" : "Which animal plows the field?",
+                        "rightAnswer" : 2,
+                        "answers" : [
+                            "bull",
+                            "cow",
+                            "horse",
+                            "saiga"
+                        ]
+                    },
+                    {
+                        "question" : "what type of facial hair was the man?",
+                        "rightAnswer" : 3,
+                        "answers" : [
+                            "no hair",
+                            "mustache",
+                            "beard",
+                            "beard & mustache"
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
         "id" : 1,

@@ -13,7 +13,7 @@ struct Level: Codable {
     let id: Int
     let title, kind, task, description: String
     let picture: String?
-    let target: Target?
+    let targets: [Target]?
 }
 
 // MARK: - Target
