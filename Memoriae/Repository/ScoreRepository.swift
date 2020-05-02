@@ -39,28 +39,21 @@ final class ScoreRepositoryImpl {
 
         } else {
 
-            var maxById = storedScores[0]
-            guard var maxId = Int(storedScores[0].id) else {
+            let max = storedScores.max { lhs, rhs in
+                lhs.id < rhs.id
+            }
+
+            guard let maxById = max else {
                 return
             }
 
-            for index in 1...storedScores.count - 1 {
-                guard let currentId = Int(storedScores[index].id) else {
-                    return
-                }
-                if currentId > maxId {
-                    maxId = currentId
-                    maxById = storedScores[index]
-                }
-            }
+            print("MAX: " + String(maxById.id))
 
-            guard let curId = Int(maxById.id) else {
-                return
-            }
+            let curId = maxById.id
             lastId = curId
         }
 
-        let score = Score(id: String(lastId + 1), levelId: level.id, points: Double(right * 100) / Double(questions.count), difficulty: Double(difficulty))
+        let score = Score(id: lastId + 1, levelId: level.id, points: Double(right * 100) / Double(questions.count), difficulty: Double(difficulty))
 
         repo.save(scores: [score])
 
@@ -68,25 +61,18 @@ final class ScoreRepositoryImpl {
 
         if storedScores.count > kmaxStoredScoresPerLevel {
 
-            var minById = storedScores[0]
-            guard var minId = Int(storedScores[0].id) else {
+            let min = storedScores.min { lhs, rhs in
+                lhs.id < rhs.id
+            }
+
+            guard let minById = min else {
                 return
             }
 
-            for index in 1...storedScores.count - 1 {
-                guard let currentId = Int(storedScores[index].id) else {
-                    return
-                }
-                if currentId < minId {
-                    minId = currentId
-                    minById = storedScores[index]
-                }
-            }
+            print("MIN: " + String(minById.id))
 
             repo.delete(scores: [minById])
         }
-
-        print(storedScores)
     }
 
     func save(scores: [Score]) {
@@ -112,7 +98,7 @@ final class ScoreRepositoryImpl {
 
     func clear() {
         try? realm.write {
-          realm.deleteAll()
+            realm.deleteAll()
         }
     }
 
