@@ -32,6 +32,9 @@
 		0BD9D96824577F2700450D0E /* TOMMAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9D96724577F2700450D0E /* TOMMAnswerCell.swift */; };
 		187236DC4ADDC9066E3CE74B /* Pods_Memoriae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B962E7BCDAFC590754E8A6FF /* Pods_Memoriae.framework */; };
 		64046A64A4B6A9E0028BDB56 /* Pods_MemoriaeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7367931731C180D547DCC07E /* Pods_MemoriaeUITests.framework */; };
+		809AC78F245DD563009D8C9B /* DotsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AC78E245DD563009D8C9B /* DotsSet.swift */; };
+		809AC792245DD7D1009D8C9B /* WMSNumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AC791245DD7D1009D8C9B /* WMSNumbersViewController.swift */; };
+		809AC795245DD81F009D8C9B /* WMSNumbers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809AC794245DD81F009D8C9B /* WMSNumbers.storyboard */; };
 		B748487A86F76CA012E23622 /* Pods_MemoriaeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33EEC53947962658FA7A238 /* Pods_MemoriaeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +88,9 @@
 		4E5912D020F1E2023348921F /* Pods-MemoriaeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeTests/Pods-MemoriaeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5C0B4B8851CB1AE3B7A8F570 /* Pods-Memoriae.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memoriae.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memoriae/Pods-Memoriae.debug.xcconfig"; sourceTree = "<group>"; };
 		7367931731C180D547DCC07E /* Pods_MemoriaeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		809AC78E245DD563009D8C9B /* DotsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsSet.swift; sourceTree = "<group>"; };
+		809AC791245DD7D1009D8C9B /* WMSNumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMSNumbersViewController.swift; sourceTree = "<group>"; };
+		809AC794245DD81F009D8C9B /* WMSNumbers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WMSNumbers.storyboard; sourceTree = "<group>"; };
 		8B6CF494E59CB5475C18C5CC /* Pods-MemoriaeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeUITests/Pods-MemoriaeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A33EEC53947962658FA7A238 /* Pods_MemoriaeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFB0C16F75965431EB4C09A /* Pods-MemoriaeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeUITests/Pods-MemoriaeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		0B49FC31245B601400A4F072 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				809AC790245DD790009D8C9B /* WMSNumbers */,
 				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
 				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
 				0BA4120E245D710B00592355 /* LevelViewController.swift */,
@@ -144,6 +151,7 @@
 		0B96E89F2455B2E30017E0D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				809AC78D245DD4E1009D8C9B /* WMSNumbers */,
 				0BA41210245DCD0600592355 /* TOMMPicture */,
 				0B96E8A02455B3250017E0D7 /* Level.swift */,
 				0B49FC2D245A3C3D00A4F072 /* Score.swift */,
@@ -165,6 +173,7 @@
 		0BA4120C245D6B2100592355 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				809AC793245DD7F1009D8C9B /* WMSNumbers */,
 				0BA4120D245D6B2D00592355 /* TOMMPicture */,
 			);
 			path = Levels;
@@ -268,6 +277,30 @@
 				0BD9D96424577D5B00450D0E /* TOMMPictureAnswersViewController.swift */,
 			);
 			path = TOMMPicture;
+			sourceTree = "<group>";
+		};
+		809AC78D245DD4E1009D8C9B /* WMSNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				809AC78E245DD563009D8C9B /* DotsSet.swift */,
+			);
+			path = WMSNumbers;
+			sourceTree = "<group>";
+		};
+		809AC790245DD790009D8C9B /* WMSNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				809AC791245DD7D1009D8C9B /* WMSNumbersViewController.swift */,
+			);
+			path = WMSNumbers;
+			sourceTree = "<group>";
+		};
+		809AC793245DD7F1009D8C9B /* WMSNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				809AC794245DD81F009D8C9B /* WMSNumbers.storyboard */,
+			);
+			path = WMSNumbers;
 			sourceTree = "<group>";
 		};
 		BB1A6448255F238710F98854 /* Pods */ = {
@@ -405,6 +438,7 @@
 				0BC1FCE32433BA89002161A1 /* LaunchScreen.storyboard in Resources */,
 				0BC1FCE02433BA89002161A1 /* Assets.xcassets in Resources */,
 				0BA4120A245D6A2600592355 /* TOMMPictureAnswers.storyboard in Resources */,
+				809AC795245DD81F009D8C9B /* WMSNumbers.storyboard in Resources */,
 				0BA41208245D68B600592355 /* TOMMPicture.storyboard in Resources */,
 				0BC1FCDE2433BA88002161A1 /* Main.storyboard in Resources */,
 			);
@@ -527,6 +561,7 @@
 				0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */,
 				0BA41212245DCD4C00592355 /* TOMMPictureSet.swift in Sources */,
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
+				809AC792245DD7D1009D8C9B /* WMSNumbersViewController.swift in Sources */,
 				0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */,
 				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,
 				0BA4120F245D710B00592355 /* LevelViewController.swift in Sources */,
@@ -537,6 +572,7 @@
 				0BD9D963245763AA00450D0E /* TOMMPictureViewController.swift in Sources */,
 				0B49FC2E245A3C3D00A4F072 /* Score.swift in Sources */,
 				0BD9D96824577F2700450D0E /* TOMMAnswerCell.swift in Sources */,
+				809AC78F245DD563009D8C9B /* DotsSet.swift in Sources */,
 				0B49FC30245B20C900A4F072 /* Difficulty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

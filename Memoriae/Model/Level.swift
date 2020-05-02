@@ -9,9 +9,10 @@
 import Foundation
 
 // MARK: - LevelElement
-struct Level: Codable {
+struct Level: Decodable {
     let id: Int
     let title, kind, task, description: String
     let picture: String?
     let pictureSets: [TOMMPictureSet]?
+    let dotsSet: DotsSet?
 }
