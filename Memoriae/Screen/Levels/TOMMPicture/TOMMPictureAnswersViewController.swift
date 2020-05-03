@@ -11,7 +11,7 @@ import UIKit
 class TOMMPictureAnswersViewController: UIViewController {
     
     private var level: Level?
-    private var difficulty: Float?
+    private var difficulty: Double?
     private var targetNumber: Int?
     private var currentTarget: TOMMPictureSet?
 
@@ -159,7 +159,7 @@ class TOMMPictureAnswersViewController: UIViewController {
         answers?[index]
     }
 
-    func setTestDetails(level: Level?, difficulty: Float?, targetNumber: Int?, currentTarget: TOMMPictureSet?) {
+    func setTestDetails(level: Level?, difficulty: Double?, targetNumber: Int?, currentTarget: TOMMPictureSet?) {
 
         self.level = level
         self.difficulty = difficulty

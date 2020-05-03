@@ -11,7 +11,7 @@ import UIKit
 class TOMMPictureViewController: UIViewController, LevelViewController {
 
     var level: Level?
-    var difficulty: Float?
+    var difficulty: Double?
     var targetNumber: Int?
     var currentTarget: TOMMPictureSet?
 
@@ -43,7 +43,7 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
             return
         }
 
-        waitTime = Float(currentTarget.time) * multiplier
+        waitTime = Float(Double(currentTarget.time) * multiplier)
 
         Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
     }
@@ -66,7 +66,7 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
         progressBar.setProgress(Float(timerCounter / waitTime), animated: true)
     }
 
-    func setTest(level: Level, difficulty: Float) {
+    func setTest(level: Level, difficulty: Double) {
         self.level = level
         self.difficulty = difficulty
     }

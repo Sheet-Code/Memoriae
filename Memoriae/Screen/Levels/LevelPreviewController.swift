@@ -55,7 +55,7 @@ class LevelPreviewController: UIViewController {
             return
         }
 
-        newViewController.setTest(level: level, difficulty: Difficulty.multipliers[Int(difficultySlider.value)])
+        newViewController.setTest(level: level, difficulty: Double(Difficulty.multipliers[Int(difficultySlider.value)]))
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
     }

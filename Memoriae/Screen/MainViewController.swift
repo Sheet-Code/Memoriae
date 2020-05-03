@@ -10,23 +10,19 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    var data: [Level]?
+    var levels: [Level]?
 
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var table: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let asset = NSDataAsset(name: "levels.json")
-        guard let assetData = asset?.data else {
-            return
-        }
-        data = try? JSONDecoder().decode([Level].self, from: assetData)
+        levels = ResourcesManager.getLevels()
         
-        tableView.rowHeight = UITableView.automaticDimension
+        table.rowHeight = UITableView.automaticDimension
         LevelCell.viewController = self
-        tableView.dataSource = self
-        tableView.delegate = self
+        table.dataSource = self
+        table.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,8 +35,8 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
-        case self.tableView:
-            guard let nNData = data else {
+        case self.table:
+            guard let nNData = levels else {
                 return 0
             }
             return nNData.count
@@ -53,7 +49,7 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath) as? LevelCell else {
             fatalError("Table view is not configured")
         }
-        guard let nNData = data else {
+        guard let nNData = levels else {
             fatalError("Data is null")
         }
         cell.setup(with: nNData[indexPath.row], controller: self, index: indexPath)
@@ -66,7 +62,7 @@ extension MainViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        guard let level = data?[indexPath.row] else {
+        guard let level = levels?[indexPath.row] else {
             return
         }
         guard let previewController = UIStoryboard(name: "Main", bundle: nil)

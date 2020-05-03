@@ -18,17 +18,21 @@ class LevelCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         picture.image = nil
+        title.text = nil
+        descript.text = nil
     }
 
     func setup(with level: Level, controller: MainViewController, index: IndexPath) {
         title.text = level.title
         descript.text = level.description
-        guard let pic = level.picture else {
-            return
-        }
-        
-        picture.image = UIImage(named: pic)
+
         picture.layer.cornerRadius = 8.0
         picture.clipsToBounds = true
+
+        guard let picture = level.picture else {
+            return
+        }
+
+        self.picture.image = ResourcesManager.getImage(name: picture)
     }
 }
