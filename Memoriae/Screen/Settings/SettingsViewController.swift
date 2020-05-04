@@ -26,8 +26,6 @@ class SettingsViewController: UIViewController {
 
         table.dataSource = self
         table.delegate = self
-
-        //table.register(SettingsCell, forCellReuseIdentifier: "SettingsCell")
     }
 }
 
@@ -64,9 +62,6 @@ extension SettingsViewController: UITableViewDataSource {
 
             identifier = "DetailsCell"
 
-        default:
-
-            fatalError("Unknown cell type")
         }
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? SettingsCell else {
@@ -90,7 +85,24 @@ extension SettingsViewController: UITableViewDataSource {
     }
 
     @objc func clearScoresRealm(sender: Any) {
-        ScoreRepositoryImpl.clear()
+
+        let alert = UIAlertController(title: "Delete all progress?",
+                                      message: "This action cannot be undone. All records of completed levels will be deleted",
+                                      preferredStyle: .actionSheet)
+
+        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: { _ in
+            ScoreRepositoryImpl.clear()
+        })
+
+        let canсelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        canсelAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+        deleteAction.setValue(UIColor.systemRed, forKey: "titleTextColor")
+
+        alert.addAction(deleteAction)
+        alert.addAction(canсelAction)
+
+        self.present(alert, animated: true)
     }
 }
 

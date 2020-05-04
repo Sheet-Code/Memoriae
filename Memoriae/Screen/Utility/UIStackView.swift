@@ -12,9 +12,9 @@ extension UIStackView {
 
     func removeAllArrangedSubviews() {
 
-        let removedSubviews = arrangedSubviews.reduce([]) { allSubviews, subview -> [UIView] in
-            self.removeArrangedSubview(subview)
-            return allSubviews + [subview]
+        let removedSubviews = arrangedSubviews.reduce(into: [UIView]()) { allSubviews, subview  in
+             self.removeArrangedSubview(subview)
+            allSubviews.append(subview)
         }
 
         NSLayoutConstraint.deactivate(removedSubviews.flatMap({ $0.constraints }))

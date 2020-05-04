@@ -25,7 +25,7 @@ class SimpleActionCell: UITableViewCell, SettingsCell {
 
         switch details {
 
-        case .action(title: let title, action: let action, target: let target):
+        case let .action(title: title, action: action, target: target):
 
             label.text = title
             button.titleLabel?.text = "test action"
