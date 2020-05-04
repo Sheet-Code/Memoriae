@@ -12,7 +12,7 @@ import UIKit
 class AchievementsCell: UITableViewCell {
 
     // MARK: - Size & Layout
-    static let progressViewHeight = CGFloat(200)
+    static let progressViewHeight = CGFloat(100)
     static let progressViewWidth = CGFloat(10)
 
     static let pictureHeight = CGFloat(100)

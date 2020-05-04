@@ -9,10 +9,9 @@
 import RealmSwift
 
 protocol ScoreRepository {
-    func save(_ posts: [Score])
-    func get() -> Results<Score>
-    func count() -> Int
-    func clear()
+    static func saveAnswers(right: Int, level: Level, difficulty: Double, questions: [Question])
+    static func getScores(levelId: Int) -> [Score]?
+    static func clear()
 }
 
 final class ScoreRepositoryImpl {
@@ -79,6 +78,11 @@ final class ScoreRepositoryImpl {
         } else {
             return res
         }
+    }
+
+    static func clear() {
+        let repo = ScoreRepositoryImpl()
+        repo.clear()
     }
 
     func save(scores: [Score]) {

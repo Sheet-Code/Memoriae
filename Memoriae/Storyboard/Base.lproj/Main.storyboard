@@ -10,29 +10,98 @@
         <!--Settings-->
         <scene sceneID="aco-CJ-04s">
             <objects>
-                <tableViewController title="Settings" id="kpC-Qk-eJR" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3hg-ya-YTE">
+                <tableViewController storyboardIdentifier="SettingsViewController" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kpC-Qk-eJR" customClass="SettingsViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3hg-ya-YTE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="54" id="iev-q8-Usu">
-                                <rect key="frame" x="0.0" y="28" width="414" height="54"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleActionCell" rowHeight="54" id="iev-q8-Usu" customClass="SimpleActionCell" customModule="Memoriae" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iev-q8-Usu" id="2hp-hL-hpT">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete all progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-au-7LF">
+                                            <rect key="frame" x="35" y="17" width="143" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObY-sR-4li">
+                                            <rect key="frame" x="342" y="16" width="19" height="22"/>
+                                            <state key="normal" image="trash" catalog="system">
+                                                <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Wtg-au-7LF" firstAttribute="centerY" secondItem="2hp-hL-hpT" secondAttribute="centerY" id="KAM-hu-LdC"/>
+                                        <constraint firstItem="Wtg-au-7LF" firstAttribute="leading" secondItem="2hp-hL-hpT" secondAttribute="leadingMargin" constant="15" id="bfE-hS-aT5"/>
+                                        <constraint firstAttribute="trailing" secondItem="ObY-sR-4li" secondAttribute="trailing" constant="13" id="jDM-xv-qL7"/>
+                                        <constraint firstItem="ObY-sR-4li" firstAttribute="centerY" secondItem="2hp-hL-hpT" secondAttribute="centerY" id="ng1-iQ-LNC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="button" destination="ObY-sR-4li" id="BI6-mf-gGt"/>
+                                    <outlet property="label" destination="Wtg-au-7LF" id="yV0-L9-zTK"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleSwitcherCell" rowHeight="54" id="VdB-Pe-tf3" customClass="SimpleSwitcherCell" customModule="Memoriae" customModuleProvider="target">
+                                <rect key="frame" x="20" y="109.33333206176758" width="374" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VdB-Pe-tf3" id="FHh-w6-AnF">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switcher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkR-cT-qF2">
+                                            <rect key="frame" x="35" y="16.666666666666668" width="67" height="21.000000000000004"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QkR-cT-qF2" firstAttribute="leading" secondItem="FHh-w6-AnF" secondAttribute="leadingMargin" constant="15" id="HEO-c6-CaX"/>
+                                        <constraint firstItem="QkR-cT-qF2" firstAttribute="centerY" secondItem="FHh-w6-AnF" secondAttribute="centerY" id="yfv-QW-CQN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="QkR-cT-qF2" id="qp2-Yz-U7Y"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsCell" rowHeight="54" id="WWh-7c-Ayv" customClass="DetailsCell" customModule="Memoriae" customModuleProvider="target">
+                                <rect key="frame" x="20" y="163.33333206176758" width="374" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WWh-7c-Ayv" id="tIe-Hp-UOH">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-Zi-WV9">
+                                            <rect key="frame" x="35" y="16.666666666666668" width="52.333333333333343" height="21.000000000000004"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bAC-Zi-WV9" firstAttribute="centerY" secondItem="tIe-Hp-UOH" secondAttribute="centerY" id="6nr-Kj-Ryw"/>
+                                        <constraint firstItem="bAC-Zi-WV9" firstAttribute="leading" secondItem="tIe-Hp-UOH" secondAttribute="leadingMargin" constant="15" id="MNY-l0-USB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="bAC-Zi-WV9" id="ygR-aZ-zru"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="kpC-Qk-eJR" id="ZO6-0M-2So"/>
-                            <outlet property="delegate" destination="kpC-Qk-eJR" id="6jP-Me-acK"/>
-                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="GSu-Ep-dVc"/>
                     <navigationItem key="navigationItem" title="Memoriae" id="uMQ-Ow-ZSO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="table" destination="3hg-ya-YTE" id="FYE-6a-KGT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br0-Y3-TFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -411,5 +480,6 @@
         <image name="book" catalog="system" width="128" height="101"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>
