@@ -22,6 +22,18 @@ class AchievementsViewController: UIViewController {
         table.rowHeight = AchievementsCell.cellHeight
         table.dataSource = self
         table.delegate = self
+
+        table.refreshControl = UIRefreshControl()
+        table.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+    }
+
+    @objc func handleRefreshControl() {
+
+        DispatchQueue.main.async {
+            self.table.reloadData()
+        }
+
+        table.refreshControl?.endRefreshing()
     }
 }
 
