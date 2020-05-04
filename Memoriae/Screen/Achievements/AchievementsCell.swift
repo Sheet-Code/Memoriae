@@ -31,6 +31,9 @@ class AchievementsCell: UITableViewCell {
     var results: [Float] = []
     var progressBars: [UIProgressView] = []
 
+    private let timeStep: Float = 0.01
+    private var limits: [Float] = []
+
     @IBOutlet private var title: UILabel!
     @IBOutlet private var picture: UIImageView!
 
@@ -101,6 +104,10 @@ class AchievementsCell: UITableViewCell {
                 progress.leftAnchor.constraint(equalTo: previousBar.rightAnchor,
                                                constant: intervalBetweenProgressViews).isActive = true
             }
+
+            for index in 0...Difficulty.multipliers.count - 1 {
+                limits.append(Float(score[index].points / 100))
+            }
         }
 
         submitProgress()
@@ -132,8 +139,24 @@ class AchievementsCell: UITableViewCell {
     }
 
     func submitProgress() {
+
+        Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateProgressBar(timer: Timer) {
+
+        var counter = 0
+
         for index in 0...self.progressBars.count - 1 {
-            self.progressBars[index].setProgress(self.results[index], animated: false)
+            if self.progressBars[index].progress < self.limits[index] {
+                self.progressBars[index].progress += 0.005
+            } else {
+                counter += 1
+            }
+        }
+
+        if counter >= self.progressBars.count {
+            timer.invalidate()
         }
     }
 }
