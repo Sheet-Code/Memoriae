@@ -14,6 +14,8 @@
 		0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC2B245A383D00A4F072 /* ScoreRepository.swift */; };
 		0B49FC2E245A3C3D00A4F072 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC2D245A3C3D00A4F072 /* Score.swift */; };
 		0B49FC30245B20C900A4F072 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49FC2F245B20C900A4F072 /* Difficulty.swift */; };
+		0B8E08032461BA970073C89C /* WMSDots.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8E08022461BA970073C89C /* WMSDots.storyboard */; };
+		0B8E08072461BAE70073C89C /* WMSDotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E08062461BAE70073C89C /* WMSDotsViewController.swift */; };
 		0B94FF63245BA000002CFC41 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94FF62245BA000002CFC41 /* UIStackView.swift */; };
 		0B96E8A12455B3250017E0D7 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96E8A02455B3250017E0D7 /* Level.swift */; };
 		0BA41208245D68B600592355 /* TOMMPicture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA41207245D68B600592355 /* TOMMPicture.storyboard */; };
@@ -70,6 +72,8 @@
 		0B49FC2B245A383D00A4F072 /* ScoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRepository.swift; sourceTree = "<group>"; };
 		0B49FC2D245A3C3D00A4F072 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		0B49FC2F245B20C900A4F072 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		0B8E08022461BA970073C89C /* WMSDots.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WMSDots.storyboard; sourceTree = "<group>"; };
+		0B8E08062461BAE70073C89C /* WMSDotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMSDotsViewController.swift; sourceTree = "<group>"; };
 		0B94FF62245BA000002CFC41 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		0B96E8A02455B3250017E0D7 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		0BA41207245D68B600592355 /* TOMMPicture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TOMMPicture.storyboard; sourceTree = "<group>"; };
@@ -163,6 +167,14 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		0B8E07FF2461B9960073C89C /* WMSDots */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E08022461BA970073C89C /* WMSDots.storyboard */,
+			);
+			path = WMSDots;
+			sourceTree = "<group>";
+		};
 		0B96E89F2455B2E30017E0D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +199,7 @@
 		0BA4120C245D6B2100592355 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				0B8E07FF2461B9960073C89C /* WMSDots */,
 				0BA4120D245D6B2D00592355 /* TOMMPicture */,
 			);
 			path = Levels;
@@ -319,6 +332,7 @@
 		0BDE90992461AD1A006D8F47 /* WMSDots */ = {
 			isa = PBXGroup;
 			children = (
+				0B8E08062461BAE70073C89C /* WMSDotsViewController.swift */,
 				0BDE909A2461AD57006D8F47 /* PointsGenerator.swift */,
 			);
 			path = WMSDots;
@@ -458,6 +472,7 @@
 			files = (
 				0BC1FCE32433BA89002161A1 /* LaunchScreen.storyboard in Resources */,
 				0BC1FCE02433BA89002161A1 /* Assets.xcassets in Resources */,
+				0B8E08032461BA970073C89C /* WMSDots.storyboard in Resources */,
 				0BA4120A245D6A2600592355 /* TOMMPictureAnswers.storyboard in Resources */,
 				0BA41208245D68B600592355 /* TOMMPicture.storyboard in Resources */,
 				0BC1FCDE2433BA88002161A1 /* Main.storyboard in Resources */,
@@ -594,6 +609,7 @@
 				0BBC0407246038AF0048533B /* SettingsCell.swift in Sources */,
 				0BD9D95B2456E5FF00450D0E /* LevelCell.swift in Sources */,
 				0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */,
+				0B8E08072461BAE70073C89C /* WMSDotsViewController.swift in Sources */,
 				0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */,
 				0B94FF63245BA000002CFC41 /* UIStackView.swift in Sources */,
 				0BD9D963245763AA00450D0E /* TOMMPictureViewController.swift in Sources */,

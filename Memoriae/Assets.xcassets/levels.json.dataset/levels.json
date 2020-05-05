@@ -127,5 +127,13 @@
         "task" : "dont forget to create the type in entity and structure in json for this level, Dym Palych",
         "description" : "Do something",
         "picture" : null
+    },
+    {
+        "id" : 2,
+        "title" : "Level3",
+        "kind" : "WMSDots",
+        "task" : "dosomething",
+        "description" : "level with dots",
+        "picture" : null
     }
 ]

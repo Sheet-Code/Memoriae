@@ -10,7 +10,7 @@ import UIKit
 
 enum PointsGenerator {
 
-    static func scatterObjects(with size: CGSize, in quantity: Int, at area: CGSize) -> [CGPoint] {
+    static func scatterObjects(area: CGSize, size: CGSize, quantity: Int) -> [CGPoint] {
 
         var validPoints: [CGPoint] = []
 
@@ -23,11 +23,11 @@ enum PointsGenerator {
             repeat {
                 generatedPoint = CGPoint(x: CGFloat.random(in: size.width / 2 ... area.width - size.width / 2),
                                          y: CGFloat.random(in: size.height / 2 ... area.height - size.height / 2))
-                pointIsValid = rectsAreOverlaping(lhs: CGRect(x: generatedPoint.x,
-                                                              y: generatedPoint.y,
-                                                              width: size.width,
-                                                              height: size.height),
-                                                  rhs: validRects)
+                pointIsValid = !rectsAreOverlaping(lhs: CGRect(x: generatedPoint.x,
+                                                               y: generatedPoint.y,
+                                                               width: size.width,
+                                                               height: size.height),
+                                                   rhs: validRects)
 
             } while pointIsValid == false
 
@@ -41,8 +41,8 @@ enum PointsGenerator {
 
         var areOverlapping = false
 
-        if (abs(lhs.midX - rhs.midX) < lhs.width / 2 + rhs.width / 2) ||
-            (abs(lhs.midY - rhs.midY) < lhs.height / 2 + rhs.height / 2) {
+        if (abs(lhs.midX - rhs.midX) < (lhs.width / 2 + rhs.width / 2)) &&
+            (abs(lhs.midY - rhs.midY) < (lhs.height / 2 + rhs.height / 2)) {
 
             areOverlapping = true
         }
@@ -54,10 +54,12 @@ enum PointsGenerator {
 
         var areOverlapping = false
 
-        for index in 0 ... rhs.count - 1 {
+        if !rhs.isEmpty {
+            for index in 0 ... rhs.count - 1 {
 
-            if rectsAreOverlaping(lhs: lhs, rhs: rhs[index]) {
-                areOverlapping = true
+                if rectsAreOverlaping(lhs: lhs, rhs: rhs[index]) {
+                    areOverlapping = true
+                }
             }
         }
 
