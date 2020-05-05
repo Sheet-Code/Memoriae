@@ -10,5 +10,5 @@ import UIKit
 
 protocol LevelViewController: UIViewController {
 
-    func setTest(level: Level, difficulty: Double)
+    func setTest(level: Level, difficultyIndex: Int)
 }

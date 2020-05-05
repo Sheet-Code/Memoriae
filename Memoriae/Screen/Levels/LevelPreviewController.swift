@@ -30,6 +30,13 @@ class LevelPreviewController: UIViewController {
         task.text = nNLevel.task
         descript.text = nNLevel.description
         self.tabBarController?.tabBar.isHidden = true
+
+        difficultyLabel.text = Difficulty.standardName
+
+        difficultySlider.value = Float(Difficulty.standardIndex)
+        difficultySlider.minimumValue = 0
+        difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000_001
+
         guard let pic = level?.picture else {
             return
         }
@@ -37,12 +44,6 @@ class LevelPreviewController: UIViewController {
         image.image = UIImage(named: pic)
         image.layer.cornerRadius = 8.0
         image.clipsToBounds = true
-
-        difficultyLabel.text = Difficulty.standardName
-
-        difficultySlider.value = Float(Difficulty.standardIndex)
-        difficultySlider.minimumValue = 0
-        difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000_001
 
     }
 
@@ -55,7 +56,7 @@ class LevelPreviewController: UIViewController {
             return
         }
 
-        newViewController.setTest(level: level, difficulty: Double(Difficulty.multipliers[Int(difficultySlider.value)]))
+        newViewController.setTest(level: level, difficultyIndex: Int(difficultySlider.value))
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
     }

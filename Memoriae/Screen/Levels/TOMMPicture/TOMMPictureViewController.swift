@@ -66,8 +66,8 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
         progressBar.setProgress(Float(timerCounter / waitTime), animated: true)
     }
 
-    func setTest(level: Level, difficulty: Double) {
+    func setTest(level: Level, difficultyIndex: Int) {
         self.level = level
-        self.difficulty = difficulty
+        self.difficulty = Double(Difficulty.multipliers[difficultyIndex])
     }
 }
