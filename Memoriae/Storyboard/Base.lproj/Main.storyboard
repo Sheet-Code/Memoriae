@@ -68,7 +68,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="label" destination="QkR-cT-qF2" id="qp2-Yz-U7Y"/>
+                                    <outlet property="label" destination="QkR-cT-qF2" id="1ib-5H-UKC"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsCell" rowHeight="54" id="WWh-7c-Ayv" customClass="DetailsCell" customModule="Memoriae" customModuleProvider="target">
@@ -91,7 +91,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="label" destination="bAC-Zi-WV9" id="ygR-aZ-zru"/>
+                                    <outlet property="label" destination="bAC-Zi-WV9" id="fqs-fw-qRW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

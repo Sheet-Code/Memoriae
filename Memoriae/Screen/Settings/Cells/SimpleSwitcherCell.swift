@@ -10,9 +10,12 @@ import UIKit
 
 class SimpleSwitcherCell: UITableViewCell, SettingsCell {
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    @IBOutlet private var label: UILabel!
 
+    override func prepareForReuse() {
+        
+        super.prepareForReuse()
+        label.text = nil
     }
 
     func setup(with details: SettingsCellDetails) {

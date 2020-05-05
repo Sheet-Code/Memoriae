@@ -10,9 +10,12 @@ import UIKit
 
 class DetailsCell: UITableViewCell, SettingsCell {
 
+    @IBOutlet private var label: UILabel!
+    
     override func prepareForReuse() {
-        super.prepareForReuse()
 
+        super.prepareForReuse()
+        label.text = nil
     }
 
     func setup(with details: SettingsCellDetails) {
