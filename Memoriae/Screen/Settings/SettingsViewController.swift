@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    private var cellsDetails: [SettingsCellDetails] = []
+    private var cellsDetails = [[SettingsCellDetails]]()
 
     @IBOutlet private var table: UITableView!
 
@@ -19,10 +19,13 @@ class SettingsViewController: UIViewController {
 
         print(#function)
 
-        cellsDetails.append(SettingsCellDetails.action(
-            title: "Delete all progress",
-            action: #selector(SettingsViewController.clearScoresRealm(sender:)),
-            target: self))
+        cellsDetails.append([
+                SettingsCellDetails.action(title: "Delete all progress",
+                                           action: #selector(SettingsViewController.clearScoresRealm(sender:)),
+                                           target: self)
+        ])
+
+        cellsDetails.append([SettingsCellDetails.selectColor])
 
         table.dataSource = self
         table.delegate = self
@@ -31,10 +34,14 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        cellsDetails.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case self.table:
-            return cellsDetails.count
+            return cellsDetails[section].count
         default:
             return 0
         }
@@ -48,7 +55,7 @@ extension SettingsViewController: UITableViewDataSource {
 
         let identifier: String
 
-        switch cellsDetails[indexPath.row] {
+        switch cellsDetails[indexPath.section][indexPath.row] {
 
         case .action(title: _, action: _, target: _):
 
@@ -62,20 +69,31 @@ extension SettingsViewController: UITableViewDataSource {
 
             identifier = "DetailsCell"
 
+        case .selectColor:
+
+            identifier = "SelectingColorCell"
+
         }
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? SettingsCell else {
             fatalError("Table view is not configured")
         }
 
-        cell.setup(with: cellsDetails[indexPath.row])
+        cell.setup(with: cellsDetails[indexPath.section][indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
+
+        switch section {
+
+        case 0:
             return "Achievements"
-        } else {
+
+        case 1:
+            return "Appearance"
+
+        default:
             return ""
         }
     }

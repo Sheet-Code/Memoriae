@@ -17,4 +17,5 @@ enum SettingsCellDetails {
     )
     case switcher
     case details
+    case selectColor
 }

@@ -28,6 +28,7 @@
 		0BBC04032460304C0048533B /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC04022460304C0048533B /* DetailsCell.swift */; };
 		0BBC0405246033990048533B /* SettingsCellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC0404246033990048533B /* SettingsCellDetails.swift */; };
 		0BBC0407246038AF0048533B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC0406246038AF0048533B /* SettingsCell.swift */; };
+		0BBC8B132462D3B400F7FE20 /* SelectingColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC8B122462D3B400F7FE20 /* SelectingColorCell.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
 		0BC1FCDB2433BA88002161A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCDA2433BA88002161A1 /* MainViewController.swift */; };
@@ -86,6 +87,7 @@
 		0BBC04022460304C0048533B /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		0BBC0404246033990048533B /* SettingsCellDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellDetails.swift; sourceTree = "<group>"; };
 		0BBC0406246038AF0048533B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		0BBC8B122462D3B400F7FE20 /* SelectingColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingColorCell.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				0BBC03FD246029870048533B /* SimpleActionCell.swift */,
 				0BBC040024602FDF0048533B /* SimpleSwitcherCell.swift */,
 				0BBC04022460304C0048533B /* DetailsCell.swift */,
+				0BBC8B122462D3B400F7FE20 /* SelectingColorCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				0BA41212245DCD4C00592355 /* TOMMPictureSet.swift in Sources */,
 				0BBC040124602FDF0048533B /* SimpleSwitcherCell.swift in Sources */,
 				0B96E8A12455B3250017E0D7 /* Level.swift in Sources */,
+				0BBC8B132462D3B400F7FE20 /* SelectingColorCell.swift in Sources */,
 				0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */,
 				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,
 				0BA4120F245D710B00592355 /* LevelViewController.swift in Sources */,
