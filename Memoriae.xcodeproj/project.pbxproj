@@ -29,6 +29,7 @@
 		0BBC0405246033990048533B /* SettingsCellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC0404246033990048533B /* SettingsCellDetails.swift */; };
 		0BBC0407246038AF0048533B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC0406246038AF0048533B /* SettingsCell.swift */; };
 		0BBC8B132462D3B400F7FE20 /* SelectingColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC8B122462D3B400F7FE20 /* SelectingColorCell.swift */; };
+		0BBC8B152462E05500F7FE20 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC8B142462E05500F7FE20 /* ColorScheme.swift */; };
 		0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD62433BA88002161A1 /* AppDelegate.swift */; };
 		0BC1FCD92433BA88002161A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */; };
 		0BC1FCDB2433BA88002161A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1FCDA2433BA88002161A1 /* MainViewController.swift */; };
@@ -88,6 +89,7 @@
 		0BBC0404246033990048533B /* SettingsCellDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellDetails.swift; sourceTree = "<group>"; };
 		0BBC0406246038AF0048533B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		0BBC8B122462D3B400F7FE20 /* SelectingColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingColorCell.swift; sourceTree = "<group>"; };
+		0BBC8B142462E05500F7FE20 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		0BC1FCD32433BA88002161A1 /* Memoriae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoriae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC1FCD62433BA88002161A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				0B49FC31245B601400A4F072 /* Levels */,
 				0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */,
 				0B94FF62245BA000002CFC41 /* UIStackView.swift */,
+				0BBC8B142462E05500F7FE20 /* ColorScheme.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				0BD9D95F245729BD00450D0E /* LevelPreviewController.swift in Sources */,
 				0B436766245EC49100262CB3 /* AchievementsViewController.swift in Sources */,
 				0B43676A245ED25700262CB3 /* ResourcesManager.swift in Sources */,
+				0BBC8B152462E05500F7FE20 /* ColorScheme.swift in Sources */,
 				0BC1FCD72433BA88002161A1 /* AppDelegate.swift in Sources */,
 				0BA41212245DCD4C00592355 /* TOMMPictureSet.swift in Sources */,
 				0BBC040124602FDF0048533B /* SimpleSwitcherCell.swift in Sources */,

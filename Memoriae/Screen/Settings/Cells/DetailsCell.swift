@@ -22,7 +22,7 @@ class DetailsCell: UITableViewCell, SettingsCell {
 
         switch details {
 
-        case .switcher:
+        case .details:
 
             break
 
