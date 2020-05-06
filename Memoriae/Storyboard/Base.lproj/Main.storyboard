@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete all progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtg-au-7LF">
-                                            <rect key="frame" x="35" y="17" width="143" height="20"/>
+                                            <rect key="frame" x="35" y="17" width="142.66666666666666" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -97,28 +98,35 @@
                                     <outlet property="label" destination="bAC-Zi-WV9" id="fqs-fw-qRW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectingColorCell" rowHeight="120" id="XKV-Lo-qWs" customClass="SelectingColorCell" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="20" y="217.33333206176758" width="374" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectingColorCell" rowHeight="109" id="XKV-Lo-qWs" customClass="SelectingColorCell" customModule="Memoriae" customModuleProvider="target">
+                                <rect key="frame" x="20" y="217.33333206176758" width="374" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKV-Lo-qWs" id="wJP-dZ-kmP">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select theme color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrJ-aX-oSX">
-                                            <rect key="frame" x="35" y="17" width="144" height="21"/>
+                                            <rect key="frame" x="35" y="17" width="144" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-W2-wNv">
+                                            <rect key="frame" x="52" y="53" width="302" height="42"/>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="NrJ-aX-oSX" firstAttribute="leading" secondItem="wJP-dZ-kmP" secondAttribute="leadingMargin" constant="15" id="6Cf-yc-xRB"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="NrJ-aX-oSX" secondAttribute="bottom" constant="71" id="9kA-vc-f7q"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TWJ-W2-wNv" secondAttribute="bottom" constant="3" id="OGR-rv-X0S"/>
+                                        <constraint firstItem="TWJ-W2-wNv" firstAttribute="trailing" secondItem="wJP-dZ-kmP" secondAttribute="trailingMargin" id="TZR-tp-hbE"/>
+                                        <constraint firstItem="TWJ-W2-wNv" firstAttribute="top" secondItem="NrJ-aX-oSX" secondAttribute="bottom" constant="15.67" id="bEW-8T-dKJ"/>
+                                        <constraint firstItem="TWJ-W2-wNv" firstAttribute="leading" secondItem="wJP-dZ-kmP" secondAttribute="leadingMargin" constant="32" id="gEh-G3-pvC"/>
                                         <constraint firstItem="NrJ-aX-oSX" firstAttribute="top" secondItem="wJP-dZ-kmP" secondAttribute="topMargin" constant="6" id="zf7-kq-GvB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="label" destination="NrJ-aX-oSX" id="TKV-3c-HVM"/>
+                                    <outlet property="stack" destination="TWJ-W2-wNv" id="jG5-Mq-hG9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -15,7 +15,8 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
     var buttons: [UIButton] = []
 
     @IBOutlet private var label: UILabel!
-    
+    @IBOutlet private var stack: UIStackView!
+
     override func prepareForReuse() {
 
         super.prepareForReuse()
@@ -28,21 +29,12 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
 
         case .selectColor:
 
-            let cellWidth = self.contentView.bounds.width
-            let leftIndent = self.buttonDiameter * 1.5
-            let rightIndent = leftIndent / 2
-            let availableGap = cellWidth - (leftIndent + rightIndent)
-            let indentsSum = availableGap - (buttonDiameter * CGFloat(colors.count))
-            let indent = indentsSum / CGFloat(colors.count - 1)
-
-            var currentIndent = CGFloat(0)
-
             for index in 0 ... colors.count - 1 {
 
-                buttons.append(createButton(index: index, position: CGPoint(x: leftIndent + currentIndent, y: label.center.y + 30)))
-                currentIndent += buttonDiameter + indent
+                buttons.append(createButton(index: index, position: CGPoint(x: 0, y: 0)))
                 buttons[index].addTarget(self, action: #selector(self.changeColor(sender:)), for: .touchUpInside)
-                self.contentView.addSubview(buttons[index])
+                self.stack.addArrangedSubview(buttons[index])
+
             }
 
             if colors.contains(ColorScheme.tintColor) {
@@ -68,6 +60,13 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
         button.tintColor = .clear
 
         button.setImage(UIImage(systemName: "checkmark"), for: .init())
+
+        NSLayoutConstraint.activate([
+                      button.widthAnchor.constraint(equalToConstant: buttonDiameter)
+        ])
+        NSLayoutConstraint.activate([
+                      button.heightAnchor.constraint(equalToConstant: buttonDiameter)
+        ])
 
         return button
     }
