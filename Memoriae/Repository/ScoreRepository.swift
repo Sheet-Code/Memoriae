@@ -23,7 +23,7 @@ final class ScoreRepositoryImpl {
         }
     }
 
-    static func saveAnswers(right: Int, level: Level, difficulty: Double, questions: [Question]) {
+    static func saveAnswers(points: Double, level: Level, difficulty: Double) {
 
         let repo = ScoreRepositoryImpl()
         let lastId: Int
@@ -47,7 +47,7 @@ final class ScoreRepositoryImpl {
             lastId = curId
         }
 
-        let score = Score(id: lastId + 1, levelId: level.id, points: Double(right * 100) / Double(questions.count), difficulty: Double(difficulty))
+        let score = Score(id: lastId + 1, levelId: level.id, points: points, difficulty: Double(difficulty))
 
         let bestStored = repo.get(levelId: level.id, difficulty: difficulty)
 

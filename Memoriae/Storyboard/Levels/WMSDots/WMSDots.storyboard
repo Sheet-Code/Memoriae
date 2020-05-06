@@ -17,7 +17,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j22-Ic-bv4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-Ff-Vh5">
+                                        <rect key="frame" x="192" y="609" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Exit">
+                                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exit:" destination="hqo-Ym-vYw" eventType="touchUpInside" id="wEc-O7-ByU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ftg-Ff-Vh5" firstAttribute="centerX" secondItem="j22-Ic-bv4" secondAttribute="centerX" id="A5u-wG-fhR"/>
+                                    <constraint firstAttribute="bottom" secondItem="ftg-Ff-Vh5" secondAttribute="bottom" constant="179" id="RsI-PR-pFJ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -31,6 +46,7 @@
                     </view>
                     <connections>
                         <outlet property="dotsView" destination="j22-Ic-bv4" id="4b5-if-uXg"/>
+                        <outlet property="exitButton" destination="ftg-Ff-Vh5" id="wrc-O7-VkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMF-y2-mut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

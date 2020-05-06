@@ -92,18 +92,7 @@ class TOMMPictureAnswersViewController: UIViewController {
             return
         }
         
-        ScoreRepositoryImpl.saveAnswers(right: right, level: nNlevel, difficulty: nNdifficulty, questions: questions)
-        
-        //        let repo = ScoreRepositoryImpl()
-        //        guard let points = repo.get().last?.points else {
-        //            return
-        //        }
-        //
-        //                let alert = UIAlertController(title: "Results sent",
-        //                                              message: String(points),
-        //                                              preferredStyle: UIAlertController.Style.alert)
-        //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        //                self.present(alert, animated: true, completion: nil)
+        ScoreRepositoryImpl.saveAnswers(points: Double(right * 100) / Double(questions.count), level: nNlevel, difficulty: nNdifficulty)
         
         for index in 0...table.numberOfRows(inSection: 0) - 1 {
             
