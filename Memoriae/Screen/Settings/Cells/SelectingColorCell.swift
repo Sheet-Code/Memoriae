@@ -37,13 +37,9 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
 
             }
 
-            if colors.contains(ColorScheme.tintColor) {
-
-                for index in 0 ... colors.count - 1 where colors[index] == ColorScheme.tintColor {
-
+            for index in 0 ... colors.count - 1 where colors[index].cgColor == ColorScheme.tintColor.cgColor {
                     selectButton(buttons[index])
                 }
-            }
 
         default:
 
@@ -79,8 +75,21 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
             return
         }
 
-        ColorScheme.tintColor = color
-        print(ColorScheme.tintColor)
+        ColorScheme.changeColor(to: color)
+
+        let alert = UIAlertController(title: "New color",
+                                      message: "To apply changes reopen the application",
+                                      preferredStyle: .actionSheet)
+
+        let deleteAction = UIAlertAction(title: "Close", style: .cancel, handler: { _ in
+            ScoreRepositoryImpl.clear()
+        })
+
+        deleteAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+
+        alert.addAction(deleteAction)
+
+        parentViewController?.present(alert, animated: true, completion: nil)
     }
 
     func selectButton(_ button: UIButton) {
