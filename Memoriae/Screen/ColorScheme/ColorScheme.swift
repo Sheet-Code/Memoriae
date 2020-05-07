@@ -15,7 +15,6 @@ enum ColorScheme {
         let theme = ThemeRepositoryImpl.get()
         if theme != nil {
 
-            print()
             return UIColor.color(withCodedString: theme?.tintColor ?? "") ?? UIColor.systemOrange
 
         } else {

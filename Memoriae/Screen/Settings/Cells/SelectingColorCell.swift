@@ -81,11 +81,9 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
                                       message: "To apply changes reopen the application",
                                       preferredStyle: .actionSheet)
 
-        let deleteAction = UIAlertAction(title: "Close", style: .cancel, handler: { _ in
-            ScoreRepositoryImpl.clear()
-        })
+        let deleteAction = UIAlertAction(title: "Close", style: .default, handler: nil)
 
-        deleteAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+        deleteAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
 
         alert.addAction(deleteAction)
 

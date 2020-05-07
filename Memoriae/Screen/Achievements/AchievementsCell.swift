@@ -37,6 +37,9 @@ class AchievementsCell: UITableViewCell {
     @IBOutlet private var title: UILabel!
     @IBOutlet private var picture: UIImageView!
 
+    @IBOutlet private var minLabel: UILabel!
+    @IBOutlet private var maxLabel: UILabel!
+
     override func prepareForReuse() {
         super.prepareForReuse()
         picture.image = nil
@@ -53,6 +56,9 @@ class AchievementsCell: UITableViewCell {
 
         title.text = level.title
         picture.layer.cornerRadius = 8.0
+
+        minLabel.textColor = ColorScheme.tintColor
+        maxLabel.textColor = ColorScheme.tintColor
 
         title.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: AchievementsCell.border).isActive = true
         title.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: AchievementsCell.border).isActive = true
@@ -122,7 +128,7 @@ class AchievementsCell: UITableViewCell {
 
         let progressView = UIProgressView()
 
-        progressView.progressTintColor = .systemOrange
+        progressView.progressTintColor = ColorScheme.tintColor
         progressView.trackTintColor = .systemGray5
         progressView.layer.cornerRadius = 6.5
         progressView.clipsToBounds = true

@@ -94,8 +94,8 @@ class TOMMAnswerCell: UITableViewCell {
     }
     
     func buttonSetup(button: UIButton) {
-        button.setTitleColor(.systemOrange, for: .init())
-        button.tintColor = .systemOrange
+        button.setTitleColor(ColorScheme.tintColor, for: .init())
+        button.tintColor = ColorScheme.tintColor
         button.addTarget(self, action: #selector(TOMMAnswerCell.pressed(sender:)), for: .touchUpInside)
     }
     

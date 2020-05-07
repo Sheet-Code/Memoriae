@@ -396,6 +396,7 @@
                         <outlet property="difficultyLabel" destination="Tqc-QE-fIc" id="KBP-Sh-2oj"/>
                         <outlet property="difficultySlider" destination="09G-a6-vUT" id="xNb-pF-DEz"/>
                         <outlet property="image" destination="M0q-Dy-aMo" id="FlN-mk-l1n"/>
+                        <outlet property="startButton" destination="UQh-Rd-MyP" id="tx5-dB-4w6"/>
                         <outlet property="task" destination="utn-En-ctY" id="SNu-Bq-M7C"/>
                     </connections>
                 </viewController>
@@ -474,6 +475,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="maxLabel" destination="9wT-zb-hXl" id="1Fa-c4-PIc"/>
+                                    <outlet property="minLabel" destination="Msz-A4-TKU" id="ab3-yA-Cg2"/>
                                     <outlet property="picture" destination="Q26-NC-8n3" id="oJb-Vi-gef"/>
                                     <outlet property="title" destination="p9P-5B-cHw" id="0PU-k0-YsC"/>
                                 </connections>
@@ -509,7 +512,7 @@
             <point key="canvasLocation" x="-384" y="301"/>
         </scene>
     </scenes>
-    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="book" catalog="system" width="128" height="101"/>
         <image name="gear" catalog="system" width="128" height="119"/>

@@ -20,6 +20,8 @@ class LevelPreviewController: UIViewController {
     @IBOutlet private var difficultySlider: UISlider!
     @IBOutlet private var difficultyLabel: UILabel!
 
+    @IBOutlet private var startButton: UIButton!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let nNLevel = level else {
@@ -45,6 +47,8 @@ class LevelPreviewController: UIViewController {
         image.layer.cornerRadius = 8.0
         image.clipsToBounds = true
 
+        startButton.setTitleColor(ColorScheme.tintColor, for: .init())
+        difficultyLabel.textColor = ColorScheme.tintColor
     }
 
     @IBAction private func startTest(_ sender: Any) {

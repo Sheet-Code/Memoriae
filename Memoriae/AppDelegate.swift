@@ -12,10 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
         let repo = ScoreRepositoryImpl()
         if repo.count() == 0 {
             repo.clear()
         }
+
+        UINavigationBar.appearance().tintColor = ColorScheme.tintColor
+        UIToolbar.appearance().tintColor = ColorScheme.tintColor
+        UISlider.appearance().tintColor = ColorScheme.tintColor
+        UITabBar.appearance().tintColor = ColorScheme.tintColor
+        UIButton.appearance().tintColor = ColorScheme.tintColor
+        UIProgressView.appearance().tintColor = ColorScheme.tintColor
+
         return true
     }
 

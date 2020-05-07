@@ -108,14 +108,13 @@ extension SettingsViewController: UITableViewDataSource {
                                       message: "This action cannot be undone. All records of completed levels will be deleted",
                                       preferredStyle: .actionSheet)
 
-        let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: { _ in
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
             ScoreRepositoryImpl.clear()
         })
 
         let canсelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-        canсelAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
-        deleteAction.setValue(UIColor.systemRed, forKey: "titleTextColor")
+        canсelAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
 
         alert.addAction(deleteAction)
         alert.addAction(canсelAction)

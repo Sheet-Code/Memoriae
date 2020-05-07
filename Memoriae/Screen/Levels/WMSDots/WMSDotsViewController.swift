@@ -24,7 +24,7 @@ class WMSDotsViewController: UIViewController, LevelViewController {
     private let highlightInterval = 0.8
 
     private let inactiveDotColor = UIColor.systemGray4
-    private let activeDotColor = UIColor.systemOrange
+    private let activeDotColor = ColorScheme.tintColor
 
     private var timerIndex = 0
 
@@ -44,7 +44,7 @@ class WMSDotsViewController: UIViewController, LevelViewController {
 
         exitButton.isHidden = true
         exitButton.setTitleColor(dotsView.backgroundColor, for: .init())
-        exitButton.tintColor = .systemOrange
+        exitButton.tintColor = ColorScheme.tintColor
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -96,7 +96,7 @@ class WMSDotsViewController: UIViewController, LevelViewController {
     @objc func pressed(sender: IndexedUIButton) {
 
         UIView.animate(withDuration: animationIntroDuration, animations: {
-            sender.backgroundColor = .systemOrange
+            sender.backgroundColor = ColorScheme.tintColor
         })
 
         sender.isEnabled = false
@@ -127,7 +127,7 @@ class WMSDotsViewController: UIViewController, LevelViewController {
 
         for index in 0 ... dots.count - 1 {
 
-            dots[index].tintColor = .systemOrange
+            dots[index].tintColor = ColorScheme.tintColor
         }
     }
 

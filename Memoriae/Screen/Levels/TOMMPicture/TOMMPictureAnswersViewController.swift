@@ -25,6 +25,10 @@ class TOMMPictureAnswersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        submitButton.setTitleColor(ColorScheme.tintColor, for: .init())
+        exitButton.setTitleColor(ColorScheme.tintColor, for: .init())
+
         guard let questions = currentTarget?.questions else {
             return
         }
@@ -66,7 +70,7 @@ class TOMMPictureAnswersViewController: UIViewController {
                                               message: "Question number " + (String(index + 1) + " is not answered"),
                                               preferredStyle: UIAlertController.Style.alert)
                 let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-                alertAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                alertAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
                 alert.addAction(alertAction)
                 self.present(alert, animated: true, completion: nil)
                 return
