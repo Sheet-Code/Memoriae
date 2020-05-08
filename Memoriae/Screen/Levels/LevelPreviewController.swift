@@ -39,6 +39,9 @@ class LevelPreviewController: UIViewController {
         difficultySlider.minimumValue = 0
         difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000_001
 
+        startButton.setTitleColor(ColorScheme.tintColor, for: .init())
+        difficultyLabel.textColor = ColorScheme.tintColor
+
         guard let pic = level?.picture else {
             return
         }
@@ -46,9 +49,6 @@ class LevelPreviewController: UIViewController {
         image.image = UIImage(named: pic)
         image.layer.cornerRadius = 8.0
         image.clipsToBounds = true
-
-        startButton.setTitleColor(ColorScheme.tintColor, for: .init())
-        difficultyLabel.textColor = ColorScheme.tintColor
     }
 
     @IBAction private func startTest(_ sender: Any) {

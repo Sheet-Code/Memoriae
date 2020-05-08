@@ -135,5 +135,13 @@
         "task" : "Dots appear on the screen in random order. Then they will light up in a certain sequence. You must carefully observe the sequence that the computer demonstrates. Then you will have to remember and accurately reproduce the presented series.",
         "description" : "Memorization highlighted dots order",
         "picture" : "wms_dots_preview"
+    },
+    {
+        "id" : 3,
+        "title" : "????????",
+        "kind" : "WMSAreas",
+        "task" : "Do this shit",
+        "description" : "nobody knows wtf is this",
+        "picture" : null
     }
 ]
