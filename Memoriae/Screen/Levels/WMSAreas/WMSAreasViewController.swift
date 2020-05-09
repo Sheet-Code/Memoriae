@@ -28,10 +28,11 @@ class WMSAreasViewController: UIViewController, LevelViewController {
     private var selectSummaryCounter = 0.0
     private var correctTapSummaryCounter = 0.0
 
-    // MARK: Colors
+    // MARK: Customising
 
     private let notEvenButtonColor = UIColor.systemGray4
     private let evenButtonColor = UIColor.systemGray5
+    private let buttonCornerRadius = CGFloat(40)
 
     // MARK: Level & Score
 
@@ -55,46 +56,26 @@ class WMSAreasViewController: UIViewController, LevelViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var light = false
-
-        for index in 0 ... areasInStackCount - 1 {
+        for index in 0 ... areasInStackCount * 2 - 1 {
 
             let button = IndexedUIButton(type: .system)
-            leftStack.addArrangedSubview(button)
 
-            if light {
-                button.backgroundColor = notEvenButtonColor
+            if index < areasInStackCount {
+                leftStack.addArrangedSubview(button)
             } else {
-                button.backgroundColor = evenButtonColor
+                rightStack.addArrangedSubview(button)
             }
 
             buttons.append(button)
             button.setIndex(index: index)
-            button.addTarget(self, action: #selector(WMSAreasViewController.tap(sender:)), for: .touchDown)
-            button.addTarget(self, action: #selector(WMSAreasViewController.untap(sender:)), for: .touchUpInside)
-
-            light.toggle()
         }
+    }
 
-        light.toggle()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        for index in 0 ... areasInStackCount - 1 {
-
-            let button = IndexedUIButton(type: .system)
-            rightStack.addArrangedSubview(button)
-
-            if light {
-                button.backgroundColor = notEvenButtonColor
-            } else {
-                button.backgroundColor = evenButtonColor
-            }
-
-            buttons.append(button)
-            button.setIndex(index: index + areasInStackCount)
-            button.addTarget(self, action: #selector(WMSAreasViewController.tap(sender:)), for: .touchDown)
-            button.addTarget(self, action: #selector(WMSAreasViewController.untap(sender:)), for: .touchUpInside)
-
-            light.toggle()
+        for index in 0 ... buttons.count - 1 {
+            customiseButton(buttons[index], animated: false)
         }
     }
 
@@ -156,7 +137,8 @@ class WMSAreasViewController: UIViewController, LevelViewController {
                                             style: UIAlertAction.Style.default,
                                             handler: { _ in
                                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                                                guard let newViewController = storyBoard.instantiateViewController(identifier: "entry") as? UITabBarController else {
+                                                guard let newViewController = storyBoard.instantiateViewController(identifier: "entry")
+                                                    as? UITabBarController else {
                                                     return
                                                 }
                                                 self.navigationController?.pushViewController(newViewController, animated: true)
@@ -274,5 +256,43 @@ class WMSAreasViewController: UIViewController, LevelViewController {
     @objc func untap(sender: IndexedUIButton) {
 
         currentTappedIndex = nil
+    }
+
+    func customiseButton(_ button: IndexedUIButton, animated: Bool) {
+
+        if animated {
+            UIView.animate(withDuration: animationIntroDuration, animations: {
+                button.layer.cornerRadius = self.buttonCornerRadius
+                button.clipsToBounds = true
+            })
+        } else {
+            button.layer.cornerRadius = buttonCornerRadius
+            button.clipsToBounds = true
+        }
+
+        button.addTarget(self, action: #selector(WMSAreasViewController.tap(sender:)), for: .touchDown)
+        button.addTarget(self, action: #selector(WMSAreasViewController.untap(sender:)), for: .touchUpInside)
+
+        guard var index = button.getIndex() else {
+            return
+        }
+
+        if index > areasInStackCount - 1 {
+            index += 1
+        }
+
+        var backgroundColor = evenButtonColor
+
+        if !index.isEven() {
+            backgroundColor = notEvenButtonColor
+        }
+
+        if animated {
+            UIView.animate(withDuration: animationIntroDuration, animations: {
+                button.backgroundColor = backgroundColor
+            })
+        } else {
+            button.backgroundColor = backgroundColor
+        }
     }
 }

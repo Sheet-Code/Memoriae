@@ -198,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4B81B72465C6F4003839F8 /* WMSAreasViewController.swift */,
+				0B4B81B92465D615003839F8 /* Int.swift */,
 			);
 			path = WMSAreas;
 			sourceTree = "<group>";
@@ -311,7 +312,6 @@
 				0B96E89F2455B2E30017E0D7 /* Model */,
 				0BC1FCD62433BA88002161A1 /* AppDelegate.swift */,
 				0BC1FCD82433BA88002161A1 /* SceneDelegate.swift */,
-				0B4B81B92465D615003839F8 /* Int.swift */,
 				0BC1FCDF2433BA89002161A1 /* Assets.xcassets */,
 				0BC1FCE42433BA89002161A1 /* Info.plist */,
 			);
