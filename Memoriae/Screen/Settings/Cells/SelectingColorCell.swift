@@ -79,7 +79,7 @@ class SelectingColorCell: UITableViewCell, SettingsCell {
 
         let alert = UIAlertController(title: "New color",
                                       message: "To apply changes reopen the application",
-                                      preferredStyle: .actionSheet)
+                                      preferredStyle: .alert)
 
         let deleteAction = UIAlertAction(title: "Close", style: .default, handler: nil)
 

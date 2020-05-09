@@ -106,7 +106,7 @@ extension SettingsViewController: UITableViewDataSource {
 
         let alert = UIAlertController(title: "Delete all progress?",
                                       message: "This action cannot be undone. All records of completed levels will be deleted",
-                                      preferredStyle: .actionSheet)
+                                      preferredStyle: .alert)
 
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
             ScoreRepositoryImpl.clear()
