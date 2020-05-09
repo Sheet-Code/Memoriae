@@ -138,10 +138,10 @@
     },
     {
         "id" : 3,
-        "title" : "????????",
+        "title" : "Attentiveness",
         "kind" : "WMSAreas",
-        "task" : "Do this shit",
-        "description" : "nobody knows wtf is this",
-        "picture" : null
+        "task" : "The screen is divided into zones in which light signals will appear. When the zone is highlighted, you need to tap on this zone as soon as possible. As soon as the selection disappears, you need to pause tapping until the next signal.",
+        "description" : "Careful tracking of areas on the screen",
+        "picture" : "wms_areas_preview"
     }
 ]
