@@ -110,7 +110,7 @@ class WMSAreasViewController: UIViewController, LevelViewController {
         self.difficultyIndex = difficultyIndex
         selectDuration = commonSelectDuration * Double(Difficulty.multipliers[difficultyIndex])
         intervalDuration = commonIntervalDuration
-        selectedButtonsCount = Int (testTime / (selectDuration! + intervalDuration!))
+        selectedButtonsCount = Int(testTime / (selectDuration! + intervalDuration!))
     }
 
     func startTest() {
@@ -139,6 +139,32 @@ class WMSAreasViewController: UIViewController, LevelViewController {
             }
 
             selectSummaryCounter -= animationIntroDuration * 2 * Double(selectedCount)
+
+            guard let nNlevel = level, let nNDifficultyIndex = difficultyIndex else {
+                return
+            }
+
+            ScoreRepositoryImpl.saveAnswers(points: Double(100 * correctTapSummaryCounter / selectSummaryCounter),
+                                            level: nNlevel,
+                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+
+            let alert = UIAlertController(title: "Score",
+                                          message: "You scored " + String(Int(100 * correctTapSummaryCounter / selectSummaryCounter)) + " of 100",
+                                          preferredStyle: UIAlertController.Style.alert)
+
+            let alertAction = UIAlertAction(title: "Exit",
+                                            style: UIAlertAction.Style.default,
+                                            handler: { _ in
+                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                guard let newViewController = storyBoard.instantiateViewController(identifier: "entry") as? UITabBarController else {
+                                                    return
+                                                }
+                                                self.navigationController?.pushViewController(newViewController, animated: true)
+            })
+            alertAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
+            alert.addAction(alertAction)
+            self.present(alert, animated: true, completion: nil)
+            return
 
         } else {
 
