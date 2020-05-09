@@ -32,6 +32,7 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
     private let notEvenButtonColor = UIColor.systemGray4
     private let evenButtonColor = UIColor.systemGray5
+    private let brightnessTermWhileTapped = CGFloat(0.1)
     private let buttonCornerRadius = CGFloat(40)
 
     // MARK: Level & Score
@@ -41,7 +42,7 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
     // MARK: Stacks & Buttons
 
-    private let areasInStackCount = 4
+    private let areasInStackCount = 5
     private let commonSelectedButtonsCount = 10
     private var selectedButtonsCount: Int?
 
@@ -158,16 +159,6 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
     }
 
-    func tapButton(index: Int) {
-
-        if buttons.count > index {
-
-            UIView.animate(withDuration: animationIntroDuration,
-                           animations: {
-            })
-        }
-    }
-
     func highlightButton(index: Int) {
 
         if buttons.count > index {
@@ -183,20 +174,26 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
         if buttons.count > index {
 
+            var colorIndex = index
+
+            if colorIndex > self.areasInStackCount - 1 {
+                colorIndex += 1
+            }
+
+            var backgroundColor = self.evenButtonColor
+
+            if !colorIndex.isEven() {
+                backgroundColor = self.notEvenButtonColor
+            }
+
+            if currentTappedIndex == index {
+
+                backgroundColor = backgroundColor.modified(withAdditionalHue: 0.0, additionalSaturation: 0.0, additionalBrightness: brightnessTermWhileTapped)
+            }
+
             UIView.animate(withDuration: animationIntroDuration,
                            animations: {
-
-                            var colorIndex = index
-
-                            if colorIndex > self.areasInStackCount - 1 {
-                                colorIndex += 1
-                            }
-
-                            if colorIndex.isEven() {
-                                self.buttons[index].backgroundColor = self.evenButtonColor
-                            } else {
-                                self.buttons[index].backgroundColor = self.notEvenButtonColor
-                            }
+                                self.buttons[index].backgroundColor = backgroundColor
             })
         }
     }
@@ -247,15 +244,21 @@ class WMSAreasViewController: UIViewController, LevelViewController {
             return
         }
 
-        tapButton(index: index)
-
         currentTappedIndex = index
         isTappedJustNow = true
+
+        sender.backgroundColor = sender.backgroundColor?.modified(withAdditionalHue: 0.0,
+                                                                  additionalSaturation: 0.0,
+                                                                  additionalBrightness: brightnessTermWhileTapped)
     }
 
     @objc func untap(sender: IndexedUIButton) {
 
         currentTappedIndex = nil
+
+        sender.backgroundColor = sender.backgroundColor?.modified(withAdditionalHue: 0.0,
+                                                                  additionalSaturation: 0.0,
+                                                                  additionalBrightness: -brightnessTermWhileTapped)
     }
 
     func customiseButton(_ button: IndexedUIButton, animated: Bool) {
