@@ -112,7 +112,7 @@ final class ScoreRepositoryImpl {
 
     func clear() {
         try? realm.write {
-            realm.deleteAll()
+            realm.delete(get())
         }
 
         guard let levels = ResourcesManager.getLevels() else {
