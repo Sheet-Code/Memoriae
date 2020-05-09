@@ -174,17 +174,7 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
         if buttons.count > index {
 
-            var colorIndex = index
-
-            if colorIndex > self.areasInStackCount - 1 {
-                colorIndex += 1
-            }
-
-            var backgroundColor = self.evenButtonColor
-
-            if !colorIndex.isEven() {
-                backgroundColor = self.notEvenButtonColor
-            }
+            var backgroundColor = self.backgroundColor(index: index)
 
             if currentTappedIndex == index {
 
@@ -276,26 +266,31 @@ class WMSAreasViewController: UIViewController, LevelViewController {
         button.addTarget(self, action: #selector(WMSAreasViewController.tap(sender:)), for: .touchDown)
         button.addTarget(self, action: #selector(WMSAreasViewController.untap(sender:)), for: .touchUpInside)
 
-        guard var index = button.getIndex() else {
+        guard let index = button.getIndex() else {
             return
-        }
-
-        if index > areasInStackCount - 1 {
-            index += 1
-        }
-
-        var backgroundColor = evenButtonColor
-
-        if !index.isEven() {
-            backgroundColor = notEvenButtonColor
         }
 
         if animated {
             UIView.animate(withDuration: animationIntroDuration, animations: {
-                button.backgroundColor = backgroundColor
+                button.backgroundColor = self.backgroundColor(index: index)
             })
         } else {
-            button.backgroundColor = backgroundColor
+            button.backgroundColor = backgroundColor(index: index)
+        }
+    }
+
+    func backgroundColor(index: Int) -> UIColor {
+
+        var index = index
+
+        if (index > areasInStackCount - 1) && (areasInStackCount.isEven()) {
+            index += 1
+        }
+
+        if index.isEven() {
+            return evenButtonColor
+        } else {
+            return notEvenButtonColor
         }
     }
 }
