@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WMSAreas-->
+        <scene sceneID="bjd-5C-dwB">
+            <objects>
+                <viewController storyboardIdentifier="WMSAreasViewController" title="WMSAreas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1bN-zY-dye" customClass="WMSAreasViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wZR-0W-m1I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iMB-no-iV0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-Dy-13Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="203" height="818"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cfD-0u-fgs">
+                                        <rect key="frame" x="211" y="0.0" width="203" height="818"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iMB-no-iV0" firstAttribute="leading" secondItem="yqk-bl-6qE" secondAttribute="leading" id="6Qq-k5-Sro"/>
+                            <constraint firstItem="iMB-no-iV0" firstAttribute="top" secondItem="yqk-bl-6qE" secondAttribute="top" id="KDG-bY-hjY"/>
+                            <constraint firstItem="iMB-no-iV0" firstAttribute="trailing" secondItem="yqk-bl-6qE" secondAttribute="trailing" id="Tj2-ls-nDO"/>
+                            <constraint firstItem="iMB-no-iV0" firstAttribute="bottom" secondItem="yqk-bl-6qE" secondAttribute="bottom" id="nVV-Fo-vIk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yqk-bl-6qE"/>
+                    </view>
+                    <connections>
+                        <outlet property="leftStack" destination="DwI-Dy-13Q" id="BTR-65-mqB"/>
+                        <outlet property="rightStack" destination="cfD-0u-fgs" id="37H-hK-4cT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOo-lE-4gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+</document>

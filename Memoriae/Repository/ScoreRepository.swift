@@ -9,13 +9,10 @@
 import RealmSwift
 
 protocol ScoreRepository {
-    func save(_ posts: [Score])
-    func get() -> Results<Score>
-    func count() -> Int
-    func clear()
+    static func saveAnswers(right: Int, level: Level, difficulty: Double, questions: [Question])
+    static func getScores(levelId: Int) -> [Score]?
+    static func clear()
 }
-
-let kmaxStoredScoresPerLevel = 10
 
 final class ScoreRepositoryImpl {
     var realm: Realm {
@@ -26,12 +23,11 @@ final class ScoreRepositoryImpl {
         }
     }
 
-    static func saveAnswers(right: Int, level: Level, difficulty: Float, questions: [Question]) {
+    static func saveAnswers(points: Double, level: Level, difficulty: Double) {
 
         let repo = ScoreRepositoryImpl()
         let lastId: Int
-
-        var storedScores = repo.get(levelId: level.id)
+        let storedScores = repo.get(levelId: level.id)
 
         if repo.get().last == nil {
 
@@ -42,37 +38,51 @@ final class ScoreRepositoryImpl {
             let max = storedScores.max { lhs, rhs in
                 lhs.id < rhs.id
             }
-
+            
             guard let maxById = max else {
                 return
             }
-
-            print("MAX: " + String(maxById.id))
 
             let curId = maxById.id
             lastId = curId
         }
 
-        let score = Score(id: lastId + 1, levelId: level.id, points: Double(right * 100) / Double(questions.count), difficulty: Double(difficulty))
+        let score = Score(id: lastId + 1, levelId: level.id, points: points, difficulty: Double(difficulty))
 
-        repo.save(scores: [score])
+        let bestStored = repo.get(levelId: level.id, difficulty: difficulty)
 
-        storedScores = repo.get(levelId: level.id)
+        if bestStored.isEmpty {
 
-        if storedScores.count > kmaxStoredScoresPerLevel {
+            repo.save(scores: [score])
 
-            let min = storedScores.min { lhs, rhs in
-                lhs.id < rhs.id
+        } else {
+
+            let best = bestStored[0]
+
+            if best.points < score.points {
+
+                score.id = best.id
+
+                repo.delete(scores: [best])
+                repo.save(scores: [score])
             }
-
-            guard let minById = min else {
-                return
-            }
-
-            print("MIN: " + String(minById.id))
-
-            repo.delete(scores: [minById])
         }
+    }
+
+    static func getScores(levelId: Int) -> [Score]? {
+        let repo = ScoreRepositoryImpl()
+        let res = Array(repo.get(levelId: levelId))
+
+        if res.isEmpty {
+            return nil
+        } else {
+            return res
+        }
+    }
+
+    static func clear() {
+        let repo = ScoreRepositoryImpl()
+        repo.clear()
     }
 
     func save(scores: [Score]) {
@@ -96,9 +106,28 @@ final class ScoreRepositoryImpl {
         realm.objects(Score.self).filter("levelId == %@", levelId)
     }
 
+    func get(levelId: Int, difficulty: Double) -> [Score] {
+        get(levelId: levelId).filter({ $0.difficulty == difficulty })
+    }
+
     func clear() {
         try? realm.write {
-            realm.deleteAll()
+            realm.delete(get())
+        }
+
+        guard let levels = ResourcesManager.getLevels() else {
+            return
+        }
+
+        for levelIndex in 0...levels.count - 1 {
+            for difficultyIndex in 0...Difficulty.multipliers.count - 1 {
+                save(scores: [
+                    Score(id: levelIndex * Difficulty.multipliers.count + difficultyIndex,
+                          levelId: levels[levelIndex].id,
+                          points: 0,
+                          difficulty: Double(Difficulty.multipliers[difficultyIndex]))
+                ])
+            }
         }
     }
 

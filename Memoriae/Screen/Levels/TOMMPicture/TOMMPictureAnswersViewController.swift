@@ -11,7 +11,7 @@ import UIKit
 class TOMMPictureAnswersViewController: UIViewController {
     
     private var level: Level?
-    private var difficulty: Float?
+    private var difficulty: Double?
     private var targetNumber: Int?
     private var currentTarget: TOMMPictureSet?
 
@@ -25,6 +25,10 @@ class TOMMPictureAnswersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        submitButton.setTitleColor(ColorScheme.tintColor, for: .init())
+        exitButton.setTitleColor(ColorScheme.tintColor, for: .init())
+
         guard let questions = currentTarget?.questions else {
             return
         }
@@ -66,7 +70,7 @@ class TOMMPictureAnswersViewController: UIViewController {
                                               message: "Question number " + (String(index + 1) + " is not answered"),
                                               preferredStyle: UIAlertController.Style.alert)
                 let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-                alertAction.setValue(UIColor.systemOrange, forKey: "titleTextColor")
+                alertAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
                 alert.addAction(alertAction)
                 self.present(alert, animated: true, completion: nil)
                 return
@@ -92,18 +96,7 @@ class TOMMPictureAnswersViewController: UIViewController {
             return
         }
         
-        ScoreRepositoryImpl.saveAnswers(right: right, level: nNlevel, difficulty: nNdifficulty, questions: questions)
-        
-        //        let repo = ScoreRepositoryImpl()
-        //        guard let points = repo.get().last?.points else {
-        //            return
-        //        }
-        //
-        //                let alert = UIAlertController(title: "Results sent",
-        //                                              message: String(points),
-        //                                              preferredStyle: UIAlertController.Style.alert)
-        //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        //                self.present(alert, animated: true, completion: nil)
+        ScoreRepositoryImpl.saveAnswers(points: Double(right * 100) / Double(questions.count), level: nNlevel, difficulty: nNdifficulty)
         
         for index in 0...table.numberOfRows(inSection: 0) - 1 {
             
@@ -159,7 +152,7 @@ class TOMMPictureAnswersViewController: UIViewController {
         answers?[index]
     }
 
-    func setTestDetails(level: Level?, difficulty: Float?, targetNumber: Int?, currentTarget: TOMMPictureSet?) {
+    func setTestDetails(level: Level?, difficulty: Double?, targetNumber: Int?, currentTarget: TOMMPictureSet?) {
 
         self.level = level
         self.difficulty = difficulty

@@ -10,7 +10,6 @@
         <!--TOMM Picture Answers-->
         <scene sceneID="kJ8-sD-Zxj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lsZ-Kx-Zqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TOMMPictureAnswersViewController" title="TOMM Picture Answers" id="0hW-au-ZfN" customClass="TOMMPictureAnswersViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="649-sS-ngf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -20,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TOMMAnswerCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TOMMAnswerCell" rowHeight="247" id="DGo-xN-9BI" customClass="TOMMAnswerCell" customModule="Memoriae">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TOMMAnswerCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TOMMAnswerCell" rowHeight="247" id="DGo-xN-9BI" customClass="TOMMAnswerCell" customModule="Memoriae">
                                         <rect key="frame" x="0.0" y="28" width="414" height="247"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DGo-xN-9BI" id="GXv-9k-leI">
@@ -95,6 +94,7 @@
                         <outlet property="table" destination="6X0-xx-Lad" id="fTK-Jk-g69"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lsZ-Kx-Zqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1096" y="-2172"/>
         </scene>

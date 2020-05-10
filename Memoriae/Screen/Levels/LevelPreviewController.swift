@@ -20,6 +20,8 @@ class LevelPreviewController: UIViewController {
     @IBOutlet private var difficultySlider: UISlider!
     @IBOutlet private var difficultyLabel: UILabel!
 
+    @IBOutlet private var startButton: UIButton!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let nNLevel = level else {
@@ -30,13 +32,6 @@ class LevelPreviewController: UIViewController {
         task.text = nNLevel.task
         descript.text = nNLevel.description
         self.tabBarController?.tabBar.isHidden = true
-        guard let pic = level?.picture else {
-            return
-        }
-
-        image.image = UIImage(named: pic)
-        image.layer.cornerRadius = 8.0
-        image.clipsToBounds = true
 
         difficultyLabel.text = Difficulty.standardName
 
@@ -44,6 +39,16 @@ class LevelPreviewController: UIViewController {
         difficultySlider.minimumValue = 0
         difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000_001
 
+        startButton.setTitleColor(ColorScheme.tintColor, for: .init())
+        difficultyLabel.textColor = ColorScheme.tintColor
+
+        guard let pic = level?.picture else {
+            return
+        }
+
+        image.image = UIImage(named: pic)
+        image.layer.cornerRadius = 8.0
+        image.clipsToBounds = true
     }
 
     @IBAction private func startTest(_ sender: Any) {
@@ -55,7 +60,7 @@ class LevelPreviewController: UIViewController {
             return
         }
 
-        newViewController.setTest(level: level, difficulty: Difficulty.multipliers[Int(difficultySlider.value)])
+        newViewController.setTest(level: level, difficultyIndex: Int(difficultySlider.value))
         navigationController?.pushViewController(newViewController, animated: true)
         self.navigationController?.isNavigationBarHidden = true
     }
