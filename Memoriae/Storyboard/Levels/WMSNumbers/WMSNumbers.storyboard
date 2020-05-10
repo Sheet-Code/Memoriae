@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBw-RN-Zn1">
-                                <rect key="frame" x="132" y="328" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBw-RN-Zn1">
+                                <rect key="frame" x="107" y="125" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HUD-5N-loH"/>
+                                    <constraint firstAttribute="width" constant="200" id="oIa-6d-PV2"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -29,195 +32,189 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="huisosatWithSender:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="cpD-ei-KJ9"/>
+                                    <action selector="startGameWithSender:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="THQ-TT-mj1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDk-0B-JxR" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="323" y="457" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLj-FN-ka8">
+                                <rect key="frame" x="45" y="490" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="0Tw-ya-8IJ"/>
+                                    <constraint firstAttribute="width" constant="75" id="ufO-fW-ohC"/>
+                                </constraints>
                                 <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="ymI-TK-Pnb"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJy-dS-RS9" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="323" y="230" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEm-hl-2Au">
+                                <rect key="frame" x="128" y="490" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="EWy-jF-tI1"/>
+                                    <constraint firstAttribute="width" constant="75" id="XzG-pN-eq2"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="hbo-v6-XI7"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-Vg-8h0" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="323" y="308" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTM-d3-iDC">
+                                <rect key="frame" x="211" y="490" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button8">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="IQB-Me-IpZ"/>
+                                    <constraint firstAttribute="width" constant="75" id="XH8-Ly-rth"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="AMr-97-147"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-7R-IDJ" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="35" y="307" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWi-MC-eA3">
+                                <rect key="frame" x="294" y="490" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="FIW-5b-fBo"/>
+                                    <constraint firstAttribute="height" constant="75" id="KRo-4u-4uF"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="5Gj-6L-3wf"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYU-fa-EaS" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="35" y="457" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-ll-Eak">
+                                <rect key="frame" x="45" y="573" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="YIc-or-nEg"/>
+                                    <constraint firstAttribute="height" constant="75" id="cwi-TF-lt9"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="eFO-X6-wKM"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mM6-qz-mW2">
-                                <rect key="frame" x="35" y="541" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbt-ay-Dcd">
+                                <rect key="frame" x="128" y="573" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="0Ng-Ud-Fqs"/>
+                                    <constraint firstAttribute="height" constant="75" id="IvG-Fg-stn"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="FDY-Ys-VVO"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xt-aB-ZDB" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="35" y="383" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-cr-Gdh">
+                                <rect key="frame" x="128" y="656" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="rDW-QV-FKF"/>
+                                    <constraint firstAttribute="height" constant="75" id="rpS-wE-nlJ"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="ZbV-NL-xMR"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh9-8K-Lvz" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="35" y="230" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ8-LW-0t4">
+                                <rect key="frame" x="211" y="656" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Fs3-Ja-GV2"/>
+                                    <constraint firstAttribute="width" constant="75" id="jXT-sx-T2w"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="nxU-Qn-2ch"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPC-4M-cxj" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="323" y="541" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-fu-mMw">
+                                <rect key="frame" x="132" y="780" width="150" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZSP-yh-PfF"/>
+                                    <constraint firstAttribute="width" constant="150" id="wlB-EX-NYD"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="Dva-nV-SwY"/>
+                                    <action selector="exit:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="9vx-BI-a8W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KN-Fj-AnQ" customClass="IndexedUIButton" customModule="Memoriae" customModuleProvider="target">
-                                <rect key="frame" x="323" y="382" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HA4-Mk-faP">
+                                <rect key="frame" x="294" y="573" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="jdp-qF-mQm"/>
+                                    <constraint firstAttribute="height" constant="75" id="rCV-K6-1HT"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="checker:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="Rjy-d9-dfL"/>
-                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-cp-Kry">
+                                <rect key="frame" x="211" y="573" width="75" height="75"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="5jg-3o-Skg"/>
+                                    <constraint firstAttribute="height" constant="75" id="sqN-zf-eeS"/>
+                                </constraints>
+                                <state key="normal" title="Button1">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Nbt-ay-Dcd" firstAttribute="leading" secondItem="WpF-ll-Eak" secondAttribute="trailing" constant="8" id="0C6-mN-nAJ"/>
+                            <constraint firstItem="HA4-Mk-faP" firstAttribute="bottom" secondItem="WpF-ll-Eak" secondAttribute="bottom" id="1Hl-3r-SGL"/>
+                            <constraint firstItem="tEm-hl-2Au" firstAttribute="leading" secondItem="MLj-FN-ka8" secondAttribute="trailing" constant="8" id="6mR-vK-fzZ"/>
+                            <constraint firstItem="Nbt-ay-Dcd" firstAttribute="bottom" secondItem="WpF-ll-Eak" secondAttribute="bottom" id="8e0-Am-Ogg"/>
+                            <constraint firstItem="WWK-cp-Kry" firstAttribute="leading" secondItem="Nbt-ay-Dcd" secondAttribute="trailing" constant="8" id="A7V-cO-bYH"/>
+                            <constraint firstItem="eQ8-LW-0t4" firstAttribute="leading" secondItem="Fb2-cr-Gdh" secondAttribute="trailing" constant="8" id="CE6-aC-2fc"/>
+                            <constraint firstItem="eQ8-LW-0t4" firstAttribute="trailing" secondItem="NTM-d3-iDC" secondAttribute="trailing" id="Ccz-kf-ATu"/>
+                            <constraint firstItem="nAb-fu-mMw" firstAttribute="trailing" secondItem="eQ8-LW-0t4" secondAttribute="trailing" constant="-4" id="EJl-d4-1BT"/>
+                            <constraint firstItem="WWK-cp-Kry" firstAttribute="top" secondItem="NTM-d3-iDC" secondAttribute="bottom" constant="8" id="GqY-2x-fNA"/>
+                            <constraint firstItem="hBw-RN-Zn1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qXc-ER-hh2" secondAttribute="top" constant="35" id="Gzp-35-Jh0"/>
+                            <constraint firstItem="Nbt-ay-Dcd" firstAttribute="top" secondItem="tEm-hl-2Au" secondAttribute="bottom" constant="8" id="KF6-b9-yG6"/>
+                            <constraint firstItem="WWK-cp-Kry" firstAttribute="bottom" secondItem="WpF-ll-Eak" secondAttribute="bottom" id="LLr-hN-X1Z"/>
+                            <constraint firstItem="HA4-Mk-faP" firstAttribute="leading" secondItem="WWK-cp-Kry" secondAttribute="trailing" constant="8" id="N74-we-Baw"/>
+                            <constraint firstItem="NTM-d3-iDC" firstAttribute="top" secondItem="MLj-FN-ka8" secondAttribute="top" id="NWN-Zf-x3P"/>
+                            <constraint firstItem="hBw-RN-Zn1" firstAttribute="centerX" secondItem="bII-wL-HD5" secondAttribute="centerX" id="Nqn-zx-3R4"/>
+                            <constraint firstItem="MLj-FN-ka8" firstAttribute="top" secondItem="hBw-RN-Zn1" secondAttribute="bottom" priority="750" constant="165" id="Nr9-Kl-kKH"/>
+                            <constraint firstItem="Fb2-cr-Gdh" firstAttribute="top" secondItem="Nbt-ay-Dcd" secondAttribute="bottom" constant="8" id="O9d-bc-z3H"/>
+                            <constraint firstItem="HA4-Mk-faP" firstAttribute="trailing" secondItem="uWi-MC-eA3" secondAttribute="trailing" id="Qk8-8V-Bje"/>
+                            <constraint firstItem="WpF-ll-Eak" firstAttribute="top" secondItem="MLj-FN-ka8" secondAttribute="bottom" constant="8" id="WQs-7a-5o5"/>
+                            <constraint firstItem="nAb-fu-mMw" firstAttribute="leading" secondItem="Fb2-cr-Gdh" secondAttribute="leading" constant="4" id="Zdf-zh-gkn"/>
+                            <constraint firstItem="tEm-hl-2Au" firstAttribute="top" secondItem="MLj-FN-ka8" secondAttribute="top" id="ZeK-bg-nb7"/>
+                            <constraint firstItem="eQ8-LW-0t4" firstAttribute="top" secondItem="WWK-cp-Kry" secondAttribute="bottom" constant="8" id="cxy-bn-WNR"/>
+                            <constraint firstItem="uWi-MC-eA3" firstAttribute="top" secondItem="MLj-FN-ka8" secondAttribute="top" id="dWm-Yd-PqF"/>
+                            <constraint firstItem="uWi-MC-eA3" firstAttribute="leading" secondItem="NTM-d3-iDC" secondAttribute="trailing" constant="8" id="ekF-QQ-RhC"/>
+                            <constraint firstItem="NTM-d3-iDC" firstAttribute="leading" secondItem="tEm-hl-2Au" secondAttribute="trailing" constant="8" id="fA8-41-nD9"/>
+                            <constraint firstItem="WWK-cp-Kry" firstAttribute="trailing" secondItem="NTM-d3-iDC" secondAttribute="trailing" id="hzc-B8-Xz6"/>
+                            <constraint firstItem="HA4-Mk-faP" firstAttribute="top" secondItem="uWi-MC-eA3" secondAttribute="bottom" constant="8" id="kgB-bP-WUu"/>
+                            <constraint firstItem="nAb-fu-mMw" firstAttribute="top" secondItem="eQ8-LW-0t4" secondAttribute="bottom" constant="49" id="nMm-7X-QgJ"/>
+                            <constraint firstItem="qXc-ER-hh2" firstAttribute="bottom" secondItem="nAb-fu-mMw" secondAttribute="bottom" constant="32" id="peD-3Q-2U7"/>
+                            <constraint firstItem="nAb-fu-mMw" firstAttribute="top" secondItem="Fb2-cr-Gdh" secondAttribute="bottom" constant="49" id="r3C-ZP-9xu"/>
+                            <constraint firstItem="Fb2-cr-Gdh" firstAttribute="leading" secondItem="tEm-hl-2Au" secondAttribute="leading" id="uZe-ZO-G0e"/>
+                            <constraint firstItem="WpF-ll-Eak" firstAttribute="leading" secondItem="MLj-FN-ka8" secondAttribute="leading" id="vcm-l3-0Ty"/>
+                            <constraint firstItem="Nbt-ay-Dcd" firstAttribute="leading" secondItem="tEm-hl-2Au" secondAttribute="leading" id="wIW-9h-HAb"/>
+                            <constraint firstItem="nAb-fu-mMw" firstAttribute="centerX" secondItem="bII-wL-HD5" secondAttribute="centerX" id="yBh-MJ-xvR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qXc-ER-hh2"/>
                     </view>
                     <connections>
-                        <outlet property="bigCircle" destination="hBw-RN-Zn1" id="pDb-My-BMb"/>
-                        <outlet property="button0" destination="hqy-7R-IDJ" id="PIv-T3-2I7"/>
-                        <outlet property="button1" destination="WDk-0B-JxR" id="uUj-Lp-V9y"/>
-                        <outlet property="button2" destination="WJy-dS-RS9" id="Ps8-jm-7sF"/>
-                        <outlet property="button3" destination="1xt-aB-ZDB" id="ZU0-bg-LO8"/>
-                        <outlet property="button4" destination="qPC-4M-cxj" id="zEd-lb-Hqh"/>
-                        <outlet property="button5" destination="9KN-Fj-AnQ" id="KXt-oM-qhS"/>
-                        <outlet property="button6" destination="oh9-8K-Lvz" id="ciU-Ok-Pef"/>
-                        <outlet property="button7" destination="TYU-fa-EaS" id="KnJ-T7-UoL"/>
-                        <outlet property="button8" destination="Nql-Vg-8h0" id="ti8-JG-Q94"/>
-                        <outlet property="button9" destination="mM6-qz-mW2" id="TJY-Kf-5dn"/>
+                        <outlet property="button0" destination="MLj-FN-ka8" id="9Ko-us-Z8a"/>
+                        <outlet property="button1" destination="tEm-hl-2Au" id="bWd-dg-NAU"/>
+                        <outlet property="button2" destination="NTM-d3-iDC" id="Spw-ew-aPQ"/>
+                        <outlet property="button3" destination="uWi-MC-eA3" id="oGC-1T-VNI"/>
+                        <outlet property="button4" destination="WpF-ll-Eak" id="cw2-XY-bte"/>
+                        <outlet property="button5" destination="Nbt-ay-Dcd" id="L27-hl-vWJ"/>
+                        <outlet property="button6" destination="WWK-cp-Kry" id="X4E-IV-kpk"/>
+                        <outlet property="button7" destination="HA4-Mk-faP" id="SZ8-fC-Xee"/>
+                        <outlet property="button8" destination="Fb2-cr-Gdh" id="ZaX-lk-bHR"/>
+                        <outlet property="button9" destination="eQ8-LW-0t4" id="2r0-jw-ioE"/>
+                        <outlet property="mainButton" destination="hBw-RN-Zn1" id="pDb-My-BMb"/>
+                        <outlet property="submit" destination="nAb-fu-mMw" id="2xE-vY-bqb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auN-Xo-vsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
