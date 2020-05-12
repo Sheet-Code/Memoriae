@@ -10,14 +10,15 @@ import UIKit
 
 class WMSNumbersViewController: UIViewController, LevelViewController {
     
-    var level: Level?
-    var difficulty = Float(0.0)
-    var difficultyIndex: Int?
-    var numbersCount = 0
-    var randNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].shuffled()
-    var userAnswers = [Int]()
-    var buttons = [UIButton]()
-    var isChecked = false
+    private var level: Level?
+    private var difficulty = Float(0.0)
+    private var difficultyIndex: Int?
+    private var numbersCount = 0
+    private var randNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].shuffled()
+    private var userAnswers = [Int]()
+    private var buttons = [UIButton]()
+    private var isChecked = false
+    private let animationDuration = 0.8
     
     @IBOutlet private var mainButton: UIButton!
     @IBOutlet private var button0: UIButton!
@@ -47,7 +48,7 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
         submit.layer.masksToBounds = true
         submit.layer.cornerRadius = 0.5 * submit.bounds.size.height
         submit.titleLabel?.text = "Submit"
-        submit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        submit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         submit.setTitleColor(.white, for: .init())
         
         setupButtons()
@@ -89,8 +90,8 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
     }
     
     func showCorrectness(index: Int, answerIsCorrect: Bool) {
-        UIView.animate(withDuration: 0.8, animations: {
-            
+
+        UIView.animate(withDuration: animationDuration, animations: {
             if answerIsCorrect {
                 self.buttons[index].backgroundColor = .systemGreen
             } else {
@@ -113,7 +114,10 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
             mainButton.isEnabled = false
             
             for button in buttons {
-                button.backgroundColor = ColorScheme.tintColor
+
+                UIView.animate(withDuration: animationDuration, animations: {
+                    button.backgroundColor = ColorScheme.tintColor
+                })
                 button.isEnabled = true
             }
             
@@ -163,12 +167,13 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
         
         userAnswers.append(intTitle)
         sender.isEnabled = false
-        
-        if userAnswers.count == 10 {
-            submit.isEnabled = true
-            submit.backgroundColor = ColorScheme.tintColor
-        }
-        
+
+        UIView.animate(withDuration: animationDuration, animations: {
+
+            if self.userAnswers.count == 10 {
+                self.submit.isEnabled = true
+                self.submit.backgroundColor = ColorScheme.tintColor
+            }
+        })
     }
-    
 }
