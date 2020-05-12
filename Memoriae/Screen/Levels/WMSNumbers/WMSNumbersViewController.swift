@@ -11,11 +11,13 @@ import UIKit
 class WMSNumbersViewController: UIViewController, LevelViewController {
     
     var level: Level?
-    var difficulty: Float?
+    var difficulty = Float(0.0)
+    var difficultyIndex: Int?
     var numbersCount = 0
-    var randNumbers = [Int]()
+    var randNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].shuffled()
     var userAnswers = [Int]()
     var buttons = [UIButton]()
+    var isChecked = false
     
     @IBOutlet private var mainButton: UIButton!
     @IBOutlet private var button0: UIButton!
@@ -32,7 +34,7 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         mainButton.layer.cornerRadius = 0.5 * mainButton.bounds.size.width
         mainButton.layer.masksToBounds = true
         mainButton.setTitle("Start", for: .normal)
@@ -40,47 +42,79 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
         mainButton.setTitleColor(.white, for: .init())
         mainButton.backgroundColor = ColorScheme.tintColor
         submit.backgroundColor = ColorScheme.tintColor
-
-        setupButtons()
+        submit.isHidden = true
         
+        setupButtons()
     }
     
     @IBAction private func startGame(sender: UIButton) {
         sender.setTitle("Go!", for: .normal)
-        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(randomNumbers), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: TimeInterval(difficulty), target: self, selector: #selector(randomNumbers), userInfo: nil, repeats: true)
     }
     
-    @IBAction private func exit(_ sender: Any) {
-
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let newViewController = storyBoard.instantiateViewController(identifier: "entry") as? UITabBarController else {
-            return
+    @IBAction private func submit(_ sender: Any) {
+        if !isChecked {
+            guard let nNlevel = level, let nNDifficultyIndex = difficultyIndex else { return }
+            
+            var rightAnswers = 0
+            for index in 0...userAnswers.count - 1 {
+                if userAnswers[index] == randNumbers[index] {
+                    rightAnswers += 1
+                    showCorrectness(index: userAnswers[index], answerIsCorrect: true)
+                } else {
+                    showCorrectness(index: userAnswers[index], answerIsCorrect: false)
+                }
+            }
+            
+            ScoreRepositoryImpl.saveAnswers(points: Double(100 * rightAnswers / randNumbers.count),
+                                            level: nNlevel,
+                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+            isChecked = true
+            submit.setTitle("Exit", for: .init())
+        } else {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            guard let newViewController = storyBoard.instantiateViewController(identifier: "entry") as? UITabBarController else {
+                return
+            }
+            
+            navigationController?.pushViewController(newViewController, animated: true)
         }
-
-        navigationController?.pushViewController(newViewController, animated: true)
+        
     }
     
-    func setTest(level: Level, difficulty: Float) {
+    func showCorrectness(index: Int, answerIsCorrect: Bool) {
+        UIView.animate(withDuration: 0.8, animations: {
+            
+            if answerIsCorrect {
+                self.buttons[index].backgroundColor = .systemGreen
+            } else {
+                self.buttons[index].backgroundColor = .systemRed
+            }
+        })
+    }
+    
+    func setTest(level: Level, difficultyIndex: Int) {
         self.level = level
-        self.difficulty = difficulty
+        self.difficultyIndex = difficultyIndex
+        self.difficulty = Difficulty.multipliers[difficultyIndex]
     }
     
     @objc func randomNumbers(timer: Timer) {
-        if numbersCount > 5 {
+        if numbersCount > 9 {
             timer.invalidate()
             mainButton.setTitle("That's all", for: .normal)
+            mainButton.isEnabled = false
+            submit.isEnabled = true
             numbersCount = 0
             
             mainButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 36)
             for butt in buttons {
-                butt.addTarget(self, action: #selector(WMSNumbersViewController.checker(sender:)), for: .touchUpInside)
+                butt.addTarget(self, action: #selector(WMSNumbersViewController.answerSelector(sender:)), for: .touchUpInside)
             }
             
             return
         }
-        let random = Int.random(in: 0..<10)
-        randNumbers.append(random)
-        mainButton.setTitle(String(random), for: .normal)
+        mainButton.setTitle(String(randNumbers[numbersCount]), for: .normal)
         numbersCount += 1
     }
     
@@ -111,17 +145,22 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
         submit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         submit.setTitleColor(.white, for: .init())
         
-        
-    }
-
-    @objc func checker(sender: UIButton) {
-        //проверка после ввода последовательности чисел
-        //sender.tintColor = .systemRed
-        print(sender.title(for: .normal))
     }
     
-    func setTest(level: Level, difficultyIndex: Int) {
-        //
+    @objc func answerSelector(sender: UIButton) {
+        sender.backgroundColor = sender.backgroundColor?.modified(withAdditionalHue: 0, additionalSaturation: 0, additionalBrightness: -0.2)
+        
+        guard let strTitle = sender.title(for: .normal), let intTitle = Int(strTitle) else {
+            return
+        }
+        
+        userAnswers.append(intTitle)
+        sender.isEnabled = false
+        
+        if userAnswers.count == 10 {
+            self.submit.isHidden = false
+        }
+        
     }
     
 }

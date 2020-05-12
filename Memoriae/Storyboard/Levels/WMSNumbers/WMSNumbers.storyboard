@@ -137,7 +137,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="exit:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="9vx-BI-a8W"/>
+                                    <action selector="submit:" destination="sWJ-Mb-mex" eventType="touchUpInside" id="9vx-BI-a8W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HA4-Mk-faP">

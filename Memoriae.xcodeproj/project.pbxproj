@@ -389,6 +389,15 @@
 			path = TOMMPicture;
 			sourceTree = "<group>";
 		};
+		0BDE90992461AD1A006D8F47 /* WMSDots */ = {
+			isa = PBXGroup;
+			children = (
+				0B8E08062461BAE70073C89C /* WMSDotsViewController.swift */,
+				0BDE909A2461AD57006D8F47 /* PointsGenerator.swift */,
+			);
+			path = WMSDots;
+			sourceTree = "<group>";
+		};
 		809AC78D245DD4E1009D8C9B /* WMSNumbers */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,15 +420,6 @@
 				809AC794245DD81F009D8C9B /* WMSNumbers.storyboard */,
 			);
 			path = WMSNumbers;
-            sourceTree = "<group>";
-            };
-		0BDE90992461AD1A006D8F47 /* WMSDots */ = {
-			isa = PBXGroup;
-			children = (
-				0B8E08062461BAE70073C89C /* WMSDotsViewController.swift */,
-				0BDE909A2461AD57006D8F47 /* PointsGenerator.swift */,
-			);
-			path = WMSDots;
 			sourceTree = "<group>";
 		};
 		BB1A6448255F238710F98854 /* Pods */ = {
@@ -885,13 +885,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HG9ZBM8AV;
+				DEVELOPMENT_TEAM = LAN7LN5ML2;
 				INFOPLIST_FILE = Memoriae/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "SheetCode-Team.Memoriae";
+				PRODUCT_BUNDLE_IDENTIFIER = shahbazly.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -904,13 +905,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HG9ZBM8AV;
+				DEVELOPMENT_TEAM = LAN7LN5ML2;
 				INFOPLIST_FILE = Memoriae/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "SheetCode-Team.Memoriae";
+				PRODUCT_BUNDLE_IDENTIFIER = shahbazly.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
