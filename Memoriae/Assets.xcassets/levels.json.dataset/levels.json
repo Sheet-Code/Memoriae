@@ -1,7 +1,7 @@
 [
     {
         "id" : 0,
-        "title" : "Mnemonics",
+        "title" : "Eidetism",
         "kind" : "TOMMPicture",
         "task" : "This task was compiled in accordance with the TOMM methodology. You will be shown a picture. The task is to remember as many details as you can. After a certain time we will ask you a few questions",
         "description" : "Memorization details of picture",
@@ -122,11 +122,11 @@
     },
     {
         "id" : 1,
-        "title" : "Level2",
+        "title" : "Mnemonics",
         "kind" : "WMSNumbers",
-        "task" : "dont forget to create the type in entity and structure in json for this level, Dym Palych",
-        "description" : "Do something",
-        "picture" : null
+        "task" : "You must remember the sequence of occurrence of numbers indicated on the balls in order to then reproduce this sequence.",
+        "description" : "Memorization of sequence of number",
+        "picture" : "wms_numbers_preview"
     },
     {
         "id" : 2,

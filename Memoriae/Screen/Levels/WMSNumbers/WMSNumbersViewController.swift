@@ -41,8 +41,14 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
         mainButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 72)
         mainButton.setTitleColor(.white, for: .init())
         mainButton.backgroundColor = ColorScheme.tintColor
-        submit.backgroundColor = ColorScheme.tintColor
-        submit.isHidden = true
+        
+        submit.backgroundColor = .gray
+        submit.isEnabled = false
+        submit.layer.masksToBounds = true
+        submit.layer.cornerRadius = 0.5 * submit.bounds.size.height
+        submit.titleLabel?.text = "Submit"
+        submit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        submit.setTitleColor(.white, for: .init())
         
         setupButtons()
     }
@@ -102,9 +108,15 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
     @objc func randomNumbers(timer: Timer) {
         if numbersCount > 9 {
             timer.invalidate()
+            
             mainButton.setTitle("That's all", for: .normal)
             mainButton.isEnabled = false
-            submit.isEnabled = true
+            
+            for button in buttons {
+                button.backgroundColor = ColorScheme.tintColor
+                button.isEnabled = true
+            }
+            
             numbersCount = 0
             
             mainButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 36)
@@ -136,14 +148,9 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
             buttons[index].layer.masksToBounds = true
             buttons[index].titleLabel?.font = UIFont.boldSystemFont(ofSize: 36)
             buttons[index].setTitleColor(.white, for: .init())
-            buttons[index].backgroundColor = ColorScheme.tintColor
+            buttons[index].backgroundColor = .gray
+            buttons[index].isEnabled = false
         }
-        
-        submit.layer.masksToBounds = true
-        submit.layer.cornerRadius = 0.5 * submit.bounds.size.height
-        submit.titleLabel?.text = "Submit"
-        submit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        submit.setTitleColor(.white, for: .init())
         
     }
     
@@ -158,7 +165,8 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
         sender.isEnabled = false
         
         if userAnswers.count == 10 {
-            self.submit.isHidden = false
+            submit.isEnabled = true
+            submit.backgroundColor = ColorScheme.tintColor
         }
         
     }
