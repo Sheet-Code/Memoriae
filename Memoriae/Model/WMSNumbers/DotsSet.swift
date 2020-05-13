@@ -6,6 +6,6 @@
 //  Copyright © 2020 SheetCode Team. All rights reserved.
 //
 
-struct DotsSet : Codable {
+struct DotsSet: Codable {
   var dotsCount: Int
 }
