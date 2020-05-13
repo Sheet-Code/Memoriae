@@ -181,7 +181,6 @@
 		0B49FC31245B601400A4F072 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				809AC790245DD790009D8C9B /* WMSNumbers */,
 				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
 				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
 				0BD9D95E245729BD00450D0E /* LevelPreviewController.swift */,
@@ -189,6 +188,7 @@
 				0BD9D96624577EDC00450D0E /* TOMMPicture */,
 				0BDE90992461AD1A006D8F47 /* WMSDots */,
 				0B4B81B62465C6A1003839F8 /* WMSAreas */,
+				809AC790245DD790009D8C9B /* WMSNumbers */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -243,10 +243,10 @@
 		0BA4120C245D6B2100592355 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				809AC793245DD7F1009D8C9B /* WMSNumbers */,
 				0BA4120D245D6B2D00592355 /* TOMMPicture */,
 				0B8E07FF2461B9960073C89C /* WMSDots */,
 				0B4B81B12465C574003839F8 /* WMSAreas */,
+				809AC793245DD7F1009D8C9B /* WMSNumbers */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -892,7 +892,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = memoriae;
+				PRODUCT_BUNDLE_IDENTIFIER = "SheetCode-Team.Memoriae";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -912,7 +912,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = memoriae;
+				PRODUCT_BUNDLE_IDENTIFIER = "SheetCode-Team.Memoriae";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
