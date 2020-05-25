@@ -107,7 +107,7 @@
                         ]
                     },
                     {
-                        "question" : "what type of facial hair was the man?",
+                        "question" : "What was the man's facial hair style?",
                         "rightAnswer" : 3,
                         "answers" : [
                             "no hair",
