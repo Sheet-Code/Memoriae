@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picture View Controller-->
+        <scene sceneID="HwX-V2-WXc">
+            <objects>
+                <viewController storyboardIdentifier="FAPictureViewController" id="Pmw-wh-JWP" customClass="FAPictureViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cwB-A0-y23">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SCt-LN-p1d">
+                                <rect key="frame" x="10" y="85" width="394" height="767"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-TP-M0C">
+                                <rect key="frame" x="10" y="54" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZF5-TP-M0C" firstAttribute="leading" secondItem="3V2-3y-78m" secondAttribute="leading" constant="10" id="20z-In-8V8"/>
+                            <constraint firstItem="3V2-3y-78m" firstAttribute="trailing" secondItem="ZF5-TP-M0C" secondAttribute="trailing" constant="10" id="DvW-Bt-61Z"/>
+                            <constraint firstItem="3V2-3y-78m" firstAttribute="bottom" secondItem="SCt-LN-p1d" secondAttribute="bottom" constant="10" id="E3z-tH-JBK"/>
+                            <constraint firstItem="SCt-LN-p1d" firstAttribute="leading" secondItem="3V2-3y-78m" secondAttribute="leading" constant="10" id="FvO-aM-x4z"/>
+                            <constraint firstItem="SCt-LN-p1d" firstAttribute="top" secondItem="ZF5-TP-M0C" secondAttribute="bottom" constant="10" id="HuX-7e-fLL"/>
+                            <constraint firstAttribute="trailing" secondItem="SCt-LN-p1d" secondAttribute="trailing" constant="10" id="gM0-1j-NdJ"/>
+                            <constraint firstItem="ZF5-TP-M0C" firstAttribute="top" secondItem="3V2-3y-78m" secondAttribute="top" constant="10" id="mVA-B5-gSK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3V2-3y-78m"/>
+                    </view>
+                    <connections>
+                        <outlet property="stack" destination="SCt-LN-p1d" id="GfE-bD-KkP"/>
+                        <outlet property="triesLabel" destination="ZF5-TP-M0C" id="Poj-Se-Tnv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLz-aB-y84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.144927536231885" y="175.44642857142856"/>
+        </scene>
+    </scenes>
+</document>
