@@ -19,6 +19,7 @@ class FAPictureViewController: UIViewController, LevelViewController {
     private var answers: Int = 0
     private var pressedBefore: IndexedUIButton?
 
+    private let fontSize: CGFloat = 44
     private let pairMultiplier: Int = 3
     private let tryMultiplier: Int = 2
     private let radiusValue: CGFloat = 10
@@ -78,6 +79,7 @@ class FAPictureViewController: UIViewController, LevelViewController {
             currentStack.addArrangedSubview(button)
             button.setIndex(index: freeNumbers[place])
             button.setTitle(String(freeNumbers[place]), for: .normal)
+            button.titleLabel?.font = .italicSystemFont(ofSize: fontSize)
             button.addTarget(self, action: #selector(self.selected(sender:)), for: .touchUpInside)
             buttons.append(button)
             freeNumbers.remove(at: place)

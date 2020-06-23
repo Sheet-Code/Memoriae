@@ -146,10 +146,10 @@
     },
     {
         "id" : 4,
-        "title" : "FAP",
+        "title" : "Pairs",
         "kind" : "FAPicture",
-        "task" : "...",
-        "description" : "...",
-        "picture" : "wms_areas_preview"
+        "task" : "You have an even number of cards in front of you. Your task is to open them, if such a card has been encountered before, you need to remember its location. You are also given a certain number of \"free tries\" that are necessary for initial memorization. The game will be over after finding all the pairs.",
+        "description" : "Finding a pair of hidden numbers",
+        "picture" : "fap_pair_preview"
     }
 ]
