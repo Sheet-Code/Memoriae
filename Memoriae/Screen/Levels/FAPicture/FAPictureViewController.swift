@@ -19,6 +19,9 @@ class FAPictureViewController: UIViewController, LevelViewController {
     private var answers: Int = 0
     private var pressedBefore: IndexedUIButton?
 
+    private let pairMultiplier: Int = 3
+    private let tryMultiplier: Int = 2
+    private let radiusValue: CGFloat = 10
     private let stackSpacing: CGFloat = 10
     private let elementInRow: Int = 3
     private let animationIntroDuration = 0.2
@@ -46,8 +49,8 @@ class FAPictureViewController: UIViewController, LevelViewController {
             return
         }
 
-        pairCount = (difficulty + 1) * 3
-        tries = (difficulty + 1) * 2
+        pairCount = (difficulty + 1) * pairMultiplier
+        tries = (difficulty + 1) * tryMultiplier
         triesLabel.text = "Free tries: " + String(tries)
 
         for index in 0 ... pairCount * 2 - 1 {
@@ -71,6 +74,7 @@ class FAPictureViewController: UIViewController, LevelViewController {
 
             let button = IndexedUIButton(type: .system)
             button.backgroundColor = ColorScheme.tintColor
+            button.layer.cornerRadius = radiusValue
             currentStack.addArrangedSubview(button)
             button.setIndex(index: freeNumbers[place])
             button.setTitle(String(freeNumbers[place]), for: .normal)
@@ -98,60 +102,71 @@ class FAPictureViewController: UIViewController, LevelViewController {
                         let equal = sender.getIndex() == pressed.getIndex()
                         UIView.animate(withDuration: self.animationEndDuration,
                                        animations: {
-                                        if equal {
-                                            sender.backgroundColor = UIColor.clear
-                                            pressed.backgroundColor = UIColor.clear
-                                            sender.tintColor = UIColor.clear
-                                            pressed.tintColor = UIColor.clear
-                                        } else {
-                                            sender.tintColor = ColorScheme.tintColor
-                                            pressed.tintColor = ColorScheme.tintColor
-                                        }
+                                        self.selectAnimationType(sender: sender, pressed: pressed, equal: equal)
                         },
                                        completion: { _ in
-                                        if equal {
-                                            sender.isEnabled = false
-                                            pressed.isEnabled = false
-                                            self.right += 1
-                                            self.answers += 1
-                                        } else {
-                                            if self.tries > 0 {
-                                                self.tries -= 1
-                                                self.triesLabel.text = "Free tries: " + String(self.tries)
-                                            } else {
-                                                self.answers += 1
-                                            }
-                                        }
+                                        self.countAnswers(sender: sender, pressed: pressed, equal: equal)
                                         self.pressedBefore = nil
                                         self.allowPress = true
-
-                                        if self.right == self.pairCount {
-                                            guard let nNlevel = self.level, let nNDifficultyIndex = self.difficultyIndex else {
-                                                return
-                                            }
-
-                                            ScoreRepositoryImpl.saveAnswers(points: Double(100 * self.right / self.answers),
-                                                                            level: nNlevel,
-                                                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
-                                            let alert = UIAlertController(title: "Score",
-                                                                          message: "You scored " + String(Int(100 * self.right / self.answers)) + " of 100",
-                                                                          preferredStyle: UIAlertController.Style.alert)
-                                            let alertAction = UIAlertAction(title: "Exit",
-                                                                            style: UIAlertAction.Style.default,
-                                                                            handler: { _ in
-                                                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                                                                                guard let newViewController = storyBoard.instantiateViewController(identifier: "entry")
-                                                                                    as? UITabBarController else {
-                                                                                        return
-                                                                                }
-                                                                                self.navigationController?.pushViewController(newViewController, animated: true)
-                                            })
-                                            alertAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
-                                            alert.addAction(alertAction)
-                                            self.present(alert, animated: true, completion: nil)
-                                        }
+                                        self.check()
                         })
         })
+    }
+
+    func selectAnimationType(sender: IndexedUIButton, pressed: IndexedUIButton, equal: Bool) {
+        if equal {
+            sender.backgroundColor = UIColor.clear
+            pressed.backgroundColor = UIColor.clear
+            sender.tintColor = UIColor.clear
+            pressed.tintColor = UIColor.clear
+        } else {
+            sender.tintColor = ColorScheme.tintColor
+            pressed.tintColor = ColorScheme.tintColor
+        }
+    }
+
+    func countAnswers(sender: IndexedUIButton, pressed: IndexedUIButton, equal: Bool) {
+        if equal {
+            sender.isEnabled = false
+            pressed.isEnabled = false
+            self.right += 1
+            self.answers += 1
+        } else {
+            if self.tries > 0 {
+                self.tries -= 1
+                self.triesLabel.text = "Free tries: " + String(self.tries)
+            } else {
+                self.answers += 1
+            }
+        }
+    }
+
+    func check() {
+        if self.right == self.pairCount {
+            guard let nNlevel = self.level, let nNDifficultyIndex = self.difficultyIndex else {
+                return
+            }
+
+            ScoreRepositoryImpl.saveAnswers(points: Double(100 * self.right / self.answers),
+                                            level: nNlevel,
+                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+            let alert = UIAlertController(title: "Score",
+                                          message: "You scored " + String(Int(100 * self.right / self.answers)) + " of 100",
+                                          preferredStyle: UIAlertController.Style.alert)
+            let alertAction = UIAlertAction(title: "Exit",
+                                            style: UIAlertAction.Style.default,
+                                            handler: { _ in
+                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                guard let newViewController = storyBoard.instantiateViewController(identifier: "entry")
+                                                    as? UITabBarController else {
+                                                        return
+                                                }
+                                                self.navigationController?.pushViewController(newViewController, animated: true)
+            })
+            alertAction.setValue(ColorScheme.tintColor, forKey: "titleTextColor")
+            alert.addAction(alertAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     func setTest(level: Level, difficultyIndex: Int) {

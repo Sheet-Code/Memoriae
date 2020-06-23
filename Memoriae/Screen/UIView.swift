@@ -16,7 +16,11 @@ extension UIView {
 
         while parentResponder != nil {
 
-            parentResponder = parentResponder!.next
+            guard let parent = parentResponder else {
+                return nil
+            }
+
+            parentResponder = parent.next
             if parentResponder is UIViewController {
                 return parentResponder as? UIViewController
             }

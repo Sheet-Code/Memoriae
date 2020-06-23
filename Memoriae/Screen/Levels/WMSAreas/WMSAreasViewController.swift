@@ -92,7 +92,10 @@ class WMSAreasViewController: UIViewController, LevelViewController {
         self.difficultyIndex = difficultyIndex
         selectDuration = commonSelectDuration * Double(Difficulty.multipliers[difficultyIndex])
         intervalDuration = commonIntervalDuration
-        selectedButtonsCount = Int(testTime / (selectDuration! + intervalDuration!))
+        guard let select = selectDuration, let interval = intervalDuration else {
+            return
+        }
+        selectedButtonsCount = Int(testTime / (select + interval))
     }
 
     func startTest() {
