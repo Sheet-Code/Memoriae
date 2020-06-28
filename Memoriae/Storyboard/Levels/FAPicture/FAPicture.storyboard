@@ -16,10 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SCt-LN-p1d">
-                                <rect key="frame" x="10" y="85" width="394" height="767"/>
+                                <rect key="frame" x="10" y="95" width="394" height="757"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF5-TP-M0C">
-                                <rect key="frame" x="10" y="54" width="394" height="21"/>
+                                <rect key="frame" x="10" y="64" width="394" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="394" id="DlH-lR-vVi"/>
+                                    <constraint firstAttribute="height" constant="21" id="J39-vu-x0B"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,12 +32,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZF5-TP-M0C" firstAttribute="leading" secondItem="3V2-3y-78m" secondAttribute="leading" constant="10" id="20z-In-8V8"/>
+                            <constraint firstItem="ZF5-TP-M0C" firstAttribute="top" secondItem="3V2-3y-78m" secondAttribute="top" constant="20" id="3yy-Ur-ISh"/>
                             <constraint firstItem="3V2-3y-78m" firstAttribute="trailing" secondItem="ZF5-TP-M0C" secondAttribute="trailing" constant="10" id="DvW-Bt-61Z"/>
                             <constraint firstItem="3V2-3y-78m" firstAttribute="bottom" secondItem="SCt-LN-p1d" secondAttribute="bottom" constant="10" id="E3z-tH-JBK"/>
                             <constraint firstItem="SCt-LN-p1d" firstAttribute="leading" secondItem="3V2-3y-78m" secondAttribute="leading" constant="10" id="FvO-aM-x4z"/>
                             <constraint firstItem="SCt-LN-p1d" firstAttribute="top" secondItem="ZF5-TP-M0C" secondAttribute="bottom" constant="10" id="HuX-7e-fLL"/>
                             <constraint firstAttribute="trailing" secondItem="SCt-LN-p1d" secondAttribute="trailing" constant="10" id="gM0-1j-NdJ"/>
-                            <constraint firstItem="ZF5-TP-M0C" firstAttribute="top" secondItem="3V2-3y-78m" secondAttribute="top" constant="10" id="mVA-B5-gSK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3V2-3y-78m"/>
                     </view>
