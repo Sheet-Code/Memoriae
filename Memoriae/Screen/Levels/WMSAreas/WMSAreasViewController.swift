@@ -90,7 +90,10 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
         self.level = level
         self.difficultyIndex = difficultyIndex
-        selectDuration = commonSelectDuration * Double(Difficulty.multipliers[difficultyIndex])
+        guard let difficulties = level.difficulties, let multiplier = difficulties[difficultyIndex].multipliers?[0] else {
+            return
+        }
+        selectDuration = commonSelectDuration * Double(multiplier)
         intervalDuration = commonIntervalDuration
         guard let select = selectDuration, let interval = intervalDuration else {
             return
@@ -131,7 +134,7 @@ class WMSAreasViewController: UIViewController, LevelViewController {
 
             ScoreRepositoryImpl.saveAnswers(points: Double(100 * correctTapSummaryCounter / selectSummaryCounter),
                                             level: nNlevel,
-                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+                                            difficulty: nNDifficultyIndex)
 
             let alert = UIAlertController(title: "Score",
                                           message: "You scored " + String(Int(100 * correctTapSummaryCounter / selectSummaryCounter)) + " of 100",

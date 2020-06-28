@@ -75,7 +75,7 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
             
             ScoreRepositoryImpl.saveAnswers(points: Double(100 * rightAnswers / randNumbers.count),
                                             level: nNlevel,
-                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+                                            difficulty: nNDifficultyIndex)
             isChecked = true
             submit.setTitle("Exit", for: .init())
         } else {
@@ -103,7 +103,10 @@ class WMSNumbersViewController: UIViewController, LevelViewController {
     func setTest(level: Level, difficultyIndex: Int) {
         self.level = level
         self.difficultyIndex = difficultyIndex
-        self.difficulty = Difficulty.multipliers[difficultyIndex]
+        guard let difficulties = level.difficulties, let difficulty = difficulties[difficultyIndex].multipliers?[0] else {
+            return
+        }
+        self.difficulty = difficulty
     }
     
     @objc func randomNumbers(timer: Timer) {

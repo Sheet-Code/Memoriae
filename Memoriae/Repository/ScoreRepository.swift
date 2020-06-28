@@ -9,7 +9,7 @@
 import RealmSwift
 
 protocol ScoreRepository {
-    static func saveAnswers(right: Int, level: Level, difficulty: Double, questions: [Question])
+    static func saveAnswers(right: Int, level: Level, difficulty: Int, questions: [Question])
     static func getScores(levelId: Int) -> [Score]?
     static func clear()
 }
@@ -19,11 +19,11 @@ final class ScoreRepositoryImpl {
         do {
             return try Realm()
         } catch {
-            fatalError("Realm can't be created")
+            fatalError("Realm can't be created") //  po Realm.Configuration.defaultConfiguration.fileURL
         }
     }
 
-    static func saveAnswers(points: Double, level: Level, difficulty: Double) {
+    static func saveAnswers(points: Double, level: Level, difficulty: Int) {
 
         let repo = ScoreRepositoryImpl()
         let lastId: Int
@@ -47,7 +47,7 @@ final class ScoreRepositoryImpl {
             lastId = curId
         }
 
-        let score = Score(id: lastId + 1, levelId: level.id, points: points, difficulty: Double(difficulty))
+        let score = Score(id: lastId + 1, levelId: level.id, points: points, difficulty: difficulty)
 
         let bestStored = repo.get(levelId: level.id, difficulty: difficulty)
 
@@ -106,7 +106,7 @@ final class ScoreRepositoryImpl {
         realm.objects(Score.self).filter("levelId == %@", levelId)
     }
 
-    func get(levelId: Int, difficulty: Double) -> [Score] {
+    func get(levelId: Int, difficulty: Int) -> [Score] {
         get(levelId: levelId).filter({ $0.difficulty == difficulty })
     }
 
@@ -119,14 +119,20 @@ final class ScoreRepositoryImpl {
             return
         }
 
+        var lastIndex = 0
+
         for levelIndex in 0...levels.count - 1 {
-            for difficultyIndex in 0...Difficulty.multipliers.count - 1 {
+            guard let difficulties = levels[levelIndex].difficulties else {
+                return
+            }
+            for difficultyIndex in 0...difficulties.count - 1 {
                 save(scores: [
-                    Score(id: levelIndex * Difficulty.multipliers.count + difficultyIndex,
+                    Score(id: lastIndex,
                           levelId: levels[levelIndex].id,
                           points: 0,
-                          difficulty: Double(Difficulty.multipliers[difficultyIndex]))
+                          difficulty: difficultyIndex)
                 ])
+                lastIndex += 1
             }
         }
     }

@@ -33,11 +33,15 @@ class LevelPreviewController: UIViewController {
         descript.text = nNLevel.description
         self.tabBarController?.tabBar.isHidden = true
 
-        difficultyLabel.text = Difficulty.standardName
+        guard let difficulties = level?.difficulties, let standardIndex = level?.standardIndex, let name = difficulties[standardIndex].name else {
+            return
+        }
 
-        difficultySlider.value = Float(Difficulty.standardIndex)
+        difficultyLabel.text = name
+
+        difficultySlider.value = Float(standardIndex)
         difficultySlider.minimumValue = 0
-        difficultySlider.maximumValue = Float(Difficulty.multipliers.count) - 0.000_001
+        difficultySlider.maximumValue = Float(difficulties.count) - 0.000_001
 
         startButton.setTitleColor(ColorScheme.tintColor, for: .init())
         difficultyLabel.textColor = ColorScheme.tintColor
@@ -66,6 +70,9 @@ class LevelPreviewController: UIViewController {
     }
 
     @IBAction private func sliderValueChanged(_ sender: Any) {
-        difficultyLabel.text = Difficulty.names[Int(difficultySlider.value)]
+        guard let diff = level?.difficulties, let name = diff[Int(difficultySlider.value)].name else {
+            return
+        }
+        difficultyLabel.text = name
     }
 }

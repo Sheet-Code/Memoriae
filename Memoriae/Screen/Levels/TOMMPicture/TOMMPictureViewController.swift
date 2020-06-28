@@ -11,7 +11,7 @@ import UIKit
 class TOMMPictureViewController: UIViewController, LevelViewController {
 
     var level: Level?
-    var difficulty: Double?
+    var difficulty: Int?
     var targetNumber: Int?
     var currentTarget: TOMMPictureSet?
 
@@ -39,11 +39,11 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
         image.image = UIImage(named: currentTarget.picture)
         self.currentTarget = currentTarget
 
-        guard let multiplier = difficulty else {
+        guard let dif = level?.difficulties, let diff = difficulty, let multiplier = dif[diff].multipliers?[0] else {
             return
         }
 
-        waitTime = Float(Double(currentTarget.time) * multiplier)
+        waitTime = Float(currentTarget.time * multiplier)
 
         Timer.scheduledTimer(timeInterval: TimeInterval(timeStep), target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
     }
@@ -68,6 +68,6 @@ class TOMMPictureViewController: UIViewController, LevelViewController {
 
     func setTest(level: Level, difficultyIndex: Int) {
         self.level = level
-        self.difficulty = Double(Difficulty.multipliers[difficultyIndex])
+        self.difficulty = difficultyIndex
     }
 }

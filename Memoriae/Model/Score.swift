@@ -14,9 +14,9 @@ class Score: Object {
     @objc dynamic var id = 0
     @objc dynamic var levelId = 0
     @objc dynamic var points = 0.0
-    @objc dynamic var difficulty = 0.0
+    @objc dynamic var difficulty = 0
 
-    convenience init(id: Int, levelId: Int, points: Double, difficulty: Double) {
+    convenience init(id: Int, levelId: Int, points: Double, difficulty: Int) {
         self.init()
         self.id = id
         self.levelId = levelId

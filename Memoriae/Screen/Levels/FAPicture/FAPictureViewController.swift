@@ -46,12 +46,16 @@ class FAPictureViewController: UIViewController, LevelViewController {
 
         stack.spacing = stackSpacing
 
-        guard let difficulty = difficultyIndex else {
+        guard let index = difficultyIndex, let difficulty = level?.difficulties?[index] else {
+            return
+        }
+        
+        guard let pair = difficulty.multipliers?[0], let free = difficulty.multipliers?[1] else {
             return
         }
 
-        pairCount = (difficulty + 1) * pairMultiplier
-        tries = (difficulty + 1) * tryMultiplier
+        pairCount = Int(pair)
+        tries = Int(free)
         triesLabel.text = "Free tries: " + String(tries)
 
         for index in 0 ... pairCount * 2 - 1 {
@@ -151,7 +155,7 @@ class FAPictureViewController: UIViewController, LevelViewController {
 
             ScoreRepositoryImpl.saveAnswers(points: Double(100 * self.right / self.answers),
                                             level: nNlevel,
-                                            difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+                                            difficulty: nNDifficultyIndex)
             let alert = UIAlertController(title: "Score",
                                           message: "You scored " + String(Int(100 * self.right / self.answers)) + " of 100",
                                           preferredStyle: UIAlertController.Style.alert)

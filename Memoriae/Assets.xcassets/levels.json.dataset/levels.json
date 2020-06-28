@@ -6,6 +6,45 @@
         "task" : "This task was compiled in accordance with the TOMM methodology. You will be shown a picture. The task is to remember as many details as you can. After a certain time we will ask you a few questions",
         "description" : "Memorization details of picture",
         "picture" : "tomm_picture_preview",
+	"standardIndex" : 2,
+	"difficulties" : [
+	    {
+		"multipliers": [
+                    1.4
+            	],
+		"name": "vegetable"
+	    },
+	    {
+		"multipliers": [
+                    1.2
+            	],
+		"name": "goof"
+	    },
+	    {
+		"multipliers": [
+                    1.0
+            	],
+		"name": "regular"
+	    },
+	    {
+		"multipliers": [
+                    0.8
+            	],
+		"name": "respectable"
+	    },
+	    {
+		"multipliers": [
+                    0.6
+            	],
+		"name": "megamind"
+	    },
+	    {
+		"multipliers": [
+                    0.4
+            	],
+		"name": "insane"
+	    }
+        ],
         "pictureSets" : [
             {
                 "picture" : "tomm_picture_1",
@@ -126,7 +165,45 @@
         "kind" : "WMSNumbers",
         "task" : "You must remember the sequence of occurrence of numbers indicated on the balls in order to then reproduce this sequence.",
         "description" : "Memorization of sequence of number",
-        "picture" : "wms_numbers_preview"
+        "picture" : "wms_numbers_preview",
+	"difficulties" : [
+	    {
+		"multipliers": [
+                    1.4
+            	],
+		"name": "vegetable"
+	    },
+	    {
+		"multipliers": [
+                    1.2
+            	],
+		"name": "goof"
+	    },
+	    {
+		"multipliers": [
+                    1.0
+            	],
+		"name": "regular"
+	    },
+	    {
+		"multipliers": [
+                    0.8
+            	],
+		"name": "respectable"
+	    },
+	    {
+		"multipliers": [
+                    0.6
+            	],
+		"name": "megamind"
+	    },
+	    {
+		"multipliers": [
+                    0.4
+            	],
+		"name": "insane"
+	    }
+        ]
     },
     {
         "id" : 2,
@@ -134,7 +211,46 @@
         "kind" : "WMSDots",
         "task" : "Dots appear on the screen in random order. Then they will light up in a certain sequence. You must carefully observe the sequence that the computer demonstrates. Then you will have to remember and accurately reproduce the presented series.",
         "description" : "Memorization highlighted dots order",
-        "picture" : "wms_dots_preview"
+        "picture" : "wms_dots_preview",
+	"standardIndex" : 2,
+	"difficulties" : [
+	    {
+		"multipliers": [
+                    1.4
+            	],
+		"name": "vegetable"
+	    },
+	    {
+		"multipliers": [
+                    1.2
+            	],
+		"name": "goof"
+	    },
+	    {
+		"multipliers": [
+                    1.0
+            	],
+		"name": "regular"
+	    },
+	    {
+		"multipliers": [
+                    0.8
+            	],
+		"name": "respectable"
+	    },
+	    {
+		"multipliers": [
+                    0.6
+            	],
+		"name": "megamind"
+	    },
+	    {
+		"multipliers": [
+                    0.4
+            	],
+		"name": "insane"
+	    }
+        ]
     },
     {
         "id" : 3,
@@ -142,7 +258,46 @@
         "kind" : "WMSAreas",
         "task" : "The screen is divided into zones in which light signals will appear. When the zone is highlighted, you need to tap on this zone as soon as possible. As soon as the selection disappears, you need to pause tapping until the next signal.",
         "description" : "Careful tracking of areas on the screen",
-        "picture" : "wms_areas_preview"
+        "picture" : "wms_areas_preview",
+	"standardIndex" : 2,
+	"difficulties" : [
+	    {
+		"multipliers": [
+                    1.4
+            	],
+		"name": "vegetable"
+	    },
+	    {
+		"multipliers": [
+                    1.2
+            	],
+		"name": "goof"
+	    },
+	    {
+		"multipliers": [
+                    1.0
+            	],
+		"name": "regular"
+	    },
+	    {
+		"multipliers": [
+                    0.8
+            	],
+		"name": "respectable"
+	    },
+	    {
+		"multipliers": [
+                    0.6
+            	],
+		"name": "megamind"
+	    },
+	    {
+		"multipliers": [
+                    0.4
+            	],
+		"name": "insane"
+	    }
+        ]
     },
     {
         "id" : 4,
@@ -150,6 +305,44 @@
         "kind" : "FAPicture",
         "task" : "You have an even number of cards in front of you. Your task is to open them, if such a card has been encountered before, you need to remember its location. You are also given a certain number of \"free tries\" that are necessary for initial memorization.",
         "description" : "Finding a pair of hidden numbers",
-        "picture" : "fap_pair_preview"
+        "picture" : "fap_pair_preview",
+	"standardIndex" : 2,
+	"difficulties" : [
+	    {
+		"multipliers": [
+                    3,
+		    2
+            	],
+		"name": "vegetable"
+	    },
+	    {
+		"multipliers": [
+                    6,
+		    4
+            	],
+		"name": "goof"
+	    },
+	    {
+		"multipliers": [
+                    9,
+		    6
+            	],
+		"name": "regular"
+	    },
+	    {
+		"multipliers": [
+                    12,
+		    8
+            	],
+		"name": "respectable"
+	    },
+	    {
+		"multipliers": [
+                    15,
+		    10
+            	],
+		"name": "megamind"
+	    }
+        ]
     }
 ]

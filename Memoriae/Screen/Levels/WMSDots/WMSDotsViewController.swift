@@ -151,13 +151,13 @@ class WMSDotsViewController: UIViewController, LevelViewController {
 
         ScoreRepositoryImpl.saveAnswers(points: Double(100 * rightAnswers / dots.count),
                                         level: nNlevel,
-                                        difficulty: Double(Difficulty.multipliers[nNDifficultyIndex]))
+                                        difficulty: nNDifficultyIndex)
     }
 
     func setTest(level: Level, difficultyIndex: Int) {
         self.level = level
         self.difficultyIndex = difficultyIndex
-        self.dotsCount = commonDotsCount + (difficultyIndex - Difficulty.standardIndex)
+        self.dotsCount = commonDotsCount + (difficultyIndex - 2)
     }
 
     func createDot(index: Int) -> IndexedUIButton {

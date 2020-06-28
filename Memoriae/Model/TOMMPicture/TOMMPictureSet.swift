@@ -9,7 +9,7 @@
 // MARK: - TOMMPictureData
 struct TOMMPictureSet: Codable {
     let picture: String
-    let time: Int
+    let time: Float
     let questions: [Question]
 }
 

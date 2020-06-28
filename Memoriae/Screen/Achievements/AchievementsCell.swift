@@ -52,7 +52,7 @@ class AchievementsCell: UITableViewCell {
             return
         }
 
-        score.sort { $0.difficulty > $1.difficulty }
+        score.sort { $0.difficulty < $1.difficulty }
 
         title.text = level.title
         picture.layer.cornerRadius = 8.0
@@ -66,11 +66,15 @@ class AchievementsCell: UITableViewCell {
         picture.topAnchor.constraint(equalTo: title.bottomAnchor, constant: AchievementsCell.border).isActive = true
         picture.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: AchievementsCell.border * 1.5).isActive = true
 
-        if !Difficulty.multipliers.isEmpty {
+        guard let difficulties = level.difficulties else {
+            return
+        }
+
+        if !difficulties.isEmpty {
 
             let progressAreaWidth = UIScreen.main.bounds.width - AchievementsCell.pictureWidth - AchievementsCell.border * 5
-            let progressBarsSumWidth = AchievementsCell.progressViewWidth * CGFloat(Difficulty.multipliers.count)
-            let intervalBetweenProgressViews = (progressAreaWidth - progressBarsSumWidth) / (CGFloat(Difficulty.multipliers.count) - CGFloat(1))
+            let progressBarsSumWidth = AchievementsCell.progressViewWidth * CGFloat(difficulties.count)
+            let intervalBetweenProgressViews = (progressAreaWidth - progressBarsSumWidth) / (CGFloat(difficulties.count) - CGFloat(1))
                 - AchievementsCell.progressViewHeight + AchievementsCell.progressViewWidth
 
             let progress = createProgressView(progress: Float(score[0].points / 100))
@@ -84,9 +88,9 @@ class AchievementsCell: UITableViewCell {
 
             var previousBar = progress
 
-            if Difficulty.multipliers.count > 2 {
+            if difficulties.count > 2 {
 
-                for index in 1...Difficulty.multipliers.count - 2 {
+                for index in 1...difficulties.count - 2 {
 
                     let progress = createProgressView(progress: Float(score[index].points / 100))
                     self.addSubview(progress)
@@ -100,9 +104,9 @@ class AchievementsCell: UITableViewCell {
                 }
             }
 
-            if Difficulty.multipliers.count > 1 {
+            if difficulties.count > 1 {
 
-                let progress = createProgressView(progress: Float(score[Difficulty.multipliers.count - 1].points / 100))
+                let progress = createProgressView(progress: Float(score[difficulties.count - 1].points / 100))
                 self.addSubview(progress)
 
                 progress.topAnchor.constraint(equalTo: title.bottomAnchor,
@@ -111,7 +115,7 @@ class AchievementsCell: UITableViewCell {
                                                constant: intervalBetweenProgressViews).isActive = true
             }
 
-            for index in 0...Difficulty.multipliers.count - 1 {
+            for index in 0...difficulties.count - 1 {
                 limits.append(Float(score[index].points / 100))
             }
         }

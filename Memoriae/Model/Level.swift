@@ -15,4 +15,6 @@ struct Level: Decodable {
     let picture: String?
     let pictureSets: [TOMMPictureSet]?
     let dotsSet: DotsSet?
+    let standardIndex: Int?
+    var difficulties: [Difficulty]?
 }
