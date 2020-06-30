@@ -11,7 +11,7 @@ import Foundation
 // MARK: - LevelElement
 struct Level: Decodable {
     let id: Int
-    let title, kind, task, description: String
+    let title, kind, task, description, section: String
     let picture: String?
     let pictureSets: [TOMMPictureSet]?
     let dotsSet: DotsSet?

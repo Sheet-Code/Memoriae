@@ -1,6 +1,7 @@
 [
     {
         "id" : 0,
+	"section" : "Memory",
         "title" : "Eidetism",
         "kind" : "TOMMPicture",
         "task" : "This task was compiled in accordance with the TOMM methodology. You will be shown a picture. The task is to remember as many details as you can. After a certain time we will ask you a few questions",
@@ -161,6 +162,7 @@
     },
     {
         "id" : 1,
+	"section" : "Memory",
         "title" : "Mnemonics",
         "kind" : "WMSNumbers",
         "task" : "You must remember the sequence of occurrence of numbers indicated on the balls in order to then reproduce this sequence.",
@@ -207,6 +209,7 @@
     },
     {
         "id" : 2,
+	"section" : "Memory",
         "title" : "Concentration",
         "kind" : "WMSDots",
         "task" : "Dots appear on the screen in random order. Then they will light up in a certain sequence. You must carefully observe the sequence that the computer demonstrates. Then you will have to remember and accurately reproduce the presented series.",
@@ -254,6 +257,7 @@
     },
     {
         "id" : 3,
+	"section" : "Attention",
         "title" : "Attentiveness",
         "kind" : "WMSAreas",
         "task" : "The screen is divided into zones in which light signals will appear. When the zone is highlighted, you need to tap on this zone as soon as possible. As soon as the selection disappears, you need to pause tapping until the next signal.",
@@ -301,6 +305,7 @@
     },
     {
         "id" : 4,
+	"section" : "Memory",
         "title" : "Pairs",
         "kind" : "FAPicture",
         "task" : "You have an even number of cards in front of you. Your task is to open them, if such a card has been encountered before, you need to remember its location. You are also given a certain number of \"free tries\" that are necessary for initial memorization.",
