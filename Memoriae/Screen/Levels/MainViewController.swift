@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
             return
         }
 
-        levelList.sort(by: { $0.section > $1.section })
+        levelList.sort(by: { $0.section < $1.section })
         var last = ""
         var currentSection = -1
         levels = [[Level]]()
