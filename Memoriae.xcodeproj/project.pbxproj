@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B0E4D6224599DBB00DABF92 /* IndexedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */; };
+		0B1932C924ACBEC80086BBAD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1932C824ACBEC80086BBAD /* Section.swift */; };
 		0B35C9A424636975008AA00B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35C9A324636975008AA00B /* UIView.swift */; };
 		0B436766245EC49100262CB3 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B436765245EC49100262CB3 /* AchievementsViewController.swift */; };
 		0B436768245EC4C400262CB3 /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B436767245EC4C400262CB3 /* AchievementsCell.swift */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedUIButton.swift; sourceTree = "<group>"; };
+		0B1932C824ACBEC80086BBAD /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		0B35C9A324636975008AA00B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0B436765245EC49100262CB3 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		0B436767245EC4C400262CB3 /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				0B0E4D6124599DBB00DABF92 /* IndexedUIButton.swift */,
 				0B94FF62245BA000002CFC41 /* UIStackView.swift */,
 				0B35C9A324636975008AA00B /* UIView.swift */,
+				0B1932C824ACBEC80086BBAD /* Section.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				0B94FF63245BA000002CFC41 /* UIStackView.swift in Sources */,
 				0BD9D963245763AA00450D0E /* TOMMPictureViewController.swift in Sources */,
 				0BBC0405246033990048533B /* SettingsCellDetails.swift in Sources */,
+				0B1932C924ACBEC80086BBAD /* Section.swift in Sources */,
 				0BBC04032460304C0048533B /* DetailsCell.swift in Sources */,
 				0B49FC2E245A3C3D00A4F072 /* Score.swift in Sources */,
 				0BD9D96824577F2700450D0E /* TOMMAnswerCell.swift in Sources */,

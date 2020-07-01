@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     var levels: [[Level]]?
+    var sections = [Section]()
 
     @IBOutlet private var table: UITableView!
 
@@ -21,12 +22,18 @@ class MainViewController: UIViewController {
             return
         }
 
-        levelList.sort(by: { $0.section > $1.section })
+        levelList.sort(by: { $0.section < $1.section })
         var last = ""
         var currentSection = -1
         levels = [[Level]]()
         for index in 0...levelList.count - 1 {
             if last != levelList[index].section {
+                if !last.isEmpty {
+                    guard let level = levels?[currentSection] else {
+                        return
+                    }
+                    sections.append(Section(name: last, items: level))
+                }
                 last = levelList[index].section
                 currentSection += 1
                 levels?.append([Level]())
@@ -34,6 +41,13 @@ class MainViewController: UIViewController {
             levels?[currentSection].append(levelList[index])
         }
 
+        if !last.isEmpty {
+            guard let level = levels?[currentSection] else {
+                return
+            }
+            sections.append(Section(name: last, items: level))
+        }
+        
         guard let sections = levels?.count else {
             return
         }
@@ -58,24 +72,35 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sections = levels?.count else {
+        guard let sectionsCount = levels?.count else {
             return 0
         }
-        return sections
+        return sectionsCount
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let name = levels?[section][0].section else {
-            return nil
-        }
-        return name
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        guard let name = levels?[section][0].section else {
+//            return nil
+//        }
+//        return sections[section].name
+//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let nNData = levels else {
-            return 0
-        }
-        return nNData[section].count
+//        guard let nNData = levels else {
+//            return 0
+//        }
+//        return nNData[section].count
+        sections[section].collapsed ? 0 : sections[section].items.count
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleHeader ?? CollapsibleHeader(reuseIdentifier: "header")
+        header.title.text = sections[section].name
+        header.arrow.text = ">"
+        header.collapse(collapsed: sections[section].collapsed)
+        header.section = section
+        header.delegate = self
+        return header
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,6 +112,10 @@ extension MainViewController: UITableViewDataSource {
         }
         cell.setup(with: nNData[indexPath.section][indexPath.row], controller: self, index: indexPath)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        sections[indexPath.section].collapsed ? 0 : UITableView.automaticDimension
     }
 }
 
@@ -106,5 +135,14 @@ extension MainViewController: UITableViewDelegate {
         previewController.level = level
         navigationController?.pushViewController(previewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MainViewController: CollapsibleDelegate {
+    func toggleSection(header: CollapsibleHeader, section: Int) {
+        let collapsed = !sections[section].collapsed
+        sections[section].collapsed = collapsed
+        header.collapse(collapsed: collapsed)
+        table.reloadSections(IndexSet(integer: section), with: .automatic)
     }
 }
