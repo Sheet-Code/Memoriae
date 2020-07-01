@@ -14,7 +14,7 @@ struct Section {
     var items: [Level]
     var collapsed: Bool
 
-    init(name: String, items: [Level], collapsed: Bool = true) {
+    init(name: String, items: [Level], collapsed: Bool = false) {
         self.name = name
         self.items = items
         self.collapsed = collapsed

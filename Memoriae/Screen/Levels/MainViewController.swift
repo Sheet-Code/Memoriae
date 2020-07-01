@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
         LevelCell.viewController = self
         table.dataSource = self
         table.delegate = self
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -72,35 +73,54 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let sectionsCount = levels?.count else {
-            return 0
-        }
-        return sectionsCount
+        sections.count
     }
 
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        guard let name = levels?[section][0].section else {
-//            return nil
-//        }
-//        return sections[section].name
-//    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let nNData = levels else {
-//            return 0
-//        }
-//        return nNData[section].count
         sections[section].collapsed ? 0 : sections[section].items.count
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleHeader ?? CollapsibleHeader(reuseIdentifier: "header")
-        header.title.text = sections[section].name
-        header.arrow.text = ">"
-        header.collapse(collapsed: sections[section].collapsed)
-        header.section = section
-        header.delegate = self
-        return header
+//        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleHeader ?? CollapsibleHeader(reuseIdentifier: "header")
+//        header.title.text = sections[section].name
+//        header.arrow.text = ">"
+//        header.collapse(collapsed: sections[section].collapsed)
+//        header.section = section
+//        header.delegate = self
+//        return header
+        let sectionButton = IndexedUIButton()
+        sectionButton.setTitle(sections[section].name, for: .normal)
+        sectionButton.backgroundColor = ColorScheme.tintColor
+        sectionButton.setIndex(index: section)
+        sectionButton.addTarget(self, action: #selector(self.hideSection(sender:)), for: .touchUpInside)
+        return sectionButton
+    }
+
+    @objc func hideSection(sender: IndexedUIButton) {
+        guard let section = sender.getIndex() else {
+            return
+        }
+        table.beginUpdates()
+        if self.sections[section].collapsed {
+            levels?[section] = sections[section].items
+            table.insertRows(at: indexPathsForSection(section: section), with: .fade)
+        } else {
+            levels?[section].removeAll()
+            table.deleteRows(at: indexPathsForSection(section: section), with: .fade)
+        }
+        table.endUpdates()
+        sections[section].collapsed = !sections[section].collapsed
+    }
+
+    func indexPathsForSection(section: Int) -> [IndexPath] {
+        var indexPaths = [IndexPath]()
+
+        for row in 0..<self.sections[section].items.count {
+            indexPaths.append(IndexPath(row: row,
+                                        section: section))
+        }
+
+        return indexPaths
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -138,11 +158,11 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-extension MainViewController: CollapsibleDelegate {
-    func toggleSection(header: CollapsibleHeader, section: Int) {
-        let collapsed = !sections[section].collapsed
-        sections[section].collapsed = collapsed
-        header.collapse(collapsed: collapsed)
-        table.reloadSections(IndexSet(integer: section), with: .automatic)
-    }
-}
+//extension MainViewController: CollapsibleDelegate {
+//    func toggleSection(header: CollapsibleHeader, section: Int) {
+//        let collapsed = !sections[section].collapsed
+//        sections[section].collapsed = collapsed
+//        header.collapse(collapsed: collapsed)
+//        table.reloadSections(IndexSet(integer: section), with: .automatic)
+//    }
+//}
