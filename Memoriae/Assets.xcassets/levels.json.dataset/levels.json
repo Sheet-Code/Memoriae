@@ -168,6 +168,7 @@
         "task" : "You must remember the sequence of occurrence of numbers indicated on the balls in order to then reproduce this sequence.",
         "description" : "Memorization of sequence of number",
         "picture" : "wms_numbers_preview",
+	"standardIndex" : 2,
 	"difficulties" : [
 	    {
 		"multipliers": [
