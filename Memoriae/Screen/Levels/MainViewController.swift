@@ -96,7 +96,6 @@ extension MainViewController: UITableViewDataSource {
         sectionButton.addTarget(self, action: #selector(self.hideSection(sender:)), for: .touchUpInside)
 
         sectionButton.layer.borderWidth = HBW
-
         sectionButton.layer.borderColor = ColorScheme.tintColor.modified(withAdditionalHue: 0.0, additionalSaturation: 0.0, additionalBrightness: HBB).cgColor
 
         return sectionButton
@@ -110,9 +109,11 @@ extension MainViewController: UITableViewDataSource {
         if self.sections[section].collapsed {
             levels?[section] = sections[section].items
             table.insertRows(at: indexPathsForSection(section: section), with: .top)
+            sender.setTitle(sections[section].name, for: .normal)
         } else {
             levels?[section].removeAll()
             table.deleteRows(at: indexPathsForSection(section: section), with: .top)
+            sender.setTitle("< " + sections[section].name + " >", for: .normal)
         }
         table.endUpdates()
         sections[section].collapsed = !sections[section].collapsed
