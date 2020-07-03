@@ -13,6 +13,9 @@ class MainViewController: UIViewController {
     var levels: [[Level]]?
     var sections = [Section]()
 
+    let HBW: CGFloat = 1
+    let HBB: CGFloat = -0.1
+
     @IBOutlet private var table: UITableView!
 
     override func viewDidLoad() {
@@ -32,7 +35,7 @@ class MainViewController: UIViewController {
                     guard let level = levels?[currentSection] else {
                         return
                     }
-                    sections.append(Section(name: last, items: level))
+                    sections.append(Section(name: last, items: level.sorted(by: { $0.title < $1.title })))
                 }
                 last = levelList[index].section
                 currentSection += 1
@@ -45,14 +48,16 @@ class MainViewController: UIViewController {
             guard let level = levels?[currentSection] else {
                 return
             }
-            sections.append(Section(name: last, items: level))
-        }
-        
-        guard let sections = levels?.count else {
-            return
+            sections.append(Section(name: last, items: level.sorted(by: { $0.title < $1.title })))
         }
 
-        for section in 0...sections - 1 {
+        if !sections.isEmpty && sections[0].collapsed {
+            for index in 0..<sections.count {
+                levels?[index].removeAll()
+            }
+        }
+
+        for section in 0..<sections.count {
             levels?[section].sort(by: { $0.title < $1.title })
         }
 
@@ -60,7 +65,7 @@ class MainViewController: UIViewController {
         LevelCell.viewController = self
         table.dataSource = self
         table.delegate = self
-
+        table.tableFooterView = UIView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -77,22 +82,23 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sections[section].collapsed ? 0 : sections[section].items.count
+        guard let rowsInSection = levels?[section].count else {
+            return 0
+        }
+        return rowsInSection
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleHeader ?? CollapsibleHeader(reuseIdentifier: "header")
-//        header.title.text = sections[section].name
-//        header.arrow.text = ">"
-//        header.collapse(collapsed: sections[section].collapsed)
-//        header.section = section
-//        header.delegate = self
-//        return header
         let sectionButton = IndexedUIButton()
         sectionButton.setTitle(sections[section].name, for: .normal)
         sectionButton.backgroundColor = ColorScheme.tintColor
         sectionButton.setIndex(index: section)
         sectionButton.addTarget(self, action: #selector(self.hideSection(sender:)), for: .touchUpInside)
+
+        sectionButton.layer.borderWidth = HBW
+
+        sectionButton.layer.borderColor = ColorScheme.tintColor.modified(withAdditionalHue: 0.0, additionalSaturation: 0.0, additionalBrightness: HBB).cgColor
+
         return sectionButton
     }
 
@@ -103,10 +109,10 @@ extension MainViewController: UITableViewDataSource {
         table.beginUpdates()
         if self.sections[section].collapsed {
             levels?[section] = sections[section].items
-            table.insertRows(at: indexPathsForSection(section: section), with: .fade)
+            table.insertRows(at: indexPathsForSection(section: section), with: .top)
         } else {
             levels?[section].removeAll()
-            table.deleteRows(at: indexPathsForSection(section: section), with: .fade)
+            table.deleteRows(at: indexPathsForSection(section: section), with: .top)
         }
         table.endUpdates()
         sections[section].collapsed = !sections[section].collapsed
@@ -114,12 +120,10 @@ extension MainViewController: UITableViewDataSource {
 
     func indexPathsForSection(section: Int) -> [IndexPath] {
         var indexPaths = [IndexPath]()
-
         for row in 0..<self.sections[section].items.count {
             indexPaths.append(IndexPath(row: row,
                                         section: section))
         }
-
         return indexPaths
     }
 
@@ -132,10 +136,6 @@ extension MainViewController: UITableViewDataSource {
         }
         cell.setup(with: nNData[indexPath.section][indexPath.row], controller: self, index: indexPath)
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        sections[indexPath.section].collapsed ? 0 : UITableView.automaticDimension
     }
 }
 
@@ -157,12 +157,3 @@ extension MainViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-//extension MainViewController: CollapsibleDelegate {
-//    func toggleSection(header: CollapsibleHeader, section: Int) {
-//        let collapsed = !sections[section].collapsed
-//        sections[section].collapsed = collapsed
-//        header.collapse(collapsed: collapsed)
-//        table.reloadSections(IndexSet(integer: section), with: .automatic)
-//    }
-//}
