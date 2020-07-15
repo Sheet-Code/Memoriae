@@ -44,6 +44,10 @@ class AchievementsCell: UITableViewCell {
         super.prepareForReuse()
         picture.image = nil
         title.text = nil
+        for progressElement in progressBars {
+            progressElement.removeFromSuperview()
+        }
+        progressBars = [UIProgressView]()
     }
 
     func setup(with level: Level) {
