@@ -44,6 +44,8 @@ class AchievementsCell: UITableViewCell {
         super.prepareForReuse()
         picture.image = nil
         title.text = nil
+        results.removeAll()
+        limits.removeAll()
         for progressElement in progressBars {
             progressElement.removeFromSuperview()
         }
