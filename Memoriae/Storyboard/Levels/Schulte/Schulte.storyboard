@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Schulte View Controller-->
+        <scene sceneID="a42-nO-Fvy">
+            <objects>
+                <viewController storyboardIdentifier="SchulteViewController" id="b2q-Do-HcU" customClass="SchulteViewController" customModule="Memoriae" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="whl-Mk-mOr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqJ-ld-neY">
+                                <rect key="frame" x="0.0" y="92" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5re-Wg-efN">
+                                <rect key="frame" x="0.0" y="67" width="414" height="739.5"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ELQ-jS-x9S">
+                                <rect key="frame" x="20" y="194" width="374" height="507"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startGameWithSender:" destination="b2q-Do-HcU" eventType="touchUpInside" id="1fp-AJ-Sqi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WqJ-ld-neY" firstAttribute="leading" secondItem="WqF-9T-rr4" secondAttribute="leading" id="6Gv-ma-7yI"/>
+                            <constraint firstItem="5re-Wg-efN" firstAttribute="leading" secondItem="WqF-9T-rr4" secondAttribute="leading" id="8mU-zD-p4e"/>
+                            <constraint firstItem="5re-Wg-efN" firstAttribute="trailing" secondItem="WqF-9T-rr4" secondAttribute="trailing" id="BO7-4l-1HX"/>
+                            <constraint firstItem="WqF-9T-rr4" firstAttribute="trailing" secondItem="WqJ-ld-neY" secondAttribute="trailing" id="OMT-Yw-fOC"/>
+                            <constraint firstItem="5re-Wg-efN" firstAttribute="top" secondItem="WqJ-ld-neY" secondAttribute="bottom" constant="10" id="TOR-We-jHl"/>
+                            <constraint firstItem="WqJ-ld-neY" firstAttribute="trailing" secondItem="WqF-9T-rr4" secondAttribute="trailing" id="cRV-ng-REQ"/>
+                            <constraint firstItem="WqJ-ld-neY" firstAttribute="top" secondItem="WqF-9T-rr4" secondAttribute="top" constant="48" id="cvQ-bE-EGn"/>
+                            <constraint firstItem="WqJ-ld-neY" firstAttribute="leading" secondItem="WqF-9T-rr4" secondAttribute="leading" id="cx9-4P-Igg"/>
+                            <constraint firstItem="WqF-9T-rr4" firstAttribute="bottom" secondItem="5re-Wg-efN" secondAttribute="bottom" id="e2Z-lI-4VF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WqF-9T-rr4"/>
+                    </view>
+                    <connections>
+                        <outlet property="stack" destination="5re-Wg-efN" id="nVH-Oj-P70"/>
+                        <outlet property="triesLabel" destination="WqJ-ld-neY" id="GpC-sF-ZVm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eV9-tY-PBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.594202898550726" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+</document>

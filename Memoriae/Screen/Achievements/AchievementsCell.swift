@@ -53,54 +53,34 @@ class AchievementsCell: UITableViewCell {
     }
 
     func setup(with level: Level) {
-
-        guard var score = ScoreRepositoryImpl.getScores(levelId: level.id) else {
-            return
-        }
-
+        guard var score = ScoreRepositoryImpl.getScores(levelId: level.id) else { return }
         score.sort { $0.difficulty < $1.difficulty }
-
         title.text = level.title
         picture.layer.cornerRadius = 8.0
-
         minLabel.textColor = ColorScheme.tintColor
         maxLabel.textColor = ColorScheme.tintColor
-
         title.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: AchievementsCell.border).isActive = true
         title.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: AchievementsCell.border).isActive = true
-
         picture.topAnchor.constraint(equalTo: title.bottomAnchor, constant: AchievementsCell.border).isActive = true
         picture.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: AchievementsCell.border * 1.5).isActive = true
-
-        guard let difficulties = level.difficulties else {
-            return
-        }
-
+        guard let difficulties = level.difficulties else { return }
         if !difficulties.isEmpty {
-
             let progressAreaWidth = UIScreen.main.bounds.width - AchievementsCell.pictureWidth - AchievementsCell.border * 5
             let progressBarsSumWidth = AchievementsCell.progressViewWidth * CGFloat(difficulties.count)
             let intervalBetweenProgressViews = (progressAreaWidth - progressBarsSumWidth) / (CGFloat(difficulties.count) - CGFloat(1))
                 - AchievementsCell.progressViewHeight + AchievementsCell.progressViewWidth
-
             let progress = createProgressView(progress: Float(score[0].points / 100))
-
             self.addSubview(progress)
-
             progress.topAnchor.constraint(equalTo: title.bottomAnchor,
                                           constant: AchievementsCell.progressViewHeight / 2 + AchievementsCell.border).isActive = true
             progress.leftAnchor.constraint(equalTo: picture.rightAnchor,
                                            constant: AchievementsCell.border * 2 - AchievementsCell.progressViewHeight / 2).isActive = true
 
             var previousBar = progress
-
             if difficulties.count > 2 {
-
                 for index in 1...difficulties.count - 2 {
-
                     let progress = createProgressView(progress: Float(score[index].points / 100))
                     self.addSubview(progress)
-
                     progress.topAnchor.constraint(equalTo: title.bottomAnchor,
                                                   constant: AchievementsCell.progressViewHeight / 2 + AchievementsCell.border).isActive = true
                     progress.leftAnchor.constraint(equalTo: previousBar.rightAnchor,
@@ -111,26 +91,19 @@ class AchievementsCell: UITableViewCell {
             }
 
             if difficulties.count > 1 {
-
                 let progress = createProgressView(progress: Float(score[difficulties.count - 1].points / 100))
                 self.addSubview(progress)
-
                 progress.topAnchor.constraint(equalTo: title.bottomAnchor,
                                               constant: AchievementsCell.progressViewHeight / 2 + AchievementsCell.border).isActive = true
                 progress.leftAnchor.constraint(equalTo: previousBar.rightAnchor,
                                                constant: intervalBetweenProgressViews).isActive = true
             }
-
             for index in 0...difficulties.count - 1 {
                 limits.append(Float(score[index].points / 100))
             }
         }
-
         submitProgress()
-
-        guard let picture = level.picture else {
-            return
-        }
+        guard let picture = level.picture else { return }
         self.picture.image = ResourcesManager.getImage(name: picture)
     }
 

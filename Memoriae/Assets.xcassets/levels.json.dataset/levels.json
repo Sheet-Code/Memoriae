@@ -350,5 +350,51 @@
 		"name": "megamind"
 	    }
         ]
-    }
+    },
+    {
+          "id" : 5,
+    "section" : "Memory",
+          "title" : "Schulte Table",
+          "kind" : "Schulte",
+          "task" : "You will see 12 numbers on the screen after tapping any spot on the screen. For the limited time you will need to remember where each number was placed. Then you have got to tap each one in sequence from 0 to 11 with minimum of mistakes.",
+          "description" : "Tap numbers in sequence for limited time",
+          "picture" : "SchulteImage",
+    "standardIndex" : 2,
+    "difficulties" : [
+        {
+      "multipliers": [
+         10
+        ],
+      "name": "vegetable"
+        },
+        {
+      "multipliers": [
+                     
+          8
+                ],
+      "name": "goof"
+        },
+        {
+      "multipliers": [
+                      
+          6
+                ],
+      "name": "regular"
+        },
+        {
+      "multipliers": [
+                     
+          4
+                ],
+      "name": "respectable"
+        },
+        {
+      "multipliers": [
+                      
+          3
+                ],
+      "name": "megamind"
+        }
+          ]
+      }
 ]

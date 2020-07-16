@@ -59,6 +59,8 @@
 		809AC78F245DD563009D8C9B /* DotsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AC78E245DD563009D8C9B /* DotsSet.swift */; };
 		809AC792245DD7D1009D8C9B /* WMSNumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AC791245DD7D1009D8C9B /* WMSNumbersViewController.swift */; };
 		809AC795245DD81F009D8C9B /* WMSNumbers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809AC794245DD81F009D8C9B /* WMSNumbers.storyboard */; };
+		80A6EFD924BCEACC00020C27 /* Schulte.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A6EFD824BCEACC00020C27 /* Schulte.storyboard */; };
+		80A6EFDC24BCEC4D00020C27 /* SchulteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6EFDB24BCEC4C00020C27 /* SchulteViewController.swift */; };
 		B748487A86F76CA012E23622 /* Pods_MemoriaeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33EEC53947962658FA7A238 /* Pods_MemoriaeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +141,8 @@
 		809AC78E245DD563009D8C9B /* DotsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsSet.swift; sourceTree = "<group>"; };
 		809AC791245DD7D1009D8C9B /* WMSNumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMSNumbersViewController.swift; sourceTree = "<group>"; };
 		809AC794245DD81F009D8C9B /* WMSNumbers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WMSNumbers.storyboard; sourceTree = "<group>"; };
+		80A6EFD824BCEACC00020C27 /* Schulte.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schulte.storyboard; sourceTree = "<group>"; };
+		80A6EFDB24BCEC4C00020C27 /* SchulteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteViewController.swift; sourceTree = "<group>"; };
 		8B6CF494E59CB5475C18C5CC /* Pods-MemoriaeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeUITests/Pods-MemoriaeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A33EEC53947962658FA7A238 /* Pods_MemoriaeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoriaeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFB0C16F75965431EB4C09A /* Pods-MemoriaeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoriaeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoriaeUITests/Pods-MemoriaeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		0B49FC31245B601400A4F072 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				80A6EFDA24BCEC2600020C27 /* Schulte */,
 				0B7B908F24A10F3500255FF0 /* FAPicture */,
 				0BC1FCDA2433BA88002161A1 /* MainViewController.swift */,
 				0BD9D95A2456E5FF00450D0E /* LevelCell.swift */,
@@ -266,6 +271,7 @@
 		0BA4120C245D6B2100592355 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				80A6EFD724BCEA5700020C27 /* Schulte */,
 				0B7B908924A10C5D00255FF0 /* FAPicture */,
 				0BA4120D245D6B2D00592355 /* TOMMPicture */,
 				0B8E07FF2461B9960073C89C /* WMSDots */,
@@ -447,6 +453,22 @@
 			path = WMSNumbers;
 			sourceTree = "<group>";
 		};
+		80A6EFD724BCEA5700020C27 /* Schulte */ = {
+			isa = PBXGroup;
+			children = (
+				80A6EFD824BCEACC00020C27 /* Schulte.storyboard */,
+			);
+			path = Schulte;
+			sourceTree = "<group>";
+		};
+		80A6EFDA24BCEC2600020C27 /* Schulte */ = {
+			isa = PBXGroup;
+			children = (
+				80A6EFDB24BCEC4C00020C27 /* SchulteViewController.swift */,
+			);
+			path = Schulte;
+			sourceTree = "<group>";
+		};
 		BB1A6448255F238710F98854 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +610,7 @@
 				0B4B81B32465C5D0003839F8 /* WMSAreas.storyboard in Resources */,
 				0B7B908E24A10DAC00255FF0 /* FAPicture.storyboard in Resources */,
 				0BC1FCDE2433BA88002161A1 /* Main.storyboard in Resources */,
+				80A6EFD924BCEACC00020C27 /* Schulte.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +745,7 @@
 				0BBC8B132462D3B400F7FE20 /* SelectingColorCell.swift in Sources */,
 				0B49FC2C245A383D00A4F072 /* ScoreRepository.swift in Sources */,
 				0BCEE44F24633A10003F7A0A /* Theme.swift in Sources */,
+				80A6EFDC24BCEC4D00020C27 /* SchulteViewController.swift in Sources */,
 				0BD9D96524577D5B00450D0E /* TOMMPictureAnswersViewController.swift in Sources */,
 				0BA4120F245D710B00592355 /* LevelViewController.swift in Sources */,
 				0BBC0407246038AF0048533B /* SettingsCell.swift in Sources */,

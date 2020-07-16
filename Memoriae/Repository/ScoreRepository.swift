@@ -18,6 +18,7 @@ final class ScoreRepositoryImpl {
     var realm: Realm {
         do {
             return try Realm()
+        
         } catch {
             fatalError("Realm can't be created") //  po Realm.Configuration.defaultConfiguration.fileURL
         }
